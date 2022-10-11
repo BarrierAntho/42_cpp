@@ -56,6 +56,8 @@ test		:
 			@echo $(SEP_P)
 			./$(NAME)
 			@echo $(SEP_P)
+			./$(NAME) Hello " 42 " "World"      "!" "§±"
+			@echo $(SEP_P)
 
 -include $(DEPS)
 
