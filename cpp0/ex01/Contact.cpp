@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:30:16 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/15 15:45:18 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/15 17:46:13 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,13 @@ void	Contact::search(int index)
 
 void	Contact::search_field(std::string str)
 {
+	size_t	i;
+
 	if (str.size() < FD_WIDTH)
 		std::cout << std::right << std::setw(FD_WIDTH) << str;
 	else
 	{
-		for (unsigned i = 0; i < (FD_WIDTH - 1); ++i)
+		for (i = 0; i < (FD_WIDTH - 1); ++i)
 		{
 			std::cout << str.at(i);
 		}

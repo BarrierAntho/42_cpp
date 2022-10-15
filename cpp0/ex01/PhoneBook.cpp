@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:33:43 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/15 15:45:23 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/15 17:47:03 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,19 @@ PhoneBook::~PhoneBook(void)
 
 void	PhoneBook::add(void)
 {
-//	if (contacts[0].create() == 1)
-//		std::cout << ERR_CT_EMPTY_FD << std::endl;
-	search();
+	if (contacts[0].create() == 1)
+		std::cerr << ERR_CT_EMPTY_FD << std::endl;
 }
+
+//void	PhoneBook::last(void)
+//{
+//	int	i;
+//
+//	for (i = 0; i < 8; i++)
+//	{
+//		if (contacts[i].
+//	}
+//}
 
 void	PhoneBook::search(void)
 {
@@ -41,13 +50,14 @@ void	PhoneBook::search(void)
 	search_header();
 	for (i = 0; i < 8; i++)
 		contacts[i].search(i);
-	std::cout << "Which contact do you want to show ?" << std::endl;
+	std::cout << MSG_PB_INDEX_QUEST;
 	std::getline (std::cin, buff);
 	index = atoi(buff.c_str());
-	if (buff.size() == 1 && index >= 1 && index <= 7)
-		contacts[index].show();
+	if (buff.size() == 1 && index >= 1 && index <= 8)
+		contacts[index - 1].show();
 	else
-		std::cerr << "ERROR" << std::endl;
+		std::cerr << "Error: " << ERR_PB_INDEX << std::endl;
+	main_wellcome_back();
 }
 
 void	PhoneBook::search_header(void)
