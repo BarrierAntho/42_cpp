@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:35:11 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/11 17:24:35 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/15 15:45:12 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP 
-# define CONTACT_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 # include "main.hpp"
 
-# define CT_FT_NAME "First name: "
-# define CT_LT_NAME "Last name: "
-# define CT_NCK_NAME "Nickname: "
-# define CT_PH_NUM "Phone number: "
-# define CT_SECRET "Dark secret: "
+# define FD_WIDTH 10
+# define FD_SEP "|"
 
-class Contact
+# define HD_INDEX "Index"
+# define HD_FT_NAME "First Name"
+# define HD_LT_NAME "Last Name"
+# define HD_NCKNAME "Nickname"
+
+class PhoneBook
 {
 	public:
-		Contact(void);
-		~Contact(void);
-
-	private:
-		char	_first_name;
-		char	_last_name;
-		char	_nickname;
-		char	_phone_num;
-		char	_secret;
+		PhoneBook(void);
+		~PhoneBook(void);
+		Contact contacts[8];
+//		Contact	*old;
+		void	add(void);
+		void	search(void);
+		void	search_header(void);
 };
 
 #endif

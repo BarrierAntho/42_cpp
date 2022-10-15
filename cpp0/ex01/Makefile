@@ -3,9 +3,9 @@ SEP_P		:=	"----------------------------------------------"
 SEP_S		:=	".............................................."
 
 NAME		:=	phonebook
-CC		:=	c++
-CFLAGS		:=	-MMD -Wall -Werror -Wextra
-CPPFLAGS	:=	-std=c++98
+CXX		:=	c++
+CXXFLAGS	:=	-std=c++98 -Wall -Werror -Wextra
+CPPFLAGS	:=	-MMD
 
 IPATH		:=	.
 OPATH		:=	obj
@@ -15,8 +15,8 @@ RM		:=	rm -rf
 VAL		:=	valgrind --leak-check=full --show-leak-kinds=all
 
 SRCS		:=	main.cpp\
-			contact.cpp\
-			phonebook.cpp
+			Contact.cpp\
+			PhoneBook.cpp
 
 OBJS		:=	$(addprefix $(OPATH)/, $(SRCS:.cpp=.o))
 DEPS		:=	$(OBJS:.o=.d)
@@ -28,10 +28,10 @@ vpath %.o	$(OPATH)
 all		:	$(NAME)
 
 $(OPATH)/%.o	:	%.cpp
-			$(CC) $(CFLAGS) $(CPPFLAGS) -I $(IPATH) -c $< -o $@
+			$(CXX) $(CXXFLAGS) $(CPPFLAGS) -I $(IPATH) -c $< -o $@
 
 $(NAME)		:	$(OBJS)
-			$(CC) $(CFLAGS) $(CPPFLAGS) $(OBJS) -I $(IPATH) -o $(NAME)
+			$(CXX) $(CXXFLAGS) $(OBJS) -I $(IPATH) -o $(NAME)
 
 $(OBJS)		:	| $(OPATH)
 
