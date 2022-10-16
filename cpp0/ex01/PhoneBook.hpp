@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:35:11 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/15 17:47:34 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/16 09:29:01 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class PhoneBook
 	
 	private:
 		Contact contacts[8];
-//		Contact	*old;
+		size_t	amount;
 };
 
 #endif

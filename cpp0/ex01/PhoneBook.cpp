@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:33:43 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/15 17:47:03 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/16 09:48:51 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 PhoneBook::PhoneBook(void)
 {
 	std::cout << "PhoneBook has been instantied" << std::endl;
+	amount = 7;
 	return ;
 }
 
@@ -27,19 +28,20 @@ PhoneBook::~PhoneBook(void)
 
 void	PhoneBook::add(void)
 {
-	if (contacts[0].create() == 1)
-		std::cerr << ERR_CT_EMPTY_FD << std::endl;
-}
+	Contact contact;
 
-//void	PhoneBook::last(void)
-//{
-//	int	i;
-//
-//	for (i = 0; i < 8; i++)
-//	{
-//		if (contacts[i].
-//	}
-//}
+	if (amount < 8)
+	{
+		if (contact.create() == 1)
+			std::cerr << ERR_CT_EMPTY_FD << std::endl;
+		else
+		{
+			contacts[amount].copy(&contact);
+			amount++;
+		}
+	}
+
+}
 
 void	PhoneBook::search(void)
 {

@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:30:16 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/15 17:46:13 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/16 09:45:00 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,15 @@ Contact::~Contact(void)
 {
 	std::cout << "Contact deleted" << std::endl;
 	return ;
+}
+
+void	Contact::copy(Contact *contact)
+{
+	this->_first_name = contact->_first_name;
+	this->_last_name = contact->_last_name;
+	this->_nickname = contact->_nickname;
+	this->_phone_num = contact->_phone_num;
+	this->_secret = contact->_secret;
 }
 
 int	Contact::create(void)

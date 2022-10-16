@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:35:11 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/15 17:47:23 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/16 09:45:24 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Contact
 	public:
 		Contact(void);
 		~Contact(void);
+		void	copy(Contact *);
 		int	create(void);
 		void	search(int);
 		void	search_field(std::string);
