@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:35:11 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/16 09:29:01 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/17 10:32:28 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 # define HD_LT_NAME "Last Name"
 # define HD_NCKNAME "Nickname"
 
-# define ERR_PB_INDEX "Selected index out of range. Select index between 1 to 8"
-# define MSG_PB_INDEX_QUEST "Write index between 1 to 8 to show contact fields: "
+# define MSG_PB_ID_CANCEL "Cancelling contact displaying"
+# define MSG_PB_ID_QUEST "Write index from 1 to 8 to show contact (type something else to cancel): "
 # define MSG_PB_MENU "Welcome to PhoneBook program"
 # define MSG_PB_MENU_BACK "Go back to main memu"
 # define MSG_PB_SELEC "What do you want to do ? (ADD, SEARCH, EXIT): "
@@ -41,6 +41,7 @@ class PhoneBook
 		void	add(void);
 		void	search(void);
 		void	search_header(void);
+		void	shift(Contact *);
 	
 	private:
 		Contact contacts[8];

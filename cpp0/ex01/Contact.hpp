@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:35:11 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/16 09:45:24 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/17 10:30:01 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 # define CT_PH_NUM "Phone number: "
 # define CT_SECRET "Dark secret: "
 
-# define ERR_CT_EMPTY_FD "Forbidden empty contact's fields"
+# define ERR_CT_EMPTY_FD "Contact's fields can not be empty"
+# define MSG_CT_EMPTY "No contact at the selected index"
 
 class Contact
 {
@@ -40,7 +41,6 @@ class Contact
 		std::string	_nickname;
 		std::string	_phone_num;
 		std::string	_secret;
-//		time_t		*_timer;
 };
 
 #endif

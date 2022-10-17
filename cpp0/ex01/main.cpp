@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:33:43 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/15 17:18:34 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/17 10:28:19 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,9 @@ int	main(void)
 		}
 		else
 		{
-			std::cout << "Choice UNKNOWN" << std::endl;
+			std::cout << "UNKNOWN mode" << std::endl;
 			std::cout << SEP_SP << std::endl;
 		}
-
 	}
 	return (0);
 }

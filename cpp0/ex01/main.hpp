@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:35:11 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/15 17:46:07 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/17 10:31:25 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 # define MAIN_HPP
 
 # include <cstdlib>
-# include <cstring>
 # include <iomanip>
 # include <iostream>
-# include <string>
 
 # include "Contact.hpp"
 # include "PhoneBook.hpp"

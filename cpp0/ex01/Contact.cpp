@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:30:16 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/16 09:45:00 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/17 10:21:39 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 
 Contact::Contact(void)
 {
-	std::cout << "Contact created" << std::endl;
-	_first_name = "Anthony";
-	_last_name = "BARRIER";
-	_nickname = "abarrier";
-	_phone_num = "+33 1 23 45 67 78";
-	_secret = "I am a ghost";
+//	std::cout << "Contact created" << std::endl;
+//	_first_name = "Anthony";
+//	_last_name = "BARRIER";
+//	_nickname = "abarrier";
+//	_phone_num = "+33 1 23 45 67 78";
+//	_secret = "I am a ghost";
 	return ;
 }
 
 Contact::~Contact(void)
 {
-	std::cout << "Contact deleted" << std::endl;
+//	std::cout << "Contact deleted" << std::endl;
 	return ;
 }
 
@@ -80,20 +80,23 @@ void	Contact::search_field(std::string str)
 {
 	size_t	i;
 
-	if (str.size() < FD_WIDTH)
+	if (str.length() < FD_WIDTH)
 		std::cout << std::right << std::setw(FD_WIDTH) << str;
 	else
 	{
 		for (i = 0; i < (FD_WIDTH - 1); ++i)
-		{
 			std::cout << str.at(i);
-		}
 		std::cout << ".";
 	}
 }
 
 void	Contact::show(void)
 {
+	if (_first_name.empty() == true)
+	{
+		std::cout << MSG_CT_EMPTY << std::endl;
+		return ;
+	}
 	std::cout << CT_FT_NAME << _first_name << std::endl;
 	std::cout << CT_LT_NAME << _last_name << std::endl;
 	std::cout << CT_NCK_NAME << _nickname << std::endl;
