@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:30:16 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/17 13:56:09 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/17 15:17:04 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,24 +40,24 @@ void	Contact::copy(Contact *contact)
 int	Contact::create(void)
 {
 	std::cout << CT_FT_NAME;
-	std::getline(std::cin, _first_name);
-	if (_first_name.empty() == 1)
+	std::getline(std::cin, this->_first_name);
+	if (this->_first_name.empty() == 1)
 		return (1);
 	std::cout << CT_LT_NAME;
-	std::getline(std::cin, _last_name);
-	if (_last_name.empty() == 1)
+	std::getline(std::cin, this->_last_name);
+	if (this->_last_name.empty() == 1)
 		return (1);
 	std::cout << CT_NCK_NAME;
-	std::getline(std::cin, _nickname);
-	if (_nickname.empty() == 1)
+	std::getline(std::cin, this->_nickname);
+	if (this->_nickname.empty() == 1)
 		return (1);
 	std::cout << CT_PH_NUM;
-	std::getline(std::cin, _phone_num);
-	if (_phone_num.empty() == 1)
+	std::getline(std::cin, this->_phone_num);
+	if (this->_phone_num.empty() == 1)
 		return (1);
 	std::cout << CT_SECRET;
-	std::getline(std::cin, _secret);
-	if (_secret.empty() == 1)
+	std::getline(std::cin, this->_secret);
+	if (this->_secret.empty() == 1)
 		return (1);
 	return (0);
 }
@@ -66,11 +66,11 @@ void	Contact::search(int index)
 {
 	std::cout << std::right << std::setw(FD_WIDTH) << (index + 1);
 	std::cout << FD_SEP;
-	search_field(_first_name);
+	search_field(this->_first_name);
 	std::cout << FD_SEP;
-	search_field(_last_name);
+	search_field(this->_last_name);
 	std::cout << FD_SEP;
-	search_field(_nickname);
+	search_field(this->_nickname);
 	std::cout << std::endl;
 }
 
@@ -90,14 +90,14 @@ void	Contact::search_field(std::string str)
 
 void	Contact::show(void)
 {
-	if (_first_name.empty() == true)
+	if (this->_first_name.empty() == true)
 	{
 		std::cout << MSG_CT_EMPTY << std::endl;
 		return ;
 	}
-	std::cout << CT_FT_NAME << _first_name << std::endl;
-	std::cout << CT_LT_NAME << _last_name << std::endl;
-	std::cout << CT_NCK_NAME << _nickname << std::endl;
-	std::cout << CT_PH_NUM << _phone_num << std::endl;
-	std::cout << CT_SECRET << _secret << std::endl;
+	std::cout << CT_FT_NAME << this->_first_name << std::endl;
+	std::cout << CT_LT_NAME << this->_last_name << std::endl;
+	std::cout << CT_NCK_NAME << this->_nickname << std::endl;
+	std::cout << CT_PH_NUM << this->_phone_num << std::endl;
+	std::cout << CT_SECRET << this->_secret << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:33:43 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/17 13:52:42 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/17 15:18:09 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ void	PhoneBook::add(void)
 		std::cerr << ERR_CT_EMPTY_FD << std::endl;
 		return ;
 	}
-	if (amount >= 8)
-		amount = 0;
-	contacts[amount].copy(&contact);
-	amount++;
+	if (this->amount >= 8)
+		this->amount = 0;
+	this->contacts[this->amount].copy(&contact);
+	this->amount++;
 }
 
 void	PhoneBook::search(void)
@@ -47,13 +47,13 @@ void	PhoneBook::search(void)
 
 	search_header();
 	for (i = 0; i < 8; i++)
-		contacts[i].search(i);
+		this->contacts[i].search(i);
 	std::cout << MSG_PB_ID_QUEST;
 	if (std::getline(std::cin, buff).good() == false)
 		return ;
 	index = atoi(buff.c_str());
 	if (buff.size() == 1 && index >= 1 && index <= 8)
-		contacts[index - 1].show();
+		this->contacts[index - 1].show();
 	else
 		std::cout << MSG_PB_ID_CANCEL << std::endl;
 	main_wellcome_back();
