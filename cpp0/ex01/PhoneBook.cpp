@@ -6,23 +6,21 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:33:43 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/17 10:25:22 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:02:37 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
-#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void)
 {
-//	std::cout << "PhoneBook has been instantied" << std::endl;
+	//amount = 8;
 	amount = 0;
 	return ;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-//	std::cout << "PhoneBook has been deleted" << std::endl;
 	return ;
 }
 
@@ -35,25 +33,10 @@ void	PhoneBook::add(void)
 		std::cerr << ERR_CT_EMPTY_FD << std::endl;
 		return ;
 	}
-	if (amount < 8)
-	{
-		contacts[amount].copy(&contact);
-		amount++;
-	}
-	else
-		shift(&contact);
-
-}
-
-void	PhoneBook::shift(Contact *contact)
-{
-	int	i;
-
-	for (i = 0; i < 7; i++)
-	{
-		contacts[i].copy(&contacts[i + 1]);
-	}
-	contacts[7].copy(contact);
+	if (amount >= 8)
+		amount = 0;
+	contacts[amount].copy(&contact);
+	amount++;
 }
 
 void	PhoneBook::search(void)

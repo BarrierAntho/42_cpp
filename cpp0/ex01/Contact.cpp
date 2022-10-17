@@ -6,12 +6,11 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:30:16 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/17 10:21:39 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:59:06 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
-#include "Contact.hpp"
 
 Contact::Contact(void)
 {
@@ -26,7 +25,6 @@ Contact::Contact(void)
 
 Contact::~Contact(void)
 {
-//	std::cout << "Contact deleted" << std::endl;
 	return ;
 }
 
