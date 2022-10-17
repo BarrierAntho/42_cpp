@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:33:43 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/17 12:02:37 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/17 13:52:42 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ void	PhoneBook::search(void)
 	for (i = 0; i < 8; i++)
 		contacts[i].search(i);
 	std::cout << MSG_PB_ID_QUEST;
-	std::getline (std::cin, buff);
+	if (std::getline(std::cin, buff).good() == false)
+		return ;
 	index = atoi(buff.c_str());
 	if (buff.size() == 1 && index >= 1 && index <= 8)
 		contacts[index - 1].show();

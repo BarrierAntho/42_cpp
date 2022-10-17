@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:33:43 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/17 10:28:19 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:10:49 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,13 @@ int	main(void)
 	main_wellcome();
 	while (42)
 	{
-		std::cout << MSG_PB_SELEC;
-		std::getline (std::cin, buff);
+		if (std::cin.eof() == 0)
+			std::cout << MSG_PB_SELEC;
+		if (std::getline(std::cin, buff).good() == false)
+		{
+			std::cout << std::endl;
+			break;
+		}
 		if (buff.compare(USR_A) == 0)
 		{
 			std::cout << "Mode \"ADD\" selected" << std::endl;

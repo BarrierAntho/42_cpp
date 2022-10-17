@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:30:16 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/17 11:59:06 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/17 13:56:09 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,23 +40,23 @@ void	Contact::copy(Contact *contact)
 int	Contact::create(void)
 {
 	std::cout << CT_FT_NAME;
-	std::getline (std::cin, _first_name);
+	std::getline(std::cin, _first_name);
 	if (_first_name.empty() == 1)
 		return (1);
 	std::cout << CT_LT_NAME;
-	std::getline (std::cin, _last_name);
+	std::getline(std::cin, _last_name);
 	if (_last_name.empty() == 1)
 		return (1);
 	std::cout << CT_NCK_NAME;
-	std::getline (std::cin, _nickname);
+	std::getline(std::cin, _nickname);
 	if (_nickname.empty() == 1)
 		return (1);
 	std::cout << CT_PH_NUM;
-	std::getline (std::cin, _phone_num);
+	std::getline(std::cin, _phone_num);
 	if (_phone_num.empty() == 1)
 		return (1);
 	std::cout << CT_SECRET;
-	std::getline (std::cin, _secret);
+	std::getline(std::cin, _secret);
 	if (_secret.empty() == 1)
 		return (1);
 	return (0);
