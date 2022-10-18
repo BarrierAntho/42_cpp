@@ -55,6 +55,18 @@ test		:
 			$(VAL) ./$(NAME)
 			@echo $(SEP_P)
 
+compare		:
+			@$(call check_log)
+
+define check_log
+	if [ ! -f "cmp_log.sh" ]; \
+	then \
+		wget "https://raw.githubusercontent.com/BarrierAntho/42_cpp/main/cpp0/ex02/cmp_log.sh" || return 1; \
+	fi
+	chmod +x "cmp_log.sh"; \
+	./cmp_log.sh;
+endef
+
 -include $(DEPS)
 
-.PHONY		:	all clean fclean re test
+.PHONY		:	all clean fclean re test compare
