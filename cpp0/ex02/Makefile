@@ -1,10 +1,6 @@
 # constant
 SEP_P		:=	"----------------------------------------------"
 SEP_S		:=	".............................................."
-ORI_LOG		:=	19920104_091532
-ORI_LOG_NO_T	:=	19920104_091532_without_time
-RES		:=	my_log
-RES_NO_T	:=	$(RES)_without_time
 
 NAME		:=	The_Job_Of_Your_Dreams
 IPATH		:=	.
@@ -56,26 +52,9 @@ re		:
 test		:
 			make
 			@echo $(SEP_P)
-			$(VAL) ./$(NAME) > $(RES).log
+			$(VAL) ./$(NAME)
 			@echo $(SEP_P)
-
-compare		:
-			@$(call compare)
-
-define compare
-	if [ -f "$(ORI_LOG)" ]; \
-	then \
-		awk '{print $2}' $(ORI_LOG).log > $(ORI_LOG_NO_T).log; \
-	else \
-		wget https://projects.intra.42.fr/uploads/document/document/10875/19920104_091532.log && awk '{print $2}' $(ORI_LOG).log > $(ORI_LOG_NO_T).log || return 1; \
-	fi;
-	if [ -f "$(RES)" ]; \
-	then \
-		awk '{print $2}' $(RES).log > $(RES_NO_T).log || return 1; \
-		diff $(RES).log $(RES_NO_T).log; \
-	fi
-endef
 
 -include $(DEPS)
 
-.PHONY		:	all clean fclean re test compare
+.PHONY		:	all clean fclean re test
