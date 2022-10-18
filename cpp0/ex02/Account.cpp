@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:33:16 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/17 18:17:59 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/18 11:26:41 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,10 @@ int	Account::getNbWithdrawals( void )
 
 void	Account::displayAccountsInfos( void )
 {
-	std::cout << "[timestamp] " << "accounts:" << Account::getNbAccounts()
-		<< ";total:" << Account::getTotalAmount() << ";deposits:"
-		<< Account::getNbDeposits() << ";withdrawals:" << Account::getNbWithdrawals()
+	_displayTimestamp();
+	std::cout << "accounts:" << _nbAccounts
+		<< ";total:" << _totalAmount << ";deposits:" <<  _totalNbDeposits
+		<< ";withdrawals:" << _totalNbWithdrawals
 		<< std::endl;
 }
 
@@ -59,16 +60,18 @@ Account::Account( int initial_deposit )
 	this->_amount = initial_deposit;
 	this->_nbDeposits = 0;
 	this->_nbWithdrawals = 0;
-	std::cout << "[timestamp] " << "index:" << this->_accountIndex
-		<< ";amount:" << checkAmount() << ";created"
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex
+		<< ";amount:" << this->_amount << ";created"
 		<< std::endl;
-	_totalAmount += checkAmount();
+	_totalAmount += this->_amount;
 }
 
 Account::~Account( void )
 {
-	std::cout << "[timestamp] " << "index:" << this->_accountIndex
-		<< ";amount:" << checkAmount() << ";closed"
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex
+		<< ";amount:" << this->_amount << ";closed"
 		<< std::endl;
 }
 
@@ -76,12 +79,13 @@ void	Account::makeDeposit( int deposit )
 {
 	int	p_amount;
 
-	p_amount = checkAmount();
+	p_amount = this->_amount;
 	this->_nbDeposits++;
-	this->_amount = checkAmount() + deposit;
-	std::cout << "[timestamp] " << "index:" << this->_accountIndex
+	this->_amount = this->_amount + deposit;
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex
 		<< ";p_amount:" << p_amount << ";deposit:" << deposit
-		<< ";amount:" << checkAmount() << ";nb_deposits:" << this->_nbDeposits
+		<< ";amount:" << this->_amount << ";nb_deposits:" << this->_nbDeposits
 		<< std::endl;
 	_totalAmount += deposit;
 	_totalNbDeposits++;
@@ -91,19 +95,21 @@ bool	Account::makeWithdrawal( int withdrawal )
 {
 	int	p_amount;
 
-	p_amount = checkAmount();
+	p_amount = this->_amount;
 	if (p_amount < withdrawal)
 	{
-		std::cout << "[timestamp] " << "index:" << this->_accountIndex
+		_displayTimestamp();
+		std::cout << "index:" << this->_accountIndex
 			<< ";p_amount:" << p_amount << ";withdrawal:refused"
 			<< std::endl;
 		return (false);
 	}
 	this->_nbWithdrawals++;
-	this->_amount = checkAmount() - withdrawal;
-	std::cout << "[timestamp] " << "index:" << this->_accountIndex
+	this->_amount = this->_amount - withdrawal;
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex
 		<< ";p_amount:" << p_amount << ";withdrawal:" << withdrawal
-		<< ";amount:" << checkAmount() << ";nb_withdrawals:" << this->_nbWithdrawals
+		<< ";amount:" << this->_amount << ";nb_withdrawals:" << this->_nbWithdrawals
 		<< std::endl;
 	_totalAmount -= withdrawal;
 	_totalNbWithdrawals++;
@@ -117,8 +123,22 @@ int		Account::checkAmount( void ) const
 
 void	Account::displayStatus( void ) const
 {
-	std::cout << "[timestamp] " << "index:" << this->_accountIndex
-		<< ";amount:" << checkAmount() << ";deposits:" << this->_nbDeposits
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex
+		<< ";amount:" << this->_amount << ";deposits:" << this->_nbDeposits
 		<< ";withdrawals:" << _nbWithdrawals
 		<< std::endl;
+}
+
+// help: https://cplusplus.com/reference/ctime/strftime/
+void	Account::_displayTimestamp( void )
+{
+	time_t	current_time;
+	struct tm	*time_info;
+	char	display_time[100];
+
+	time(&current_time); // get actual time in ms. Example: 1666084448
+	time_info = localtime(&current_time); // get structure time with current_time
+	strftime(display_time, 100, "[%Y%m%d_%H%M%S] ", time_info);
+	std::cout << display_time;
 }
