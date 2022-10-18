@@ -57,4 +57,6 @@ test		:
 			$(VAL) ./$(NAME)
 			@echo $(SEP_P)
 
+-include $(DEPS)
+
 .PHONY		:	all clean fclean re test
