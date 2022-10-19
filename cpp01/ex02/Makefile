@@ -14,7 +14,7 @@ VAL		:=	valgrind --leak-check=full --show-leak-kinds=all
 
 SRCS		:=	main.cpp
 
-OBJS		:=	$(SRCS:.c=.o)
+OBJS		:=	$(SRCS:.cpp=.o)
 
 all		:	$(NAME)
 
@@ -26,7 +26,7 @@ clean		:
 
 fclean		:
 			make clean
-			$(RM) $(OBJS)
+			$(RM) $(NAME)
 
 re		:
 			make fclean
