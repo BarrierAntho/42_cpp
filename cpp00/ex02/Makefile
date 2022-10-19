@@ -61,7 +61,7 @@ compare		:
 define check_log
 	if [ ! -f "cmp_log.sh" ]; \
 	then \
-		wget "https://raw.githubusercontent.com/BarrierAntho/42_cpp/main/cpp0/ex02/cmp_log.sh" || return 1; \
+		wget "https://raw.githubusercontent.com/BarrierAntho/42_cpp/main/cpp00/ex02/cmp_log.sh" || return 1; \
 	fi
 	chmod +x "cmp_log.sh"; \
 	./cmp_log.sh;
