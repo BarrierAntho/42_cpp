@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:26:06 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/20 12:44:28 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/20 15:16:01 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,12 @@ int	main(void)
 	joker.attack();
 	joker.setWeapon(jokerWeapon);
 	joker.attack();
-	jokerWeapon.setType("Gun");
+	jokerWeapon.setType("gun");
 	joker.attack();
 
 	std::cout << SEP_SP << std::endl;
+
+	batman.setWeapon(jokerWeapon);
 
 	return (0);
 }
