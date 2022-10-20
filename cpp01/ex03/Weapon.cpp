@@ -6,16 +6,20 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:30:25 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/19 13:53:24 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:59:09 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(void)
+Weapon::Weapon(void): type("")
 {
-	this->type = "";
-	std::cout << WP_MSG_CREATED << std::endl;
+	std::cout << WP_MSG_DEFAULT << std::endl;
+}
+
+Weapon::Weapon(std::string newName): type(newName)
+{
+	std::cout << WP_MSG_CREATED << ": " << newName << std::endl;
 }
 
 Weapon::~Weapon(void)
@@ -28,7 +32,8 @@ const std::string	&Weapon::getType(void)
 	return (this->type);
 }
 
-void	Weapon::setType(std::string newWeapon)
+void	Weapon::setType(std::string newType)
 {
-	this->type = newWeapon;
+	this->type = newType;
+	std::cout << WP_MSG_CHANGE << ": " << newType << std::endl;
 }

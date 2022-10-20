@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:26:06 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/19 13:56:19 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:44:28 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,49 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
+# define SEP_P "####################"
+# define SEP_SP "--------------------"
+
 int	main(void)
 {
-	HumanA ha1;
-	HumanB hb1;
+	std::cout << "Subject test" << std::endl;
+	{
+		Weapon	club = Weapon("crude spiked club");
+		HumanA	bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	std::cout << SEP_SP << std::endl;
+	{
+		Weapon	club = Weapon("crude spiked club");
+		HumanB	jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+
+	std::cout << SEP_P << std::endl;
+
+	std::cout << "Personnal test" << std::endl;
+	Weapon	batWeapon = Weapon("batarang");
+	HumanA	batman("Batman", batWeapon);
+	batman.attack();
+	batWeapon.setType("batgrapping");
+	batman.attack();
+
+	std::cout << SEP_SP << std::endl;
+
+	Weapon jokerWeapon = Weapon ("baseball bat");
+	HumanB	joker("Joker");
+	joker.attack();
+	joker.setWeapon(jokerWeapon);
+	joker.attack();
+	jokerWeapon.setType("Gun");
+	joker.attack();
+
+	std::cout << SEP_SP << std::endl;
+
 	return (0);
 }
