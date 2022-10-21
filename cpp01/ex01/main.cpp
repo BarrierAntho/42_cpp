@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:23:24 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/18 16:32:18 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/21 09:22:36 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ int	main(void)
 		"(must create an array of Zombie on the heap)" << std::endl;
 	Zombie *horde = zombieHorde(N, "Hades");
 	std::cout << SEP_P << std::endl;
-	std::cout << "Test to call \"announce\"" << std::endl;
 	if (horde != NULL)
 	{
+		std::cout << "Test to call \"announce\"" << std::endl;
 		for (i = 0; i < N; i++)
 			horde[i].announce();
+		std::cout << SEP_P << std::endl;
+		std::cout << "Destructor" << std::endl;
+		delete[] horde;
 	}
-	std::cout << SEP_P << std::endl;
-	std::cout << "Destructor" << std::endl;
-	delete[] horde;
 	return (0);
 }
