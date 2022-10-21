@@ -6,11 +6,10 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 08:27:07 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/21 11:40:21 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:40:56 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fstream>
 #include <iostream>
 
 #include "MySed.hpp"
