@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 08:56:08 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/21 18:43:24 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/22 15:08:00 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,45 +24,108 @@ MySed::~MySed(void)
 
 void	MySed::close(void)
 {
+	this->closeInfile();
+	this->closeOutfile();
+}
+
+void	MySed::closeInfile(void)
+{
 	if (_ifs.is_open())
 	{
 		_ifs.close();
 		std::cout << MYSED_MSG_FS_CLOSE << ": " << this->getFilename() << std::endl;
 	}
+}
+
+void	MySed::closeOutfile(void)
+{
 	if (_ofs.is_open())
 	{
 		_ofs.close();
 		std::cout << MYSED_MSG_FS_CLOSE << ": " << this->getFilename() + MYSED_FS_NEW << std::endl;
 	}
 }
+int	MySed::check(void)
+{
+	if (this->checkArg() != 0)
+		return (1);
+	else if (this->checkInfile() != 0)
+		return (1);
+	else if (this->checkOutfile() != 0)
+		return (1);
+	else
+		return (0);
+}
 
-int	MySed::exec(void)
+int	MySed::checkArg(void)
 {
 	if (this->_s1.length() == 0)
 	{
 		std::cerr << MYSED_ERR_ARG_S1 << std::endl;
 		return (1);
 	}
-	// TODO: Check first if infile is a directory
-	// TODO: Check if outfile exists and if it is a directory
+	else
+		return (0);
+}
+
+int	MySed::checkInfile(void)
+{
+	std::string	buff;
+
+	if (this->openInfile() != 0)
+		return (1);
+	std::getline(this->_ifs, buff);
+	if (this->_ifs.eof() == true)
+	{
+		this->closeInfile();
+		return (0);
+	}
+	if (this->_ifs.bad() == true || this->_ifs.fail() == true)
+	{
+		std::cerr << MYSED_ERR_FS_DIR << ": " << this->getFilename() << std::endl;
+		this->closeInfile();
+		return (1);
+	}
+	this->closeInfile();
+	return (0);
+}
+
+int	MySed::checkOutfile(void)
+{
+	std::string	filename;
+	std::string	buff;
+
+	filename = this->getFilename() + MYSED_FS_NEW;
+	this->_ofs.open(filename.c_str(), std::fstream::in);
+	if (this->_ofs.is_open() == true)
+	{
+		std::cout << MYSED_MSG_FS_OPEN << ": " << filename << std::endl;
+		std::getline(this->_ofs, buff);
+		if (this->_ofs.bad() == true || this->_ofs.fail() == true)
+		{
+			std::cerr << MYSED_ERR_FS_DIR << ": " << filename << std::endl;
+			this->closeOutfile();
+			return (1);
+		}
+		else
+		{
+			this->closeOutfile();
+			return (0);
+		}
+	}
+	return (0);
+}
+
+int	MySed::exec(void)
+{
+	if (this->check() != 0)
+		return (1);
 	if (this->openInfile() != 0)
 		return (1);
 	if (this->openOutfile() != 0)
 	{
 		this->close();
 		return (0);
-	}
-	// TODO: add a check function isDir
-	std::string	buff;
-	if (std::getline(this->_ifs, buff).fail() == true)
-	{
-		std::cerr << "TEST" << std::endl;
-		return (1);
-	}
-	if (std::getline(this->_ofs, buff).fail() == true)
-	{
-		std::cerr << "TEST2" << std::endl;
-		return (1);
 	}
 	this->readFile();
 	this->close();
@@ -91,14 +154,16 @@ int	MySed::openInfile(void)
 
 	filename = this->getFilename();
 	this->_ifs.open(filename.c_str(), std::fstream::in);
-	if (this->_ifs.is_open())
-		std::cout << MYSED_MSG_FS_OPEN << ": " << filename << std::endl;
-	else
+	if (this->_ifs.is_open() == false)
 	{
 		std::cerr << MYSED_ERR_FS_OPEN << ": " << filename << std::endl;
 		return (1);
 	}
-	return (0);
+	else
+	{
+		std::cout << MYSED_MSG_FS_OPEN << ": " << filename << std::endl;
+		return (0);
+	}
 }
 
 int	MySed::openOutfile(void)
@@ -107,14 +172,16 @@ int	MySed::openOutfile(void)
 
 	filename = this->getFilename() + MYSED_FS_NEW;
 	this->_ofs.open(filename.c_str(), std::fstream::out | std::fstream::trunc);
-	if (this->_ifs.is_open())
-		std::cout << MYSED_MSG_FS_OPEN << ": " << filename << std::endl;
-	else
+	if (this->_ofs.is_open() == false)
 	{
 		std::cerr << MYSED_ERR_FS_OPEN << ": " << filename << std::endl;
 		return (1);
 	}
-	return (0);
+	else
+	{
+		std::cout << MYSED_MSG_FS_OPEN << ": " << filename << std::endl;
+		return (0);
+	}
 }
 
 void	MySed::readFile(void)

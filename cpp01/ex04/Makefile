@@ -52,35 +52,39 @@ re		:
 test		:
 			make all
 			@echo $(SEP_P)
-			rm -rf test/*.replace
+			rm -rf test/endl*.replace
 			@echo $(SEP_P)
-#			$(VAL) ./$(NAME)
-#			@echo $(SEP_P)
-#			$(VAL) ./$(NAME) a
-#			@echo $(SEP_P)
-#			$(VAL) ./$(NAME) a b
-#			@echo $(SEP_P)
-#			$(VAL) ./$(NAME) a b c d
-#			@echo $(SEP_P)
-#			$(VAL) ./$(NAME) a "" c
-#			@echo $(SEP_P)
-#			$(VAL) ./$(NAME) a b c
-#			@echo $(SEP_P)
-#			$(VAL) ./$(NAME) test/endl_no_word b c
-#			@echo $(SEP_P)
-#			$(VAL) ./$(NAME) test/endl_one_line_01 b c
-#			@echo $(SEP_P)
-#			$(VAL) ./$(NAME) test/endl_one_line_02 H h
-#			@echo $(SEP_P)
-#			$(VAL) ./$(NAME) test/endl_one_line_03 H hh
-#			@echo $(SEP_P)
-#			$(VAL) ./$(NAME) test/endl_lines_01 He Hi
-#			@echo $(SEP_P)
-#			$(VAL) ./$(NAME) test/endl_lines_02 He Hi
-#			@echo $(SEP_P)
-#			$(VAL) ./$(NAME) test/no_endl_one_line_01 a aa
-#			@echo $(SEP_P)
+			$(VAL) ./$(NAME)
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) a
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) a b
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) a b c d
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) a "" c
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) a b c
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) test/endl_no_word b c
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) test/endl_one_line_01 b c
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) test/endl_one_line_02 H h
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) test/endl_one_line_03 H hh
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) test/endl_lines_01 He Hi
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) test/endl_lines_02 He Hi
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) test/no_endl_one_line_01 a aa
+			@echo $(SEP_P)
 			$(VAL) ./$(NAME) test/no_endl_one_line_02 a aa
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) test/is_directory a aa
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) test/result_is_directory a aa
 			@echo $(SEP_P)
 
 -include $(DEPS)
