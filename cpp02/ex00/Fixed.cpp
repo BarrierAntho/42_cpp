@@ -6,16 +6,15 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:59:26 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/31 10:03:32 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/31 12:34:17 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed( void )
+Fixed::Fixed( void ): _value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-	this->_value = 0;
 }
 
 Fixed::~Fixed( void )
