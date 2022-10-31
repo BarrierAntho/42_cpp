@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 17:00:43 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/24 21:12:03 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/31 10:03:05 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,16 @@
 class Fixed
 {
 	public:
-		Fixed(void);
+		Fixed( void );
+		~Fixed( void );
+		Fixed( const Fixed & );
+		Fixed			&operator = ( const Fixed & );
+		int			getRawBits( void ) const;
+		void			setRawBits( int const raw );
 
 	private:
-		int			value;
-		static const int	frac_bits = 8;
+		int			_value;
+		static const int	_frac = 8;
 };
 
 #endif
