@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:58:47 by abarrier          #+#    #+#             */
-/*   Updated: 2022/10/31 13:31:32 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/10/31 15:13:07 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ int	main(void)
 		Fixed f3(1.0f);
 		f3.show();
 
-		Fixed f4(1.123456f);
+		//Fixed f4( 1.123456f );
+		Fixed const f4( 1.1f );
 		std::cout << "f4 (original value): " << f4 << std::endl;
 		std::cout << "f4 (fixed point): ";
 		f4.show();
