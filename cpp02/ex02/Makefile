@@ -2,7 +2,7 @@
 SEP_P           :=      "------------------------------------    ----------"
 SEP_S           :=      "....................................    .........."
 
-NAME		:=	Towards_a_more_useful_fixed-point_number_class
+NAME		:=	Now_we_re_talking
 IPATH		:=	.
 OPATH		:=	obj
 
