@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:59:26 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/01 12:20:40 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/01 13:15:29 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,54 @@ Fixed	&Fixed::operator = ( const Fixed &fixed )
 	return (*this);
 }
 
+Fixed	&Fixed::operator + ( const Fixed &fixed )
+{
+	std::cout << "Arithmetic \"+\" operator called" << std::endl;
+	this->_value = this->_value + (&fixed)->getRawBits();
+	return (*this);
+}
+
+Fixed	&Fixed::operator - ( const Fixed &fixed )
+{
+	std::cout << "Arithmetic \"-\" operator called" << std::endl;
+	this->_value = this->_value - (&fixed)->getRawBits();
+	return (*this);
+}
+
+Fixed	&Fixed::operator * ( const Fixed &fixed )
+{
+	std::cout << "Arithmetic \"*\" operator called" << std::endl;
+	this->_value = this->_value * (&fixed)->getRawBits();
+	return (*this);
+}
+
+Fixed	&Fixed::operator / ( const Fixed &fixed )
+{
+	std::cout << "Arithmetic \"/\" operator called" << std::endl;
+	this->_value = this->_value / (&fixed)->getRawBits();
+	return (*this);
+}
+
+Fixed	&Fixed::operator ++ ( void )
+{
+	std::cout << "Pre-increment \"++\" operator called" << std::endl;
+	this->_value = this->_value + (1 << this->_frac);
+	return (*this);
+}
+
+Fixed	&Fixed::operator ++ ( int n )
+{
+	Fixed	tmp;
+
+	tmp = *this;
+	std::cout << "post-increment \"++\" operator called" << std::endl;
+	this->_value = this->_value + (1 << this->_frac);
+	return (tmp.getRawBits());
+}
+
 bool	Fixed::operator > ( const Fixed &fixed )
 {
-	std::cout << "Greater \">\" operator called" << std::endl;
+	std::cout << "Comparison \">\" operator called" << std::endl;
 	if (this == &fixed)
 		return (false);
 	if (this->_value > (&fixed)->_value)
@@ -64,7 +109,7 @@ bool	Fixed::operator > ( const Fixed &fixed )
 
 bool	Fixed::operator < ( const Fixed &fixed )
 {
-	std::cout << "Lower \"<\" operator called" << std::endl;
+	std::cout << "Comparison \"<\" operator called" << std::endl;
 	if (this == &fixed)
 		return (false);
 	if (this->_value < (&fixed)->_value)
@@ -75,7 +120,7 @@ bool	Fixed::operator < ( const Fixed &fixed )
 
 bool	Fixed::operator >= ( const Fixed &fixed )
 {
-	std::cout << "Greater Equal \">=\" operator called" << std::endl;
+	std::cout << "Comparison \">=\" operator called" << std::endl;
 	if (this->_value >= (&fixed)->_value)
 		return (true);
 	else
@@ -84,7 +129,7 @@ bool	Fixed::operator >= ( const Fixed &fixed )
 
 bool	Fixed::operator <= ( const Fixed &fixed )
 {
-	std::cout << "Lower Equal \"<=\" operator called" << std::endl;
+	std::cout << "Comparison \"<=\" operator called" << std::endl;
 	if (this->_value <= (&fixed)->_value)
 		return (true);
 	else
@@ -93,7 +138,7 @@ bool	Fixed::operator <= ( const Fixed &fixed )
 
 bool	Fixed::operator == ( const Fixed &fixed )
 {
-	std::cout << "Equal Equal \"==\" operator called" << std::endl;
+	std::cout << "Comparison \"==\" operator called" << std::endl;
 	if (this->_value == (&fixed)->_value)
 		return (true);
 	else
@@ -102,7 +147,7 @@ bool	Fixed::operator == ( const Fixed &fixed )
 
 bool	Fixed::operator != ( const Fixed &fixed )
 {
-	std::cout << "Equal Equal \"!=\" operator called" << std::endl;
+	std::cout << "Comparison \"!=\" operator called" << std::endl;
 	if (this->_value != (&fixed)->_value)
 		return (true);
 	else
