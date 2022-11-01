@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 17:00:43 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/01 16:31:54 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/01 17:09:36 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ class Fixed
 		void			setRawBits( int const raw );
 		float			toFloat( void ) const;
 		int			toInt( void ) const;
+		static Fixed		&min( Fixed &, Fixed & );
+		static const Fixed	&min( const Fixed &, const Fixed & );
+		static Fixed		&max( Fixed &, Fixed & );
+		static const Fixed	&max( const Fixed &, const Fixed & );
 		void			show( void ) const;
 
 	private:

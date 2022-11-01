@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:58:47 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/01 16:46:16 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/01 17:10:16 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(void)
 
 		std::cout << b << std::endl;
 
-//		std::cout << Fixed::max( a, b ) << std::endl;
+		std::cout << Fixed::max( a, b ) << std::endl;
 	}
 	std::cout << SEP_P << std::endl;
 	// PERSONAL TEST

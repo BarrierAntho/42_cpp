@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:59:26 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/01 16:49:28 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/01 17:10:02 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,6 +188,46 @@ float	Fixed::toFloat( void ) const
 int	Fixed::toInt( void ) const
 {
 	return (roundf(this->getRawBits() / (1 << this->_frac)));
+}
+
+Fixed	&Fixed::min( Fixed &a, Fixed &b )
+{
+	if ( &a == &b )
+		return (a);
+	else if ( &a < &b )
+		return (a);
+	else
+		return (b);
+}
+
+const Fixed	&Fixed::min( const Fixed &a, const Fixed &b )
+{
+	if ( &a == &b )
+		return (a);
+	else if ( &a < &b )
+		return (a);
+	else
+		return (b);
+}
+
+Fixed	&Fixed::max( Fixed &a, Fixed &b )
+{
+	if ( &a == &b )
+		return (a);
+	else if ( &a > &b )
+		return (a);
+	else
+		return (b);
+}
+
+const Fixed	&Fixed::max( const Fixed &a, const Fixed &b )
+{
+	if ( &a == &b )
+		return (a);
+	else if ( &a > &b )
+		return (a);
+	else
+		return (b);
 }
 
 void	Fixed::show( void ) const
