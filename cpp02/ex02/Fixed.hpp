@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 17:00:43 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/01 13:14:58 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/01 14:58:29 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ class Fixed
 		Fixed			&operator * ( const Fixed & );
 		Fixed			&operator / ( const Fixed & );
 		Fixed			&operator ++ ( void );
-		Fixed			&operator ++ ( int );
+		Fixed			operator ++ ( int );
+		Fixed			&operator -- ( void );
+		Fixed			operator -- ( int );
 		bool			operator > ( const Fixed & );
 		bool			operator < ( const Fixed & );
 		bool			operator >= ( const Fixed & );
