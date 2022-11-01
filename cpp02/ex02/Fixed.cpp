@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:59:26 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/01 13:15:29 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:00:04 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,18 +82,35 @@ Fixed	&Fixed::operator / ( const Fixed &fixed )
 Fixed	&Fixed::operator ++ ( void )
 {
 	std::cout << "Pre-increment \"++\" operator called" << std::endl;
-	this->_value = this->_value + (1 << this->_frac);
+	this->_value = this->_value + 1;
 	return (*this);
 }
 
-Fixed	&Fixed::operator ++ ( int n )
+Fixed	Fixed::operator ++ ( int n )
 {
-	Fixed	tmp;
+	Fixed	tmp = *this;
 
-	tmp = *this;
-	std::cout << "post-increment \"++\" operator called" << std::endl;
-	this->_value = this->_value + (1 << this->_frac);
-	return (tmp.getRawBits());
+	(void)n;
+	std::cout << "Post-increment \"++\" operator called" << std::endl;
+	this->_value = this->_value + 1;
+	return (tmp);
+}
+
+Fixed	&Fixed::operator -- ( void )
+{
+	std::cout << "Pre-decrement \"--\" operator called" << std::endl;
+	this->_value = this->_value - 1;
+	return (*this);
+}
+
+Fixed	Fixed::operator -- ( int n )
+{
+	Fixed	tmp = *this;
+
+	(void)n;
+	std::cout << "Post-decrement \"--\" operator called" << std::endl;
+	this->_value = this->_value - 1;
+	return (tmp);
 }
 
 bool	Fixed::operator > ( const Fixed &fixed )

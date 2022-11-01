@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:58:47 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/01 13:08:07 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/01 14:59:21 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	main(void)
 		Fixed const	b( Fixed( 5.05f ) * Fixed( 2 ) );
 
 		std::cout << a << std::endl;
-//		std::cout << ++a << std::endl;
+		std::cout << ++a << std::endl;
 		std::cout << a << std::endl;
-//		std::cout << a++ << std::endl;
+		std::cout << a++ << std::endl;
 		std::cout << a << std::endl;
 
 		std::cout << b << std::endl;
@@ -44,16 +44,20 @@ int	main(void)
 		std::cout << "PERSONAL TEST" << std::endl;
 		std::cout << SEP_SP << std::endl;
 
-		int	a = 1, b = 1;
-		bool	test = false;
-		test = a > b;
-		std::cout << "test: " << test << std::endl;
-		test = a < b;
-		std::cout << "test: " << test << std::endl;
-		test = a <= b;
-		std::cout << "test: " << test << std::endl;
-		test = a >= b;
-		std::cout << "test: " << test << std::endl;
+		Fixed		a;
+		Fixed const	b( Fixed( 5.05f ) * Fixed( 2 ) );
+
+		std::cout << a << std::endl;
+		std::cout << ++a << std::endl;
+		std::cout << a << std::endl;
+		std::cout << a++ << std::endl;
+		std::cout << a << std::endl;
+		std::cout << --a << std::endl;
+		std::cout << a << std::endl;
+		std::cout << a-- << std::endl;
+		std::cout << a << std::endl;
+
+		std::cout << b << std::endl;
 	}
 	return (0);
 }
