@@ -54,14 +54,14 @@ Fixed	&Fixed::operator = ( const Fixed &fixed )
 Fixed	&Fixed::operator + ( const Fixed &fixed )
 {
 	std::cout << "Arithmetic \"+\" operator called" << std::endl;
-	this->setRawBits(this->getRawBits() + (&fixed)->getRawBits());
+	*this = this->toFloat() + (&fixed)->toFloat();
 	return (*this);
 }
 
 Fixed	&Fixed::operator - ( const Fixed &fixed )
 {
 	std::cout << "Arithmetic \"-\" operator called" << std::endl;
-	this->setRawBits(this->getRawBits() - (&fixed)->getRawBits());
+	*this = this->toFloat() - (&fixed)->toFloat();
 	return (*this);
 }
 
@@ -115,8 +115,6 @@ Fixed	Fixed::operator -- ( int n )
 bool	Fixed::operator > ( const Fixed &fixed )
 {
 	std::cout << "Comparison \">\" operator called" << std::endl;
-	if (this == &fixed)
-		return (false);
 	if (this->getRawBits() > (&fixed)->getRawBits())
 		return (true);
 	else
@@ -126,8 +124,6 @@ bool	Fixed::operator > ( const Fixed &fixed )
 bool	Fixed::operator < ( const Fixed &fixed )
 {
 	std::cout << "Comparison \"<\" operator called" << std::endl;
-	if (this == &fixed)
-		return (false);
 	if (this->getRawBits() < (&fixed)->getRawBits())
 		return (true);
 	else
@@ -187,14 +183,14 @@ float	Fixed::toFloat( void ) const
 
 int	Fixed::toInt( void ) const
 {
-	return (roundf(this->getRawBits() / (1 << this->_frac)));
+	return (this->getRawBits() / (1 << this->_frac));
 }
 
 Fixed	&Fixed::min( Fixed &a, Fixed &b )
 {
-	if ( &a == &b )
+	if ( a == b )
 		return (a);
-	else if ( &a < &b )
+	else if ( a < b )
 		return (a);
 	else
 		return (b);
@@ -202,9 +198,9 @@ Fixed	&Fixed::min( Fixed &a, Fixed &b )
 
 const Fixed	&Fixed::min( const Fixed &a, const Fixed &b )
 {
-	if ( &a == &b )
+	if ( a == b )
 		return (a);
-	else if ( &a < &b )
+	else if ( a < b )
 		return (a);
 	else
 		return (b);
@@ -212,9 +208,9 @@ const Fixed	&Fixed::min( const Fixed &a, const Fixed &b )
 
 Fixed	&Fixed::max( Fixed &a, Fixed &b )
 {
-	if ( &a == &b )
+	if ( a == b )
 		return (a);
-	else if ( &a > &b )
+	else if ( a > b )
 		return (a);
 	else
 		return (b);
@@ -222,9 +218,9 @@ Fixed	&Fixed::max( Fixed &a, Fixed &b )
 
 const Fixed	&Fixed::max( const Fixed &a, const Fixed &b )
 {
-	if ( &a == &b )
+	if ( a == b )
 		return (a);
-	else if ( &a > &b )
+	else if ( a > b )
 		return (a);
 	else
 		return (b);
