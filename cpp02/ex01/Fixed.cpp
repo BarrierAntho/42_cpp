@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:59:26 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/01 16:54:06 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:44:29 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ float	Fixed::toFloat( void ) const
 
 int	Fixed::toInt( void ) const
 {
-	return (roundf(this->getRawBits() / (1 << this->_frac)));
+	return (this->getRawBits() / (1 << this->_frac));
 }
 
 void	Fixed::show( void ) const
