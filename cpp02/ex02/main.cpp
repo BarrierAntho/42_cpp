@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:58:47 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/01 17:35:04 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/03 11:09:54 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(void)
 		cmp = a == b;
 		std::cout << "a == b: " << cmp << std::endl;
 		cmp = a != b;
-		std::cout << "a == b: " << cmp << std::endl;
+		std::cout << "a != b: " << cmp << std::endl;
 		std::cout << SEP_SP << std::endl;
 
 		std::cout << "a: " << a << std::endl;
@@ -85,7 +85,7 @@ int	main(void)
 		cmp = a == b;
 		std::cout << "a == b: " << cmp << std::endl;
 		cmp = a != b;
-		std::cout << "a == b: " << cmp << std::endl;
+		std::cout << "a != b: " << cmp << std::endl;
 		std::cout << SEP_SP << std::endl;
 
 		std::cout << "a: " << a << std::endl;
@@ -105,7 +105,7 @@ int	main(void)
 		cmp = a == b;
 		std::cout << "a == b: " << cmp << std::endl;
 		cmp = a != b;
-		std::cout << "a == b: " << cmp << std::endl;
+		std::cout << "a != b: " << cmp << std::endl;
 		std::cout << SEP_SP << std::endl;
 
 		std::cout << "a: " << a << std::endl;
@@ -125,7 +125,7 @@ int	main(void)
 		cmp = a == b;
 		std::cout << "a == b: " << cmp << std::endl;
 		cmp = a != b;
-		std::cout << "a == b: " << cmp << std::endl;
+		std::cout << "a != b: " << cmp << std::endl;
 	}
 	std::cout << SEP_P << std::endl;
 	{
@@ -165,18 +165,54 @@ int	main(void)
 
 		std::cout << "a: " << a << std::endl;
 		std::cout << "b: " << b << std::endl;
-		a++;
-		b++;
-		std::cout << "a++: " << a << std::endl;
-		std::cout << "b++: " << b << std::endl;
+		a = a * 2;
+		b = b / 2;
+		std::cout << "a * 2: " << a << std::endl;
+		std::cout << "b / 2: " << b << std::endl;
+		std::cout << SEP_SP << std::endl;
+	}
+	std::cout << SEP_P << std::endl;
+	{
+		std::cout << "PERSONAL TEST - pre/post increment/decrement" << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		Fixed	a;
+		Fixed	b( Fixed( 5.05f ) * Fixed( 2 ) );
+
+		std::cout << "a (default constructor): " << a << std::endl;
+		std::cout << "b (5.05f * 2): " << b << std::endl;
 		std::cout << SEP_SP << std::endl;
 
 		std::cout << "a: " << a << std::endl;
 		std::cout << "b: " << b << std::endl;
-		a--;
-		b--;
-		std::cout << "a--: " << a << std::endl;
-		std::cout << "b--: " << b << std::endl;
+		std::cout << "++a: " << ++a << std::endl;
+		std::cout << "++b: " << ++b << std::endl;
+		std::cout << "a: " << a << std::endl;
+		std::cout << "b: " << b << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "a: " << a << std::endl;
+		std::cout << "b: " << b << std::endl;
+		std::cout << "--a: " << --a << std::endl;
+		std::cout << "--b: " << --b << std::endl;
+		std::cout << "a: " << a << std::endl;
+		std::cout << "b: " << b << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "a: " << a << std::endl;
+		std::cout << "b: " << b << std::endl;
+		std::cout << "a++: " << a++ << std::endl;
+		std::cout << "b++: " << b++ << std::endl;
+		std::cout << "a: " << a << std::endl;
+		std::cout << "b: " << b << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "a: " << a << std::endl;
+		std::cout << "b: " << b << std::endl;
+		std::cout << "a--: " << a-- << std::endl;
+		std::cout << "b--: " << b-- << std::endl;
+		std::cout << "a: " << a << std::endl;
+		std::cout << "b: " << b << std::endl;
 		std::cout << SEP_SP << std::endl;
 	}
 	std::cout << SEP_P << std::endl;
