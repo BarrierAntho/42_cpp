@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 12:11:49 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/03 15:41:13 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:25:14 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ ClapTrap::~ClapTrap( void )
 
 ClapTrap::ClapTrap( const ClapTrap &clap )
 {
-	std::cout << "Copy constructor" << std::endl;
+//	std::cout << "Copy constructor" << std::endl;
 	if (this == (&clap))
 		return ;
 	*this = clap;
@@ -38,13 +38,14 @@ ClapTrap::ClapTrap( const ClapTrap &clap )
 // OVERLOAD OPERATOR
 ClapTrap	&ClapTrap::operator = ( const ClapTrap &clap )
 {
-	std::cout << "Overload operator \"=\"" << std:endl;
+//	std::cout << "Overload operator \"=\"" << std::endl;
 	if (this == (&clap))
 		return (*this);
 	this->setName((&clap)->getName());
 	this->setHp((&clap)->getHp());
 	this->setMp((&clap)->getMp());
 	this->setDps((&clap)->getDps());
+	std::cout << *this << "has been created as a clone" << std::endl;
 	return (*this);
 }
 
@@ -89,22 +90,51 @@ void	ClapTrap::setDps( const int newDps )
 	this->_dps = newDps;
 }
 
-// MISCELLANEOUS
-void	ClapTrap::show( void )
+// SUBJECT FUNCTIONS
+void	ClapTrap::attack(const std::string& target)
 {
-	std::cout << "ClapTrap [" << this->getName() << "]: "
-		<< " hp(" <<this->getHp() << ") "
-		<< " mp(" <<this->getMp() << ") "
-		<< " dps(" << this->getDps() << ") ";
+	if (this->getHp() <= 0)
+		std::cout << *this << " is dead... How is it possible to attack? Zombie ClapTrap ?!" << std::endl;
+	else if (this->getMp() <= 0)
+		std::cout << *this << " does not have energy point anymore and can not attack!" << std::endl;
+	else
+	{
+		std::cout << *this << " attacks " << target
+			<< ", causing " << this->getDps() << " damage points!" << std::endl;
+		this->setMp(this->getMp() - CP_DPS_COST);
+	}
 }
 
-// SUBJECT FUNCTIONS
+void	ClapTrap::takeDamage(unsigned int amount)
+{
+	if (this->getHp() <= 0)
+		std::cout << *this << " is already dead... RIP." << std::endl;
+	else
+	{
+		std::cout << *this << " receives " << amount << " damage points!" << std::endl;
+		this->setHp(this->getHp() - amount);
+	}
+}
+
+void	ClapTrap::beRepaired(unsigned int amount)
+{
+	if (this->getHp() <= 0)
+		std::cout << *this << " is already dead... It is not an immortal ClapTrap." << std::endl;
+	else if (this->getMp() <= 0)
+		std::cout << *this << " does not have energy point anymore and can not repair itself!" << std::endl;
+	else
+	{
+		std::cout << *this << " revives " << amount << " points of health point!" << std::endl;
+		this->setHp(this->getHp() + amount);
+		this->setMp(this->getMp() - CP_MP_COST);
+	}
+}
 
 // OUTSIDE OF THE CLASS
 std::ostream	&operator << ( std::ostream &out, const ClapTrap &clap )
 {
-	return (out << 	"ClapTrap [" << (&clap)->getName() << "]: "
-		<< " hp(" << (&clap)->getHp() << ") "
-		<< " mp(" << (&clap)->getMp() << ") "
-		<< " dps(" << (&clap)->getDps() << ") ");
+	return (out << 	"ClapTrap \""<< (&clap)->getName() << "\" "
+		<< "[hp=" << (&clap)->getHp() << ", "
+		<< " mp=" << (&clap)->getMp() << ", "
+		<< " dps=" << (&clap)->getDps() << "] ");
 }
