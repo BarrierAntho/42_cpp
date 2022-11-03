@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 17:00:43 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/02 13:56:26 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/03 10:35:50 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ class Fixed
 		~Fixed( void );
 		Fixed( const Fixed & );
 		Fixed			&operator = ( const Fixed & );
-		Fixed			operator + ( const Fixed & );
-		Fixed			operator - ( const Fixed & );
-		Fixed			operator * ( const Fixed & );
-		Fixed			operator / ( const Fixed & );
+		Fixed			operator + ( const Fixed & ) const;
+		Fixed			operator - ( const Fixed & ) const;
+		Fixed			operator * ( const Fixed & ) const;
+		Fixed			operator / ( const Fixed & ) const;
 		Fixed			operator ++ ( void );
 		Fixed			operator ++ ( int );
 		Fixed			operator -- ( void );
