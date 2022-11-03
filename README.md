@@ -13,5 +13,8 @@ Il est possible de mettre les constructeurs en privé pour respecter la forme ca
 
 Shortest range avec une boucle pour connaître l’écart le plus petit
 
+/!\ Il faut utiliser une fonction de la STL pour addNumber en une fois et non avec une boucle for/while
+
 Ex02
 Le containeur stack n’a pas d’iterator
+Utiliser “container_type” pour avoir l’iterateur
