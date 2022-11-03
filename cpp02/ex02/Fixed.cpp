@@ -51,39 +51,34 @@ Fixed	&Fixed::operator = ( const Fixed &fixed )
 	return (*this);
 }
 
-Fixed	&Fixed::operator + ( const Fixed &fixed )
+Fixed	Fixed::operator + ( const Fixed &fixed )
 {
 //	std::cout << "Arithmetic \"+\" operator called" << std::endl;
-	*this = this->toFloat() + (&fixed)->toFloat();
-	return (*this);
+	return Fixed (this->toFloat() + (&fixed)->toFloat());
 }
 
-Fixed	&Fixed::operator - ( const Fixed &fixed )
+Fixed	Fixed::operator - ( const Fixed &fixed )
 {
 //	std::cout << "Arithmetic \"-\" operator called" << std::endl;
-	*this = this->toFloat() - (&fixed)->toFloat();
-	return (*this);
+	return Fixed (this->toFloat() - (&fixed)->toFloat());
 }
 
-Fixed	&Fixed::operator * ( const Fixed &fixed )
+Fixed	Fixed::operator * ( const Fixed &fixed )
 {
 //	std::cout << "Arithmetic \"*\" operator called" << std::endl;
-	*this = this->toFloat() * (&fixed)->toFloat();
-	return (*this);
+	return Fixed (this->toFloat() * (&fixed)->toFloat());
 }
 
-Fixed	&Fixed::operator / ( const Fixed &fixed )
+Fixed	Fixed::operator / ( const Fixed &fixed )
 {
 //	std::cout << "Arithmetic \"/\" operator called" << std::endl;
-	*this = this->toFloat() / (&fixed)->toFloat();
-	return (*this);
+	return Fixed (this->toFloat() / (&fixed)->toFloat());
 }
 
-Fixed	&Fixed::operator ++ ( void )
+Fixed	Fixed::operator ++ ( void )
 {
 //	std::cout << "Pre-increment \"++\" operator called" << std::endl;
-	this->setRawBits(this->getRawBits() + 1);
-	return (*this);
+	return Fixed (this->getRawBits() + 1);
 }
 
 Fixed	Fixed::operator ++ ( int )
@@ -95,11 +90,10 @@ Fixed	Fixed::operator ++ ( int )
 	return (tmp);
 }
 
-Fixed	&Fixed::operator -- ( void )
+Fixed	Fixed::operator -- ( void )
 {
 //	std::cout << "Pre-decrement \"--\" operator called" << std::endl;
-	this->setRawBits(this->getRawBits() - 1);
-	return (*this);
+	return Fixed(this->getRawBits() - 1);
 }
 
 Fixed	Fixed::operator -- ( int )
