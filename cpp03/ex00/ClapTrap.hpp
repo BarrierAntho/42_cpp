@@ -14,22 +14,24 @@ class ClapTrap
 		~ClapTrap( void );
 		ClapTrap( const ClapTrap & );
 		ClapTrap	&operator = ( const ClapTrap & );
-		void		attack(const std::string );
-		void		takeDamage(unsigned int );
-		void		beRepaired(unsigned int );
+		void			attack( const std::string );
+		void			takeDamage( unsigned int );
+		void			beRepaired( unsigned int );
 
 		std::string	getName( void ) const;
-		int		getHp( void ) const;
-		void		setHp( int );
-		int		getMp( void ) const;
-		void		setMp( int );
-		int		getDps(void ) const;
-		void		setDps(int );
+		void			setName ( const std::string newName );
+		int			getHp( void ) const;
+		void			setHp( const int );
+		int			getMp( void ) const;
+		void			setMp( const int );
+		int			getDps( void ) const;
+		void			setDps( const int );
 		
-		void		show( void );
+		void			show( void );
 
 	private:
 		ClapTrap( void );
+		
 		std::string	_name;
 		int		_hp;
 		int		_mp;

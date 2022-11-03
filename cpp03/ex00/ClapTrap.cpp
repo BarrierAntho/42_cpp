@@ -22,9 +22,30 @@ ClapTrap::ClapTrap( std::string newName ): _name(newName), _hp( CP_HP ), _mp (CP
 	std::cout << *this << "appears" << std::endl;
 }
 
-ClapTrap::~ClapTrap ( void )
+ClapTrap::~ClapTrap( void )
 {
 	std::cout << *this << "has been destroyed" << std::endl;
+}
+
+ClapTrap::ClapTrap( const ClapTrap &clap )
+{
+	std::cout << "Copy constructor" << std::endl;
+	if (this == (&clap))
+		return ;
+	*this = clap;
+}
+
+// OVERLOAD OPERATOR
+ClapTrap	&ClapTrap::operator = ( const ClapTrap &clap )
+{
+	std::cout << "Overload operator \"=\"" << std:endl;
+	if (this == (&clap))
+		return (*this);
+	this->setName((&clap)->getName());
+	this->setHp((&clap)->getHp());
+	this->setMp((&clap)->getMp());
+	this->setDps((&clap)->getDps());
+	return (*this);
 }
 
 // GETTER / SETTER
@@ -33,12 +54,17 @@ std::string	ClapTrap::getName( void ) const
 	return (this->_name);
 }
 
+void	ClapTrap::setName( const std::string newName )
+{
+	this->_name = newName;
+}
+
 int	ClapTrap::getHp( void ) const
 {
 	return (this->_hp);
 }
 
-void	ClapTrap::setHp( int newHp )
+void	ClapTrap::setHp( const int newHp )
 {
 	this->_hp = newHp;
 }
@@ -48,7 +74,7 @@ int	ClapTrap::getMp( void ) const
 	return (this->_mp);
 }
 
-void	ClapTrap::setMp( int newMp )
+void	ClapTrap::setMp( const int newMp )
 {
 	this->_mp = newMp;
 }
@@ -58,7 +84,7 @@ int	ClapTrap::getDps( void ) const
 	return (this->_dps);
 }
 
-void	ClapTrap::setDps( int newDps )
+void	ClapTrap::setDps( const int newDps )
 {
 	this->_dps = newDps;
 }
@@ -71,6 +97,8 @@ void	ClapTrap::show( void )
 		<< " mp(" <<this->getMp() << ") "
 		<< " dps(" << this->getDps() << ") ";
 }
+
+// SUBJECT FUNCTIONS
 
 // OUTSIDE OF THE CLASS
 std::ostream	&operator << ( std::ostream &out, const ClapTrap &clap )
