@@ -2,6 +2,13 @@
 
 ## Correction
 
+### cpp02
+BSP sources:<br>
+- https://www.youtube.com/watch?v=HYAgJN3x4GA
+
+MAP sources:<br>
+- https://www.programiz.com/dsa/red-black-tree
+
 ### cpp08
 Utilisation des vectors
 Vector = tableau
@@ -18,3 +25,4 @@ Shortest range avec une boucle pour connaître l’écart le plus petit
 Ex02
 Le containeur stack n’a pas d’iterator
 Utiliser “container_type” pour avoir l’iterateur
+
