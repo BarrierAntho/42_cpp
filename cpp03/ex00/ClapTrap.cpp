@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:49:06 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/03 18:49:08 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:53:05 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap( void ) // Private constructor to respect Canonix form
 {
 }
 
-ClapTrap::ClapTrap( std::string newName ): _name(newName), _hp( CP_HP ), _mp (CP_MP ), _dps ( CP_DPS )
+ClapTrap::ClapTrap( const std::string newName ): _name(newName), _hp( CP_HP ), _mp (CP_MP ), _dps ( CP_DPS )
 {
 	std::cout << *this << "appears" << std::endl;
 }

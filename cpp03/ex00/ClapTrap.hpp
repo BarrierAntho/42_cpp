@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:48:51 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/03 18:48:55 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:52:53 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ClapTrap
 {
 	public:
 		// CONSTRUCTOR / DESTRUCTOR
-		ClapTrap( std::string );
+		ClapTrap( const std::string );
 		~ClapTrap( void );
 		ClapTrap( const ClapTrap & ); // COPY CONSTRUCTOR
 
