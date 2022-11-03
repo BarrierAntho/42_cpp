@@ -9,6 +9,9 @@ BSP sources:<br>
 MAP sources:<br>
 - https://www.programiz.com/dsa/red-black-tree
 
+Const sources:<br>
+- http://sdz.tdct.org/sdz/la-const-correctness-expliquee-aux-zeros.html
+
 ### cpp08
 Utilisation des vectors
 Vector = tableau
