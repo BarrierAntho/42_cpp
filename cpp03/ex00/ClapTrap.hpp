@@ -9,15 +9,29 @@
 
 class ClapTrap
 {
-    public:
-         void     attack(const std::string& target);
-         void     takeDamage(unsigned int amount);
-         void     beRepaired(unsigned int amount);
+	public:
+		ClapTrap( std::string );
+		~ClapTrap( void );
+		void		attack(const std::string );
+		void		takeDamage(unsigned int );
+		void		beRepaired(unsigned int );
 
-    private:
-         int      hp;
-         int      mp;
-         int      dps;
+		std::string	getName( void );
+		int		getHp( void );
+		void		setHp( int );
+		int		getMp( void );
+		void		setMp( int );
+		int		getDps(void );
+		void		setDps(int );
+
+		std::ostream	show( std::ostream );
+
+	private:
+		ClapTrap( void );
+		std::string	_name;
+		int		_hp;
+		int		_mp;
+		int		_dps;
 };
 
 #endif
