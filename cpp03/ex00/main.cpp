@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 12:08:40 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/03 18:30:49 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/04 10:01:51 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@
 
 int	main( void )
 {
-	// CONSTRUCTOR
+	// EXERCICE 00
+	std::cout << "EXERCICE 00" << std::endl;
 	std::cout << SEP_P << std::endl;
+
+	// CONSTRUCTOR
 	std::cout << "Default constructor with name argument" << std::endl;
 	ClapTrap	cp1("Zeus");
 	std::cout << "Copy constructor" << std::endl;
@@ -38,6 +41,7 @@ int	main( void )
 	std::cout << SEP_P << std::endl;
 
 	// SUBJECT FUNCTIONS
+	std::cout << "Subject functions" << std::endl;
 	cp1.attack(cp2.getName());
 	cp1.beRepaired(5);
 	cp1.takeDamage(10);
@@ -48,6 +52,9 @@ int	main( void )
 	cp2.takeDamage(10);
 	cp2.beRepaired(5);
 	std::cout << "Status of the " << cp2 << std::endl;
-	std::cout << SEP_SP << std::endl;
+	std::cout << SEP_P << std::endl;
+
+	// DESTRUCTOR
+	std::cout << "Destructor" << std::endl;
 	return (0);
 }
