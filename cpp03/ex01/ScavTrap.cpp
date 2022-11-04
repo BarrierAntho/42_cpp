@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:49:51 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/04 14:00:26 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/04 14:11:31 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ void	ScavTrap::guardGate( void )
 		std::cout << *this << " create a guard gate where it is impossible to get damages!" << std::endl;
 		this->setMp(this->getMp() - CP_DPS_COST);
 	}
-
 }
 
 // OUTSIDE OF THE CLASS
