@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:48:51 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/03 18:52:53 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/04 13:35:18 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class ClapTrap
 
 		// GETTER / SETTER
 		std::string	getName( void ) const;
-		void			setName ( const std::string newName );
+		void			setName ( const std::string & );
 		int			getHp( void ) const;
 		void			setHp( const int );
 		int			getMp( void ) const;

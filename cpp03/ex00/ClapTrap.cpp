@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:49:06 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/04 09:24:13 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/04 13:35:55 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ std::string	ClapTrap::getName( void ) const
 	return (this->_name);
 }
 
-void	ClapTrap::setName( const std::string newName )
+void	ClapTrap::setName( const std::string &newName )
 {
 	this->_name = newName;
 }
