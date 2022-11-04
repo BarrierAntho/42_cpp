@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 12:08:40 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/04 10:47:03 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/04 13:54:00 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,11 +94,26 @@ int	main( void )
 
 	// TEST VIRTUAL
 	std::cout << "Test virtual" << std::endl;
-	ClapTrap	*test = &cp1;
-	test->setName("Test");
-	test->attack("toto");
-	test = &cv1;
-	test->attack("toto");
+	std::cout << SEP_SP << std::endl;
+
+	std::cout << "*vcp = &cp1 // ClapTrap" << std::endl;
+	ClapTrap	*vcp = &cp1;
+	std::cout << "[vcp] Before: " << *vcp << std::endl;
+	std::cout << "[cp1] Before: " << cp1 << std::endl;
+	vcp->setName("Virtual test");
+	vcp->attack("toto");
+	std::cout << "[vcp] --> After: " << *vcp << std::endl;;
+	std::cout << "[cp1] --> After: " << cp1 << std::endl;;
+
+	std::cout << SEP_SP << std::endl;
+
+	std::cout << "*vcp = &cv1 // ScavTrap" << std::endl;
+	vcp = &cv1;
+	std::cout << "[vcp] Before: " << *vcp << std::endl;
+	std::cout << "[cv1] Before: " << cv1 << std::endl;
+	vcp->attack("toto");
+	std::cout << "[vcp] --> After: " << *vcp << std::endl;;
+	std::cout << "[cv1] --> After: " << cv1 << std::endl;;
 	std::cout << SEP_P << std::endl;
 
 	// DESTRUCTOR

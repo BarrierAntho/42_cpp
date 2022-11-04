@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:49:51 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/04 10:19:35 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/04 14:00:26 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ ScavTrap	&ScavTrap::operator = ( const ScavTrap &scav )
 	std::cout << *this << "has been created as a clone" << std::endl;
 	return (*this);
 }
-
-// GETTER / SETTER
 
 // SUBJECT FUNCTIONS
 void	ScavTrap::attack(const std::string& target)
