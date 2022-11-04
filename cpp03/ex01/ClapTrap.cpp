@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:49:51 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/03 18:53:55 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/04 10:39:39 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap( void ) // Private constructor to respect Canonix form
 {
 }
 
-ClapTrap::ClapTrap( const std::string newName ): _name(newName), _hp( CP_HP ), _mp (CP_MP ), _dps ( CP_DPS )
+ClapTrap::ClapTrap( const std::string newName ): _name(newName), _hp( CP_HP ), _mp ( CP_MP ), _dps ( CP_DPS )
 {
 	std::cout << *this << "appears" << std::endl;
 }
@@ -29,7 +29,7 @@ ClapTrap::~ClapTrap( void )
 
 ClapTrap::ClapTrap( const ClapTrap &clap )
 {
-//	std::cout << "Copy constructor" << std::endl;
+	std::cout << "ClapTrap copy constructor" << std::endl;
 	if (this == (&clap))
 		return ;
 	*this = clap;
@@ -38,7 +38,7 @@ ClapTrap::ClapTrap( const ClapTrap &clap )
 // OVERLOAD OPERATOR
 ClapTrap	&ClapTrap::operator = ( const ClapTrap &clap )
 {
-//	std::cout << "Overload operator \"=\"" << std::endl;
+	std::cout << "ClapTrap overload operator \"=\"" << std::endl;
 	if (this == (&clap))
 		return (*this);
 	this->setName((&clap)->getName());

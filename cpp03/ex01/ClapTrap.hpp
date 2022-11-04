@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:48:35 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/03 18:54:08 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/04 10:48:15 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ClapTrap
 	public:
 		// CONSTRUCTOR / DESTRUCTOR
 		ClapTrap( const std::string );
-		~ClapTrap( void );
+		virtual ~ClapTrap( void );
 		ClapTrap( const ClapTrap & ); // COPY CONSTRUCTOR
 
 		// OVERLOAD OPERATOR
@@ -43,14 +43,15 @@ class ClapTrap
 		void			setDps( const int );
 
 		// SUBJECT FUNCTIONS
-		void			attack( const std::string & );
+		virtual void		attack( const std::string & );
 		void			takeDamage( unsigned int );
 		void			beRepaired( unsigned int );
 
 	private:
 		// CONSTRUCTOR / DESTRUCTOR
 		ClapTrap( void ); // PRIVATE DEFAULT CONSTRUCTOR TO RESPECT CANNONIX FORM
-		
+	
+	protected:
 		// ATTRIBUTES
 		std::string	_name;
 		int		_hp;
