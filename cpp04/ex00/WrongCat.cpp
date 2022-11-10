@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:22:05 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/10 10:21:18 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/10 10:46:32 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat( void ): Animal()
+WrongCat::WrongCat( void ): WrongAnimal()
 {
-	std::cout << "Cat has been created" << std::endl;
-	this->setType("Cat");
+	std::cout << "WrongCat has been created" << std::endl;
+	this->setType("WrongCat");
 }
 
-Cat::~Cat( void )
+WrongCat::~WrongCat( void )
 {
-	std::cout << "Cat has been destroyed" << std::endl;
+	std::cout << "WrongCat has been destroyed" << std::endl;
 }
 
-void	Cat::makeSound( void ) const
+void	WrongCat::makeSound( void ) const
 {
-	std::cout << *this << " makes sound: " << CAT_SOUND << std::endl;
+	std::cout << *this << " makes sound: " << WRGCAT_SOUND << std::endl;
 }
 
-std::ostream	&operator << ( std::ostream &out, const Cat &ref )
+std::ostream	&operator << ( std::ostream &out, const WrongCat &ref )
 {
-	return (out << "[Cat] Type: " << (&ref)->getType());
+	return (out << "[WrongCat] Type: " << (&ref)->getType());
 }

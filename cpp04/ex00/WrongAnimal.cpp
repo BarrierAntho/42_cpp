@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 23:32:34 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/10 10:21:28 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/10 10:31:55 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal( void ): _type(ANI_DEFAULT_TYPE)
+WrongAnimal::WrongAnimal( void ): _type(WRGANI_DEFAULT_TYPE)
 {
-	std::cout << "Animal has been created" << std::endl;
+	std::cout << "WrongAnimal has been created" << std::endl;
 }
 
-Animal::~Animal( void )
+WrongAnimal::~WrongAnimal( void )
 {
-	std::cout << "Animal has been destroyed" << std::endl;
+	std::cout << "WrongAnimal has been destroyed" << std::endl;
 }
 
-const std::string	Animal::getType( void ) const
+const std::string	WrongAnimal::getType( void ) const
 {
 	return (this->_type);
 }
 
-void	Animal::setType( const std::string &newType )
+void	WrongAnimal::setType( const std::string &newType )
 {
 	this->_type = newType;
 }
 
-void	Animal::makeSound( void ) const
+void	WrongAnimal::makeSound( void ) const
 {
-	std::cout << *this << " makes sound: " << ANI_SOUND << std::endl;
+	std::cout << *this << " makes sound: " << WRGANI_SOUND << std::endl;
 }
 
-std::ostream	&operator << ( std::ostream &out, const Animal &ref )
+std::ostream	&operator << ( std::ostream &out, const WrongAnimal &ref )
 {
-	return (out << "[Animal] Type: " << (&ref)->getType());
+	return (out << "[WrongAnimal] Type: " << (&ref)->getType());
 }

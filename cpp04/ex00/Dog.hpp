@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:17:52 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/10 10:09:07 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/10 10:22:03 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Dog: virtual public Animal
 		Dog( void );
 		~Dog( void );
 
-		void	makeSound( void );
+		void	makeSound( void ) const;
 };
 
 std::ostream	&operator << ( std::ostream &, const Dog & );

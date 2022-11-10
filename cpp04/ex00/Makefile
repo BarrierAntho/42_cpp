@@ -18,7 +18,9 @@ VAL		:=	valgrind --leak-check=full --show-leak-kinds=all
 SRCS		:=	main.cpp\
 			Animal.cpp\
 			Dog.cpp\
-			Cat.cpp
+			Cat.cpp\
+			WrongAnimal.cpp\
+			WrongCat.cpp
 
 OBJS		:=	$(addprefix $(OPATH)/, $(SRCS:.cpp=.o))
 DEPS		:=	$(OBJS:.o=.d)
