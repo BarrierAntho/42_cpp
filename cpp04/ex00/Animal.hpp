@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 23:35:47 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/08 00:08:19 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/10 10:11:15 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,27 @@
 
 # include <iostream>
 
-# define ANI_DEFAULT_TYPE "mammal"
+# ifndef ANI_DEFAULT_TYPE
+#  define ANI_DEFAULT_TYPE "mammal"
+# endif
+# ifndef ANI_SOUND
+#  define ANI_SOUND "mammmmmmmmmmmal"
+# endif
 
 class Animal
 {
 	public:
 		Animal( void );
-		~Animal( void );
+		virtual ~Animal( void );
 		const std::string	getType( void ) const;
 		void			setType( const std::string & );
+
+		void			makeSound( void );
 
 	private:
 		std::string		_type;
 };
 
-std::iostream	&operator << ( std::iostream &, const Animal & );
+std::ostream	&operator << ( std::ostream &, const Animal & );
 
 #endif
