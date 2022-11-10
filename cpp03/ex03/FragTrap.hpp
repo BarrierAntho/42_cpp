@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:50:15 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/04 16:31:33 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/10 10:12:25 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class FragTrap: virtual public ClapTrap
 	public:
 		// CONSTRUCTOR / DESTRUCTOR
 		FragTrap( const std::string );
-		~FragTrap( void );
+		virtual ~FragTrap( void );
 		FragTrap ( const FragTrap & ); // COPY CONSTRUCTOR
 
 		// OVERLOAD OPERATOR

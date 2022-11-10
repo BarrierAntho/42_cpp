@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:50:15 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/04 16:31:44 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/10 10:12:38 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ScavTrap: virtual public ClapTrap
 	public:
 		// CONSTRUCTOR / DESTRUCTOR
 		ScavTrap( const std::string );
-		~ScavTrap( void );
+		virtual ~ScavTrap( void );
 		ScavTrap ( const ScavTrap & ); // COPY CONSTRUCTOR
 
 		// OVERLOAD OPERATOR
