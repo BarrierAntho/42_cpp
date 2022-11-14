@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:50:15 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/14 14:05:26 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 21:56:05 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,16 @@ class ScavTrap: virtual public ClapTrap
 		ScavTrap( const std::string );
 		virtual ~ScavTrap( void );
 		ScavTrap ( const ScavTrap & ); // COPY CONSTRUCTOR
+
+		// GETTER / SETTER
+		std::string		getName( void ) const;
+		void			setName ( const std::string & );
+		int			getHp( void ) const;
+		void			setHp( const int );
+		int			getMp( void ) const;
+		void			setMp( const int );
+		int			getDps( void ) const;
+		void			setDps( const int );
 
 		// OVERLOAD OPERATOR
 		ScavTrap	&operator = ( const ScavTrap & );

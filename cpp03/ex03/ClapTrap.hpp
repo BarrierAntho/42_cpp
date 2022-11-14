@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:48:35 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/14 13:43:44 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 21:55:45 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 
-# define CP_DEFAULT_NAME "God"
+# define CP_DEFAULT_NAME "Default_Name"
 
 # define CP_HP 10
 # define CP_MP 10
@@ -38,7 +38,7 @@ class ClapTrap
 		// GETTER / SETTER
 		std::string	getName( void ) const;
 		void			setName ( const std::string & );
-		virtual int			getHp( void ) const;
+		int			getHp( void ) const;
 		void			setHp( const int );
 		int			getMp( void ) const;
 		void			setMp( const int );
@@ -53,9 +53,9 @@ class ClapTrap
 	protected:
 		// ATTRIBUTES
 		std::string	_name;
-		int		_hp;
-		int		_mp;
-		int		_dps;
+		int		_hitPoints;
+		int		_energyPoints;
+		int		_attackPoints;
 };
 
 // OUTSIDE OF THE CLASS

@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:50:15 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/14 17:46:31 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 21:27:26 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,16 @@ class DiamondTrap: public ScavTrap, public FragTrap
 		DiamondTrap( const std::string );
 		~DiamondTrap( void );
 		DiamondTrap ( const DiamondTrap & ); // COPY CONSTRUCTOR
+
+		// GETTER / SETTER
+		std::string	getName( void ) const;
+		void			setName ( const std::string & );
+		int			getHp( void ) const;
+		void			setHp( const int );
+		int			getMp( void ) const;
+		void			setMp( const int );
+		int			getDps( void ) const;
+		void			setDps( const int );
 
 		// OVERLOAD OPERATOR
 		DiamondTrap	&operator = ( const DiamondTrap & );

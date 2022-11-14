@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:49:51 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/14 18:06:12 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 21:30:58 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,47 @@ ScavTrap	&ScavTrap::operator = ( const ScavTrap &scav )
 	*cpThis = *cpClone;
 	std::cout << *this << "has been created as a clone" << std::endl;
 	return (*this);
+}
+
+// GETTER / SETTER
+std::string	ScavTrap::getName( void ) const
+{
+	return (this->_name);
+}
+
+void	ScavTrap::setName( const std::string &newName )
+{
+	this->_name = newName;
+}
+
+int	ScavTrap::getHp( void ) const
+{
+	return (this->_hitPoints);
+}
+
+void	ScavTrap::setHp( const int newHitPoints )
+{
+	this->_hitPoints = newHitPoints;
+}
+
+int	ScavTrap::getMp( void ) const
+{
+	return (this->_energyPoints);
+}
+
+void	ScavTrap::setMp( const int newEnergyPoints )
+{
+	this->_energyPoints = newEnergyPoints;
+}
+
+int	ScavTrap::getDps( void ) const
+{
+	return (this->_attackPoints);
+}
+
+void	ScavTrap::setDps( const int newAttackPoints )
+{
+	this->_attackPoints = newAttackPoints;
 }
 
 // SUBJECT FUNCTIONS

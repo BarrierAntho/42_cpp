@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:50:15 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/14 13:18:51 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 21:55:54 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,16 @@ class FragTrap: virtual public ClapTrap
 
 		// OVERLOAD OPERATOR
 		FragTrap	&operator = ( const FragTrap & );
+
+		// GETTER / SETTER
+		std::string		getName( void ) const;
+		void			setName ( const std::string & );
+		int			getHp( void ) const;
+		void			setHp( const int );
+		int			getMp( void ) const;
+		void			setMp( const int );
+		int			getDps( void ) const;
+		void			setDps( const int );
 
 		// SUBJECT FUNCTIONS
 		void	highFivesGuys( void );

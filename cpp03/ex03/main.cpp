@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 12:08:40 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/14 18:05:42 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 22:08:27 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,10 +168,13 @@ int	main( void )
 	// CONSTRUCTOR
 	std::cout << "Default constructor without argument" << std::endl;
 	DiamondTrap	cd0;
+	cd0.whoAmI();
 	std::cout << "Default constructor with name argument" << std::endl;
 	DiamondTrap	cd1("Saphir");
+	cd1.whoAmI();
 	std::cout << "Copy constructor" << std::endl;
 	DiamondTrap	cd2(cd1);
+	cd2.whoAmI();
 	std::cout << SEP_P << std::endl;
 
 	// SETTER

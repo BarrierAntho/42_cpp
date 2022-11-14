@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:49:51 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/14 17:55:22 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 21:31:57 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,47 @@ FragTrap	&FragTrap::operator = ( const FragTrap &frag )
 	*cpThis = *cpClone;
 	std::cout << *this << "has been created as a clone" << std::endl;
 	return (*this);
+}
+
+// GETTER / SETTER
+std::string	FragTrap::getName( void ) const
+{
+	return (this->_name);
+}
+
+void	FragTrap::setName( const std::string &newName )
+{
+	this->_name = newName;
+}
+
+int	FragTrap::getHp( void ) const
+{
+	return (this->_hitPoints);
+}
+
+void	FragTrap::setHp( const int newHitPoints )
+{
+	this->_hitPoints = newHitPoints;
+}
+
+int	FragTrap::getMp( void ) const
+{
+	return (this->_energyPoints);
+}
+
+void	FragTrap::setMp( const int newEnergyPoints )
+{
+	this->_energyPoints = newEnergyPoints;
+}
+
+int	FragTrap::getDps( void ) const
+{
+	return (this->_attackPoints);
+}
+
+void	FragTrap::setDps( const int newAttackPoints )
+{
+	this->_attackPoints = newAttackPoints;
 }
 
 // SUBJECT FUNCTIONS
