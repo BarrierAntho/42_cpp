@@ -15,7 +15,7 @@
 
 # include <iostream>
 
-# define CP_DEFAULT_NAME "God"
+# define CP_DEFAULT_NAME "Default_Name"
 
 # define CP_HP 10
 # define CP_MP 10
@@ -53,9 +53,9 @@ class ClapTrap
 	private:
 		// ATTRIBUTES
 		std::string	_name;
-		int		_hp;
-		int		_mp;
-		int		_dps;
+		int		_hitPoints;
+		int		_energyPoints;
+		int		_attackPoints;
 };
 
 // OUTSIDE OF THE CLASS

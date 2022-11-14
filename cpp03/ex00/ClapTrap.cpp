@@ -13,12 +13,12 @@
 #include "ClapTrap.hpp"
 
 // CONSTRUCTOR / DESTRUCTOR
-ClapTrap::ClapTrap( void ): _name(CP_DEFAULT_NAME), _hp(CP_HP), _mp(CP_MP), _dps(CP_DPS)
+ClapTrap::ClapTrap( void ): _name(CP_DEFAULT_NAME), _hitPoints(CP_HP), _energyPoints(CP_MP), _attackPoints(CP_DPS)
 {
 	std::cout << *this << "appears" << std::endl;
 }
 
-ClapTrap::ClapTrap( const std::string newName ): _name(newName), _hp(CP_HP), _mp(CP_MP), _dps(CP_DPS)
+ClapTrap::ClapTrap( const std::string newName ): _name(newName), _hitPoints(CP_HP), _energyPoints(CP_MP), _attackPoints(CP_DPS)
 {
 	std::cout << *this << "appears" << std::endl;
 }
@@ -63,32 +63,32 @@ void	ClapTrap::setName( const std::string &newName )
 
 int	ClapTrap::getHp( void ) const
 {
-	return (this->_hp);
+	return (this->_hitPoints);
 }
 
-void	ClapTrap::setHp( const int newHp )
+void	ClapTrap::setHp( const int newHitPoints )
 {
-	this->_hp = newHp;
+	this->_hitPoints = newHitPoints;
 }
 
 int	ClapTrap::getMp( void ) const
 {
-	return (this->_mp);
+	return (this->_energyPoints);
 }
 
-void	ClapTrap::setMp( const int newMp )
+void	ClapTrap::setMp( const int newEnergyPoints )
 {
-	this->_mp = newMp;
+	this->_energyPoints = newEnergyPoints;
 }
 
 int	ClapTrap::getDps( void ) const
 {
-	return (this->_dps);
+	return (this->_attackPoints);
 }
 
-void	ClapTrap::setDps( const int newDps )
+void	ClapTrap::setDps( const int newAttackPoints )
 {
-	this->_dps = newDps;
+	this->_attackPoints = newAttackPoints;
 }
 
 // SUBJECT FUNCTIONS
