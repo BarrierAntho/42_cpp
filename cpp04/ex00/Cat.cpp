@@ -15,8 +15,8 @@
 // CONSTRUCTOR / DESTRUCTOR
 Cat::Cat( void ): Animal()
 {
-	std::cout << "Cat has been created" << std::endl;
 	this->setType("Cat");
+	std::cout << "Cat has been created" << std::endl;
 }
 
 Cat::~Cat( void )

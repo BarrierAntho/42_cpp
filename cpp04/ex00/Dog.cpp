@@ -15,8 +15,8 @@
 // CONSTRUCTOR / DESTRUCTOR
 Dog::Dog( void ): Animal()
 {
-	std::cout << "Dog has been created" << std::endl;
 	this->setType("Dog");
+	std::cout << "Dog has been created" << std::endl;
 }
 
 Dog::~Dog( void )

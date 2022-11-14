@@ -15,8 +15,8 @@
 // CONSTRUCTOR / DESTRUCTOR
 WrongCat::WrongCat( void ): WrongAnimal()
 {
-	std::cout << "WrongCat has been created" << std::endl;
 	this->setType("WrongCat");
+	std::cout << "WrongCat has been created" << std::endl;
 }
 
 WrongCat::~WrongCat( void )
