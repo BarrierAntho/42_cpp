@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:22:05 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/14 09:06:41 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 10:28:13 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ WrongCat	&WrongCat::operator = ( const WrongCat &ref )
 	cpThis = this;
 	cpClone = &ref;
 	*cpThis = *cpClone;
-	std::cout << *this << "has been created as a clone" << std::endl;
+	std::cout << *this << " has been created as a clone" << std::endl;
 	return (*this);
 }
 

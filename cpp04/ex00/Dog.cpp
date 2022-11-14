@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:14:30 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/14 08:55:32 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 10:27:52 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Dog	&Dog::operator = ( const Dog &ref )
 	cpThis = this;
 	cpClone = &ref;
 	*cpThis = *cpClone;
-	std::cout << *this << "has been created as a clone" << std::endl;
+	std::cout << *this << " has been created as a clone" << std::endl;
 	return (*this);
 }
 
