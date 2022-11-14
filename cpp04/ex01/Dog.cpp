@@ -15,12 +15,14 @@
 // CONSTRUCTOR / DESTRUCTOR
 Dog::Dog( void ): Animal()
 {
-	std::cout << "Dog has been created" << std::endl;
 	this->setType("Dog");
+	this->_brain = new Brain();
+	std::cout << "Dog has been created" << std::endl;
 }
 
 Dog::~Dog( void )
 {
+	delete(this->_brain);
 	std::cout << "Dog has been destroyed" << std::endl;
 }
 
@@ -44,6 +46,7 @@ Dog	&Dog::operator = ( const Dog &ref )
 	cpThis = this;
 	cpClone = &ref;
 	*cpThis = *cpClone;
+	this->_brain = new Brain();
 	std::cout << *this << " has been created as a clone" << std::endl;
 	return (*this);
 }

@@ -34,6 +34,9 @@ class Dog: virtual public Animal
 		
 		// SUBJECT FUNCTIONS
 		void	makeSound( void ) const;
+		
+	private:
+		Brain	*_brain;
 };
 
 // OUTSIDE OF THE CLASS
