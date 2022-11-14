@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 23:48:38 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/10 10:48:51 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:49:46 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,207 @@ int	main( void )
 		const WrongAnimal	*wrgcat = new WrongCat();
 
 		std::cout << wrgcat->getType() << " " << std::endl;
-		wrgcat->makeSound(); //will output the cat sound!
+		wrgcat->makeSound();
 		wrganimal->makeSound();
 		delete(wrganimal);
 		delete(wrgcat);
 	}
 	std::cout << SEP_P << std::endl;
-	// PERSONAL TEST
+	// PERSONAL TEST - ANIMAL
 	{
-		std::cout << "PERSONAL TEST" << std::endl;
+		std::cout << "PERSONAL TEST - ANIMAL" << std::endl;
 		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Constructor" << std::endl;
+		const Animal	a1;
+		const Animal	*a2 = &a1;
+		const Animal	&a3 = a1;
+
+		std::cout << "a1: " << "ptr = " << &a1 << "\t" << a1 << std::endl;
+		std::cout << "a2: " << "ptr = " << a2 << "\t" << *a2 << std::endl;
+		std::cout << "a3: " << "ptr = " << &a3 << "\t" << a3 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Copy Constructor" << std::endl;
+		const Animal	a10(a1);
+
+		std::cout << "a10: " << "ptr = " << &a10 << "\t" << a10 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Overload operator =" << std::endl;
+		const Animal	a11 = a1;
+		std::cout << "a11: " << "ptr = " << &a11 << "\t" << a11 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Getter/Setter" << std::endl;
+		std::cout << "a1 getType: " << a1.getType() << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Functions" << std::endl;
+		a1.makeSound();
+		a2->makeSound();
+		a3.makeSound();
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Destructor" << std::endl;
+	}
+	std::cout << SEP_P << std::endl;
+	// PERSONAL TEST - CAT
+	{
+		std::cout << "PERSONAL TEST - CAT" << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Constructor" << std::endl;
+		const Cat	a1;
+		const Cat	*a2 = &a1;
+		const Cat	&a3 = a1;
+
+		std::cout << "a1: " << "ptr = " << &a1 << "\t" << a1 << std::endl;
+		std::cout << "a2: " << "ptr = " << a2 << "\t" << *a2 << std::endl;
+		std::cout << "a3: " << "ptr = " << &a3 << "\t" << a3 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Copy Constructor" << std::endl;
+		const Cat	a10(a1);
+
+		std::cout << "a10: " << "ptr = " << &a10 << "\t" << a10 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Overload operator =" << std::endl;
+		const Cat	a11 = a1;
+		std::cout << "a11: " << "ptr = " << &a11 << "\t" << a11 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Getter/Setter" << std::endl;
+		std::cout << "a1 getType: " << a1.getType() << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Functions" << std::endl;
+		a1.makeSound();
+		a2->makeSound();
+		a3.makeSound();
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Destructor" << std::endl;
+	}
+	std::cout << SEP_P << std::endl;
+	// PERSONAL TEST - DOG
+	{
+		std::cout << "PERSONAL TEST - DOG" << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Constructor" << std::endl;
+		const Dog	a1;
+		const Dog	*a2 = &a1;
+		const Dog	&a3 = a1;
+
+		std::cout << "a1: " << "ptr = " << &a1 << "\t" << a1 << std::endl;
+		std::cout << "a2: " << "ptr = " << a2 << "\t" << *a2 << std::endl;
+		std::cout << "a3: " << "ptr = " << &a3 << "\t" << a3 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Copy Constructor" << std::endl;
+		const Dog	a10(a1);
+
+		std::cout << "a10: " << "ptr = " << &a10 << "\t" << a10 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Overload operator =" << std::endl;
+		const Dog	a11 = a1;
+		std::cout << "a11: " << "ptr = " << &a11 << "\t" << a11 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Getter/Setter" << std::endl;
+		std::cout << "a1 getType: " << a1.getType() << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Functions" << std::endl;
+		a1.makeSound();
+		a2->makeSound();
+		a3.makeSound();
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Destructor" << std::endl;
+	}
+	std::cout << SEP_P << std::endl;
+	// PERSONAL TEST - ANIMAL AND CAT
+	{
+		std::cout << "PERSONAL TEST - ANIMAL AND CAT" << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Constructor" << std::endl;
+		const Animal	*a1 = new Cat();
+		const Animal	*a2 = a1;
+		const Animal	&a3 = *a1;
+
+		std::cout << "a1: " << "ptr = " << a1 << "\t" << *a1 << std::endl;
+		std::cout << "a2: " << "ptr = " << a2 << "\t" << *a2 << std::endl;
+		std::cout << "a3: " << "ptr = " << &a3 << "\t" << a3 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Copy Constructor" << std::endl;
+		const Animal	a10(*a1);
+
+		std::cout << "a10: " << "ptr = " << &a10 << "\t" << a10 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Overload operator =" << std::endl;
+		const Animal	a11 = *a1;
+		std::cout << "a11: " << "ptr = " << &a11 << "\t" << a11 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Getter/Setter" << std::endl;
+		std::cout << "a1 getType: " << a1->getType() << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Functions" << std::endl;
+		a1->makeSound();
+		a2->makeSound();
+		(&a3)->makeSound();
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Destructor" << std::endl;
+		delete(a1);
+	}
+	std::cout << SEP_P << std::endl;
+	// PERSONAL TEST - ANIMAL AND DOG
+	{
+		std::cout << "PERSONAL TEST - ANIMAL AND DOG" << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Constructor" << std::endl;
+		const Animal	*a1 = new Dog();
+		const Animal	*a2 = a1;
+		const Animal	&a3 = *a1;
+
+		std::cout << "a1: " << "ptr = " << a1 << "\t" << *a1 << std::endl;
+		std::cout << "a2: " << "ptr = " << a2 << "\t" << *a2 << std::endl;
+		std::cout << "a3: " << "ptr = " << &a3 << "\t" << a3 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Copy Constructor" << std::endl;
+		const Animal	a10(*a1);
+
+		std::cout << "a10: " << "ptr = " << &a10 << "\t" << a10 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Overload operator =" << std::endl;
+		const Animal	a11 = *a1;
+		std::cout << "a11: " << "ptr = " << &a11 << "\t" << a11 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Getter/Setter" << std::endl;
+		std::cout << "a1 getType: " << a1->getType() << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Functions" << std::endl;
+		a1->makeSound();
+		a2->makeSound();
+		(&a3)->makeSound();
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Destructor" << std::endl;
+		delete(a1);
 	}
 	return (0);
 }

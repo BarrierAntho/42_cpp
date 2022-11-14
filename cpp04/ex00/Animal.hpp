@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 23:35:47 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/10 10:22:50 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:34:40 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Animal
 		Animal( const Animal & );
 		
 		// OVERLOAD OPERATOR
-		Animal	&Animal::operator = ( const Animal & );
+		Animal	&operator = ( const Animal & );
 		
 		// GETTER / SETTER
 		const std::string	getType( void ) const;
@@ -39,8 +39,9 @@ class Animal
 		
 		// SUBJECT FUNCTIONS
 		virtual void		makeSound( void ) const;
-
+	
 	protected:
+		// ATTRIBUTES
 		std::string		_type;
 };
 

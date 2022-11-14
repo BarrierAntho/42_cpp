@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:22:05 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/10 10:21:18 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:37:11 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Cat::~Cat( void )
 	std::cout << "Cat has been destroyed" << std::endl;
 }
 
-Cat::Cat( const Cat &ref )
+Cat::Cat( const Cat &ref ): Animal()
 {
 	std::cout << "Cat copy constructor" << std::endl;
 	if (this == (&ref))
@@ -38,13 +38,13 @@ Cat	&Cat::operator = ( const Cat &ref )
 	Animal	*cpThis;
 	const Animal	*cpClone;
 
-	std::cout << "Animal overload operator \"=\"" << std::endl;
+	std::cout << "Cat overload operator \"=\"" << std::endl;
 	if (this == (&ref))
 		return (*this);
 	cpThis = this;
 	cpClone = &ref;
 	*cpThis = *cpClone;
-	std::cout << *this << "has been created as a clone" << std::endl;
+	std::cout << *this << " has been created as a clone" << std::endl;
 	return (*this);
 }
 

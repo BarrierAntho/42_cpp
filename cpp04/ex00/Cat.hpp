@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:24:07 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/10 10:21:53 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 08:46:13 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Cat: virtual public Animal
 		Cat( const Cat & );
 		
 		// OVERLOAD OPERATOR
-		Cat	&Cat::operator = ( const Cat & );	
+		Cat	&operator = ( const Cat & );	
 		
 		// SUBJECT FUNCTIONS
 		void	makeSound( void ) const;

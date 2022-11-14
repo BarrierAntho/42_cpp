@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 23:32:34 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/10 10:21:28 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:37:47 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Animal	&Animal::operator = ( const Animal &ref )
 	if (this == (&ref))
 		return (*this);
 	this->setType((&ref)->getType());
-	std::cout << *this << "has been created as a clone" << std::endl;
+	std::cout << *this << " has been created as a clone" << std::endl;
 	return (*this);
 }
 

@@ -6,14 +6,14 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:14:30 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/10 10:21:46 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 08:55:32 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 // CONSTRUCTOR / DESTRUCTOR
-Dog::Dog( void ): Animal ()
+Dog::Dog( void ): Animal()
 {
 	std::cout << "Dog has been created" << std::endl;
 	this->setType("Dog");
@@ -24,21 +24,21 @@ Dog::~Dog( void )
 	std::cout << "Dog has been destroyed" << std::endl;
 }
 
-Cat::Cat( const Cat &ref )
+Dog::Dog( const Dog &ref ): Animal()
 {
-	std::cout << "Cat copy constructor" << std::endl;
+	std::cout << "Dog copy constructor" << std::endl;
 	if (this == (&ref))
 		return ;
 	*this = ref;
 }
 
 // OVERLOAD OPERATOR
-Cat	&Cat::operator = ( const Cat &ref )
+Dog	&Dog::operator = ( const Dog &ref )
 {
 	Animal	*cpThis;
 	const Animal	*cpClone;
 
-	std::cout << "Animal overload operator \"=\"" << std::endl;
+	std::cout << "Dog overload operator \"=\"" << std::endl;
 	if (this == (&ref))
 		return (*this);
 	cpThis = this;
