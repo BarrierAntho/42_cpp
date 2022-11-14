@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:17:52 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/10 10:22:03 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 08:46:24 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,19 @@
 class Dog: virtual public Animal
 {
 	public:
+		// CONSTRUCTOR / DESTRUCTOR
 		Dog( void );
 		~Dog( void );
-
+		Dog( const Dog & );
+		
+		// OVERLOAD OPERATOR
+		Dog	&operator = ( const Dog & );
+		
+		// SUBJECT FUNCTIONS
 		void	makeSound( void ) const;
 };
 
+// OUTSIDE OF THE CLASS
 std::ostream	&operator << ( std::ostream &, const Dog & );
 
 #endif
