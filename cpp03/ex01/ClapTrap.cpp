@@ -13,12 +13,12 @@
 #include "ClapTrap.hpp"
 
 // CONSTRUCTOR / DESTRUCTOR
-ClapTrap::ClapTrap( void ): _name(CP_DEFAULT_NAME), _hp( CP_HP ), _mp ( CP_MP ), _dps ( CP_DPS )
+ClapTrap::ClapTrap( void ): _name(CP_DEFAULT_NAME), _hp(CP_HP), _mp(CP_MP), _dps(CP_DPS)
 {
 	std::cout << *this << "appears" << std::endl;
 }
 
-ClapTrap::ClapTrap( const std::string newName ): _name(newName), _hp( CP_HP ), _mp ( CP_MP ), _dps ( CP_DPS )
+ClapTrap::ClapTrap( const std::string newName ): _name(newName), _hp(CP_HP), _mp(CP_MP), _dps(CP_DPS)
 {
 	std::cout << *this << "appears" << std::endl;
 }

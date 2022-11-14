@@ -13,7 +13,7 @@
 #include "ScavTrap.hpp"
 
 // CONSTRUCTOR / DESTRUCTOR
-ScavTrap::ScavTrap( void ): ClapTrap () // Private constructor to respect Canonix form
+ScavTrap::ScavTrap( void ): ClapTrap ()
 {
 	this->setHp(CV_HP);
 	this->setMp(CV_MP);
