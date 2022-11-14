@@ -24,12 +24,19 @@
 class Dog: virtual public Animal
 {
 	public:
+		// CONSTRUCTOR / DESTRUCTOR
 		Dog( void );
 		~Dog( void );
-
+		Dog( const Dog & );
+		
+		// OVERLOAD OPERATOR
+		Dog	&Dog::operator = ( const Dog & );
+		
+		// SUBJECT FUNCTIONS
 		void	makeSound( void ) const;
 };
 
+// OUTSIDE OF THE CLASS
 std::ostream	&operator << ( std::ostream &, const Dog & );
 
 #endif

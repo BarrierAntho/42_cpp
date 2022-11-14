@@ -24,12 +24,19 @@
 class Cat: virtual public Animal
 {
 	public:
+		// CONSTRUCTOR / DESTRUCTOR
 		Cat( void );
 		~Cat ( void );
-
+		Cat( const Cat & );
+		
+		// OVERLOAD OPERATOR
+		Cat	&Cat::operator = ( const Cat & );	
+		
+		// SUBJECT FUNCTIONS
 		void	makeSound( void ) const;
 };
 
+// OUTSIDE OF THE CLASS
 std::ostream	&operator << ( std::ostream &, const Cat & );
 
 #endif

@@ -25,17 +25,26 @@
 class Animal
 {
 	public:
+		// CONSTRUCTOR / DESTRUCTOR
 		Animal( void );
 		virtual ~Animal( void );
+		Animal( const Animal & );
+		
+		// OVERLOAD OPERATOR
+		Animal	&Animal::operator = ( const Animal & );
+		
+		// GETTER / SETTER
 		const std::string	getType( void ) const;
 		void			setType( const std::string & );
-
+		
+		// SUBJECT FUNCTIONS
 		virtual void		makeSound( void ) const;
 
 	protected:
 		std::string		_type;
 };
 
+// OUTSIDE OF THE CLASS
 std::ostream	&operator << ( std::ostream &, const Animal & );
 
 #endif
