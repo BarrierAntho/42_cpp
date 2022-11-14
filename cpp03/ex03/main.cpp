@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 12:08:40 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/04 17:09:26 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 18:05:42 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	main( void )
 	std::cout << SEP_P << std::endl;
 
 	// CONSTRUCTOR
+	std::cout << "Default constructor without argument" << std::endl;
+	ClapTrap	cp0;
 	std::cout << "Default constructor with name argument" << std::endl;
 	ClapTrap	cp1("Zeus");
 	std::cout << "Copy constructor" << std::endl;
@@ -62,6 +64,8 @@ int	main( void )
 	std::cout << SEP_P << std::endl;
 
 	// CONSTRUCTOR
+	std::cout << "Default constructor without argument" << std::endl;
+	ScavTrap	cv0;
 	std::cout << "Default constructor with name argument" << std::endl;
 	ScavTrap	cv1("Hercule");
 	std::cout << "Copy constructor" << std::endl;
@@ -123,6 +127,8 @@ int	main( void )
 	std::cout << SEP_P << std::endl;
 
 	// CONSTRUCTOR
+	std::cout << "Default constructor without argument" << std::endl;
+	FragTrap	cf0;
 	std::cout << "Default constructor with name argument" << std::endl;
 	FragTrap	cf1("Ares");
 	std::cout << "Copy constructor" << std::endl;
@@ -160,6 +166,8 @@ int	main( void )
 	std::cout << SEP_P << std::endl;
 
 	// CONSTRUCTOR
+	std::cout << "Default constructor without argument" << std::endl;
+	DiamondTrap	cd0;
 	std::cout << "Default constructor with name argument" << std::endl;
 	DiamondTrap	cd1("Saphir");
 	std::cout << "Copy constructor" << std::endl;
@@ -174,6 +182,12 @@ int	main( void )
 	cd2.setMp(200);
 	cd2.setDps(100);
 	std::cout << " --> After: " << cd2 << std::endl;;
+	std::cout << SEP_P << std::endl;
+
+	// SUBJECT FUNCTIONS
+	std::cout << "Subject functions" << std::endl;
+	cd1.attack(cd2.getName());
+	cd1.whoAmI();
 	std::cout << SEP_P << std::endl;
 
 	// DESTRUCTOR

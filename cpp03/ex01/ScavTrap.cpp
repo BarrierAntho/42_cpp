@@ -6,16 +6,20 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:49:51 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/04 14:11:31 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 18:07:25 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 // CONSTRUCTOR / DESTRUCTOR
-//ScavTrap::ScavTrap( void ): ClapTrap () // Private constructor to respect Canonix form
-//{
-//}
+ScavTrap::ScavTrap( void ): ClapTrap () // Private constructor to respect Canonix form
+{
+	this->setHp(CV_HP);
+	this->setMp(CV_MP);
+	this->setDps(CV_DPS);
+	std::cout << *this << "appears" << std::endl;
+}
 
 ScavTrap::ScavTrap( const std::string newName ): ClapTrap( newName )
 {

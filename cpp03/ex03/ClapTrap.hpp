@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:48:35 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/04 16:40:29 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 13:43:44 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define CLAPTRAP_HPP
 
 # include <iostream>
+
+# define CP_DEFAULT_NAME "God"
 
 # define CP_HP 10
 # define CP_MP 10
@@ -25,6 +27,7 @@ class ClapTrap
 {
 	public:
 		// CONSTRUCTOR / DESTRUCTOR
+		ClapTrap( void );
 		ClapTrap( const std::string );
 		virtual ~ClapTrap( void );
 		ClapTrap( const ClapTrap & ); // COPY CONSTRUCTOR
@@ -35,7 +38,7 @@ class ClapTrap
 		// GETTER / SETTER
 		std::string	getName( void ) const;
 		void			setName ( const std::string & );
-		int			getHp( void ) const;
+		virtual int			getHp( void ) const;
 		void			setHp( const int );
 		int			getMp( void ) const;
 		void			setMp( const int );
@@ -46,10 +49,6 @@ class ClapTrap
 		virtual void		attack( const std::string & );
 		void			takeDamage( unsigned int );
 		void			beRepaired( unsigned int );
-
-	private:
-		// CONSTRUCTOR / DESTRUCTOR
-//		ClapTrap( void ); // PRIVATE DEFAULT CONSTRUCTOR TO RESPECT CANNONIX FORM
 	
 	protected:
 		// ATTRIBUTES

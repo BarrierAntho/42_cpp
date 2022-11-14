@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:50:15 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/10 10:12:25 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 13:18:51 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class FragTrap: virtual public ClapTrap
 {
 	public:
 		// CONSTRUCTOR / DESTRUCTOR
+		FragTrap( void );
 		FragTrap( const std::string );
 		virtual ~FragTrap( void );
 		FragTrap ( const FragTrap & ); // COPY CONSTRUCTOR
@@ -34,10 +35,6 @@ class FragTrap: virtual public ClapTrap
 
 		// SUBJECT FUNCTIONS
 		void	highFivesGuys( void );
-
-	private:
-		// CONSTRUCTOR / DESTRUCTOR
-//		FragTrap( void ); // PRIVATE DEFAULT CONSTRUCTOR TO REPSECT CANNONIX FORM
 };
 
 std::ostream	&operator << ( std::ostream &, const FragTrap & );

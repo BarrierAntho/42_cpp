@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 12:08:40 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/04 14:24:17 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 14:03:11 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	main( void )
 	std::cout << SEP_P << std::endl;
 
 	// CONSTRUCTOR
+	std::cout << "Default constructor without argument" << std::endl;
+	ClapTrap	cp0;
 	std::cout << "Default constructor with name argument" << std::endl;
 	ClapTrap	cp1("Zeus");
 	std::cout << "Copy constructor" << std::endl;
@@ -61,6 +63,8 @@ int	main( void )
 	std::cout << SEP_P << std::endl;
 
 	// CONSTRUCTOR
+	std::cout << "Default constructor without argument" << std::endl;
+	ScavTrap	cv0;
 	std::cout << "Default constructor with name argument" << std::endl;
 	ScavTrap	cv1("Hercule");
 	std::cout << "Copy constructor" << std::endl;
@@ -122,6 +126,8 @@ int	main( void )
 	std::cout << SEP_P << std::endl;
 
 	// CONSTRUCTOR
+	std::cout << "Default constructor without argument" << std::endl;
+	FragTrap	cf0;
 	std::cout << "Default constructor with name argument" << std::endl;
 	FragTrap	cf1("Ares");
 	std::cout << "Copy constructor" << std::endl;

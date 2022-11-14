@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 12:08:40 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/04 13:54:00 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 12:47:35 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	main( void )
 	std::cout << SEP_P << std::endl;
 
 	// CONSTRUCTOR
+	std::cout << "Default constructor without argument" << std::endl;
+	ClapTrap	cp0;
 	std::cout << "Default constructor with name argument" << std::endl;
 	ClapTrap	cp1("Zeus");
 	std::cout << "Copy constructor" << std::endl;
@@ -60,6 +62,8 @@ int	main( void )
 	std::cout << SEP_P << std::endl;
 
 	// CONSTRUCTOR
+	std::cout << "Default constructor without argument" << std::endl;
+	ScavTrap	cv0;
 	std::cout << "Default constructor with name argument" << std::endl;
 	ScavTrap	cv1("Hercule");
 	std::cout << "Copy constructor" << std::endl;

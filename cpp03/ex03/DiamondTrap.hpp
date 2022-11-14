@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:50:15 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/04 16:43:24 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 17:46:31 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,13 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class DiamondTrap: public FragTrap, public ScavTrap
+# define CD_DEFAULT_NAME "Prince"
+
+class DiamondTrap: public ScavTrap, public FragTrap 
 {
 	public:
 		// CONSTRUCTOR / DESTRUCTOR
+		DiamondTrap( void );
 		DiamondTrap( const std::string );
 		~DiamondTrap( void );
 		DiamondTrap ( const DiamondTrap & ); // COPY CONSTRUCTOR
@@ -29,10 +32,11 @@ class DiamondTrap: public FragTrap, public ScavTrap
 		// OVERLOAD OPERATOR
 		DiamondTrap	&operator = ( const DiamondTrap & );
 
-	private:
-		// CONSTRUCTOR / DESTRUCTOR
-//		DiamondTrap( void ); // PRIVATE DEFAULT CONSTRUCTOR TO REPSECT CANNONIX FORM
+		// SUBJECT FUNCTIONS
+		void	attack( const std::string & );
+		void	whoAmI( void );
 
+	private:
 		// ATTRIBUTES
 		std::string	_name;
 };

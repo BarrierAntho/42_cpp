@@ -6,16 +6,20 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:49:51 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/04 14:17:38 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 18:07:53 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 // CONSTRUCTOR / DESTRUCTOR
-//FragTrap::FragTrap( void ): ClapTrap () // Private constructor to respect Canonix form
-//{
-//}
+FragTrap::FragTrap( void ): ClapTrap ()
+{
+	this->setHp(CF_HP);
+	this->setMp(CF_MP);
+	this->setDps(CF_DPS);
+	std::cout << *this << "appears" << std::endl;
+}
 
 FragTrap::FragTrap( const std::string newName ): ClapTrap( newName )
 {

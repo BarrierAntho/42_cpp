@@ -6,18 +6,19 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:49:51 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/04 16:40:23 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 17:56:37 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 // CONSTRUCTOR / DESTRUCTOR
-//ClapTrap::ClapTrap( void ) // Private constructor to respect Canonix form
-//{
-//}
+ClapTrap::ClapTrap( void ): _name(CP_DEFAULT_NAME), _hp(CP_HP), _mp (CP_MP), _dps (CP_DPS)
+{
+	std::cout << *this << "appears" << std::endl;
+}
 
-ClapTrap::ClapTrap( const std::string newName ): _name(newName), _hp( CP_HP ), _mp ( CP_MP ), _dps ( CP_DPS )
+ClapTrap::ClapTrap( const std::string newName ): _name(newName), _hp(CP_HP), _mp(CP_MP ), _dps(CP_DPS)
 {
 	std::cout << *this << "appears" << std::endl;
 }

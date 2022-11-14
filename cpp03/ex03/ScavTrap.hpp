@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:50:15 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/10 10:12:38 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/14 14:05:26 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ScavTrap: virtual public ClapTrap
 {
 	public:
 		// CONSTRUCTOR / DESTRUCTOR
+		ScavTrap( void );
 		ScavTrap( const std::string );
 		virtual ~ScavTrap( void );
 		ScavTrap ( const ScavTrap & ); // COPY CONSTRUCTOR
@@ -33,12 +34,8 @@ class ScavTrap: virtual public ClapTrap
 		ScavTrap	&operator = ( const ScavTrap & );
 
 		// SUBJECT FUNCTIONS
-		void	attack( const std::string &target );
+		virtual void	attack( const std::string &target );
 		void	guardGate( void );
-
-	private:
-		// CONSTRUCTOR / DESTRUCTOR
-//		ScavTrap( void ); // PRIVATE DEFAULT CONSTRUCTOR TO REPSECT CANNONIX FORM
 };
 
 std::ostream	&operator << ( std::ostream &, const ScavTrap & );
