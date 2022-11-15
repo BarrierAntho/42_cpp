@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:24:07 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/14 08:46:13 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:04:01 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 # ifndef CAT_SOUND
 #  define CAT_SOUND "Miaouuuhhh"
@@ -36,6 +37,7 @@ class Cat: virtual public Animal
 		void	makeSound( void ) const;
 		
 	private:
+		// ATTRIBUTES
 		Brain	*_brain;
 };
 
