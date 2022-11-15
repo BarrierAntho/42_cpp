@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:22:05 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/14 10:28:13 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:11:56 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 // CONSTRUCTOR / DESTRUCTOR
 WrongCat::WrongCat( void ): WrongAnimal()
 {
-	std::cout << "WrongCat has been created" << std::endl;
 	this->setType("WrongCat");
+	std::cout << *this << " has been created" << std::endl;
 }
 
 WrongCat::~WrongCat( void )
 {
-	std::cout << "WrongCat has been destroyed" << std::endl;
+	std::cout << *this << " has been destroyed" << std::endl;
 }
 
 WrongCat::WrongCat( const WrongCat &ref ): WrongAnimal()
 {
-	std::cout << "WrongCat copy constructor" << std::endl;
+	std::cout << *this << " copy constructor" << std::endl;
 	if (this == (&ref))
 		return ;
 	*this = ref;
@@ -38,7 +38,7 @@ WrongCat	&WrongCat::operator = ( const WrongCat &ref )
 	WrongAnimal	*cpThis;
 	const WrongAnimal	*cpClone;
 
-	std::cout << "WrongCat overload operator \"=\"" << std::endl;
+	std::cout << *this << " overload operator \"=\"" << std::endl;
 	if (this == (&ref))
 		return (*this);
 	cpThis = this;

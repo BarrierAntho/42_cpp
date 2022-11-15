@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:14:30 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/14 10:27:52 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:18:57 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ Dog::Dog( void ): Animal()
 {
 	this->setType("Dog");
 	this->_brain = new Brain();
-	std::cout << "Dog has been created" << std::endl;
+	std::cout << *this << " has been created" << std::endl;
 }
 
 Dog::~Dog( void )
 {
 	delete(this->_brain);
-	std::cout << "Dog has been destroyed" << std::endl;
+	std::cout << *this << " has been destroyed" << std::endl;
 }
 
 Dog::Dog( const Dog &ref ): Animal()
 {
-	std::cout << "Dog copy constructor" << std::endl;
+	std::cout << *this << " copy constructor" << std::endl;
 	if (this == (&ref))
 		return ;
 	*this = ref;
@@ -40,7 +40,7 @@ Dog	&Dog::operator = ( const Dog &ref )
 	Animal	*cpThis;
 	const Animal	*cpClone;
 
-	std::cout << "Dog overload operator \"=\"" << std::endl;
+	std::cout << *this << " overload operator \"=\"" << std::endl;
 	if (this == (&ref))
 		return (*this);
 	cpThis = this;

@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 21:46:47 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/15 11:02:39 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:19:49 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ Brain::~Brain( void )
 
 }
 
-Brain::Brain( const Brain &brain )
-{
-
-}
+//Brain::Brain( const Brain &brain )
+//{
+//	std::cout << *this << " copy constructor" << std::endl;
+//}
 
 // OVERLOAD OPERATOR
 // TODO

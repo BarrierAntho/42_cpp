@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 23:32:34 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/15 10:51:56 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:08:01 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 // CONSTRUCTOR / DESTRUCTOR
 Animal::Animal( void ): _type(ANI_DEFAULT_TYPE)
 {
-	std::cout << "Animal has been created" << std::endl;
+	std::cout << *this << " has been created" << std::endl;
 }
 
 Animal::~Animal( void )
 {
-	std::cout << "Animal has been destroyed" << std::endl;
+	std::cout << *this << " has been destroyed" << std::endl;
 }
 
 Animal::Animal( const Animal &ref )
 {
-	std::cout << "Animal copy constructor" << std::endl;
+	std::cout << *this << " copy constructor" << std::endl;
 	if (this == (&ref))
 		return ;
 	*this = ref;
@@ -34,7 +34,7 @@ Animal::Animal( const Animal &ref )
 // OVERLOAD OPERATOR
 Animal	&Animal::operator = ( const Animal &ref )
 {
-	std::cout << "Animal overload operator \"=\"" << std::endl;
+	std::cout << *this << " overload operator \"=\"" << std::endl;
 	if (this == (&ref))
 		return (*this);
 	this->_type = (&ref)->getType();
