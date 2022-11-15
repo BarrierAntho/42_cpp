@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:14:30 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/15 11:10:26 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:54:00 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // CONSTRUCTOR / DESTRUCTOR
 Dog::Dog( void ): Animal()
 {
-	this->setType("Dog");
+	this->_type = "Dog";
 	std::cout << *this << " has been created" << std::endl;
 }
 

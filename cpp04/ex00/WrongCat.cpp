@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:22:05 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/15 11:11:56 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:54:29 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // CONSTRUCTOR / DESTRUCTOR
 WrongCat::WrongCat( void ): WrongAnimal()
 {
-	this->setType("WrongCat");
+	this->_type = "WrongCat";
 	std::cout << *this << " has been created" << std::endl;
 }
 
