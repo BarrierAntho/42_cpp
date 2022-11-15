@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:17:52 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/15 11:03:53 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 13:40:10 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ class Dog: virtual public Animal
 		
 		// OVERLOAD OPERATOR
 		Dog	&operator = ( const Dog & );
-		
+
+		// GETTER / SETTER
+		Brain	&getBrain( void ) const;
+
 		// SUBJECT FUNCTIONS
 		void	makeSound( void ) const;
 		

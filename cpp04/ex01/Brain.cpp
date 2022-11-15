@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 21:46:47 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/15 11:51:06 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:11:00 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 // CONSTRUCTOR / DESTRUCTOR
 Brain::Brain( void )
 {
+	int	i;
+
+	for (i = 0; i < BR_IDEA_NB; i++)
+		this->_ideas[i] = BR_IDEA_DEFAULT;
 	std::cout << *this << " has been created" << std::endl;
 }
 
@@ -47,9 +51,6 @@ Brain	&Brain::operator = ( const Brain &ref )
 }
 
 // GETTER / SETTER
-// TODO
-
-// FUNCTIONS
 std::string	Brain::getIdea( const int i ) const
 {
 	if (i < 0 || i > BR_IDEA_NB)
@@ -57,6 +58,18 @@ std::string	Brain::getIdea( const int i ) const
 	else
 		return (this->_ideas[i]);
 }
+
+void	Brain::setIdea( const int i, const std::string &idea )
+{
+	if (i < 0 || i > BR_IDEA_NB)
+	{
+		std::cout << BR_ERR_IDEA << std::endl;
+		return ;
+	}
+	this->_ideas[i] = idea;
+}
+
+// FUNCTIONS
 
 // OUTSIDE OF THE CLASS
 std::ostream	&operator << ( std::ostream &out, const Brain &ref )

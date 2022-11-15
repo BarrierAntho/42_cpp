@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 21:51:12 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/15 11:47:44 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:10:45 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #  define BR_IDEA_NB 100
 # endif
 
-# ifdef BR_IDEA_DEFAULT
+# ifndef BR_IDEA_DEFAULT
 #  define BR_IDEA_DEFAULT "Default idea"
 # endif
 
@@ -39,10 +39,10 @@ class Brain
 		Brain	&operator = ( const Brain & );
 
 		// GETTER / SETTER
-		// TODO
+		std::string	getIdea( const int ) const;
+		void	setIdea( const int, const std::string & );
 
 		// FUNCTIONS
-		std::string	getIdea( const int ) const;
 
 	private:
 		// ATTRIBUTES

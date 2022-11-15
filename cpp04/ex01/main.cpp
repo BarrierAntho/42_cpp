@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 23:48:38 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/14 09:49:46 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:26:04 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,30 @@ int	main( void )
 		a3.makeSound();
 		std::cout << SEP_SP << std::endl;
 
+		std::cout << "Check Brains" << std::endl;
+		std::cout << "a1: " << "brain ptr = " << &(&a1)->getBrain() << "\t" << a1 << std::endl;
+		std::cout << "a10: " << "brain ptr = " << &(&a10)->getBrain() << "\t" << a10 << std::endl;
+		std::cout << "a11: " << "brain ptr = " << &(&a11)->getBrain() << "\t" << a11 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Modify ideas" << std::endl;
+		std::cout << "a1: " << "brain ideas[0] = " << (&a1)->getBrain().getIdea(0) << std::endl;
+		std::cout << "a10: " << "brain ideas[0] = " << (&a10)->getBrain().getIdea(0) << std::endl;
+		std::cout << "a1: " << "Modification of brain ideas[0] = \"A crazy idea\"" << std::endl;
+		(&a1)->getBrain().setIdea(0, "A crazy idea");
+		std::cout << "a1: " << "brain ideas[0] = " << (&a1)->getBrain().getIdea(0) << std::endl;
+		std::cout << "a10: " << "brain ideas[0] = " << (&a10)->getBrain().getIdea(0) << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Check modification brain ideas" << std::endl;
+		Cat	a20;
+		std::cout << "a1: " << "brain ideas[0] = " << (&a1)->getBrain().getIdea(0) << std::endl;
+		std::cout << "a20: " << "brain ideas[0] = " << (&a10)->getBrain().getIdea(0) << std::endl;
+		a20 = a1;
+		std::cout << "a1: " << "brain ideas[0] = " << (&a1)->getBrain().getIdea(0) << std::endl;
+		std::cout << "a20: " << "brain ideas[0] = " << (&a20)->getBrain().getIdea(0) << std::endl;
+		std::cout << SEP_SP << std::endl;
+
 		std::cout << "Destructor" << std::endl;
 	}
 	std::cout << SEP_P << std::endl;
@@ -170,6 +194,30 @@ int	main( void )
 		a1.makeSound();
 		a2->makeSound();
 		a3.makeSound();
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Check Brains" << std::endl;
+		std::cout << "a1: " << "brain ptr = " << &(&a1)->getBrain() << "\t" << a1 << std::endl;
+		std::cout << "a10: " << "brain ptr = " << &(&a10)->getBrain() << "\t" << a10 << std::endl;
+		std::cout << "a11: " << "brain ptr = " << &(&a11)->getBrain() << "\t" << a11 << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Modify ideas" << std::endl;
+		std::cout << "a1: " << "brain ideas[0] = " << (&a1)->getBrain().getIdea(0) << std::endl;
+		std::cout << "a10: " << "brain ideas[0] = " << (&a10)->getBrain().getIdea(0) << std::endl;
+		std::cout << "a1: " << "Modification of brain ideas[0] = \"A crazy idea\"" << std::endl;
+		(&a1)->getBrain().setIdea(0, "A crazy idea");
+		std::cout << "a1: " << "brain ideas[0] = " << (&a1)->getBrain().getIdea(0) << std::endl;
+		std::cout << "a10: " << "brain ideas[0] = " << (&a10)->getBrain().getIdea(0) << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		std::cout << "Check modification brain ideas" << std::endl;
+		Dog	a20;
+		std::cout << "a1: " << "brain ideas[0] = " << (&a1)->getBrain().getIdea(0) << std::endl;
+		std::cout << "a20: " << "brain ideas[0] = " << (&a10)->getBrain().getIdea(0) << std::endl;
+		a20 = a1;
+		std::cout << "a1: " << "brain ideas[0] = " << (&a1)->getBrain().getIdea(0) << std::endl;
+		std::cout << "a20: " << "brain ideas[0] = " << (&a20)->getBrain().getIdea(0) << std::endl;
 		std::cout << SEP_SP << std::endl;
 
 		std::cout << "Destructor" << std::endl;

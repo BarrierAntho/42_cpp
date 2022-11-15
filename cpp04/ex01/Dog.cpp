@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:14:30 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/15 11:57:29 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 13:40:55 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,15 @@ Dog	&Dog::operator = ( const Dog &ref )
 	cpClone = &ref;
 	*cpThis = *cpClone;
 	this->_brain = new Brain();
+	*this->_brain = (&ref)->getBrain();
 	std::cout << *this << " has been created as a clone" << std::endl;
 	return (*this);
+}
+
+// GETTER / SETTER
+Brain	&Dog::getBrain( void ) const
+{
+	return (*this->_brain);
 }
 
 // SUBJECT FUNCTIONS
