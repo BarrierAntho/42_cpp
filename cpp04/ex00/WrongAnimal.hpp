@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 23:35:47 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/14 09:03:12 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:13:56 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 
 # ifndef WRGANI_DEFAULT_TYPE
-#  define WRGANI_DEFAULT_TYPE "wrong mammal"
+#  define WRGANI_DEFAULT_TYPE "WrongMammal"
 # endif
 # ifndef WRGANI_SOUND
 #  define WRGANI_SOUND "mammmmmmmmmmmal"

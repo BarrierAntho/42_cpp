@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 23:32:34 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/15 10:48:56 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:11:06 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 // CONSTRUCTOR / DESTRUCTOR
 WrongAnimal::WrongAnimal( void ): _type(WRGANI_DEFAULT_TYPE)
 {
-	std::cout << "WrongAnimal has been created" << std::endl;
+	std::cout << *this << " has been created" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal( void )
 {
-	std::cout << "WrongAnimal has been destroyed" << std::endl;
+	std::cout << *this << " has been destroyed" << std::endl;
 }
 
 WrongAnimal::WrongAnimal( const WrongAnimal &ref )
 {
-	std::cout << "WrongAnimal copy constructor" << std::endl;
+	std::cout << *this << " copy constructor" << std::endl;
 	if (this == (&ref))
 		return ;
 	*this = ref;
@@ -34,7 +34,7 @@ WrongAnimal::WrongAnimal( const WrongAnimal &ref )
 // OVERLOAD OPERATOR
 WrongAnimal	&WrongAnimal::operator = ( const WrongAnimal &ref )
 {
-	std::cout << "WrongAnimal overload operator \"=\"" << std::endl;
+	std::cout << *this << " overload operator \"=\"" << std::endl;
 	if (this == (&ref))
 		return (*this);
 	this->_type = (&ref)->getType();
