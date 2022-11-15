@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 21:51:12 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/15 11:03:43 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:47:44 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 #  define BR_IDEA_NB 100
 # endif
 
+# ifdef BR_IDEA_DEFAULT
+#  define BR_IDEA_DEFAULT "Default idea"
+# endif
+
 # ifndef BR_ERR_IDEA
 #  define BR_ERR_IDEA "Idea index out of range"
 # endif
@@ -29,9 +33,10 @@ class Brain
 		// CONSTRUCTOR / DESTRUCTOR
 		Brain( void );
 		~Brain( void );
+		Brain( const Brain & );
 
 		// OVERLOAD OPERATOR
-		// TODO
+		Brain	&operator = ( const Brain & );
 
 		// GETTER / SETTER
 		// TODO

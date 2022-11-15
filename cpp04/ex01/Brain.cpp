@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 21:46:47 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/15 11:19:49 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:51:06 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,27 @@ Brain::~Brain( void )
 
 }
 
-//Brain::Brain( const Brain &brain )
-//{
-//	std::cout << *this << " copy constructor" << std::endl;
-//}
+Brain::Brain( const Brain &ref )
+{
+	std::cout << *this << " copy constructor" << std::endl;
+	if (this == (&ref))
+		return ;
+	*this = ref;
+}
 
 // OVERLOAD OPERATOR
-// TODO
+Brain	&Brain::operator = ( const Brain &ref )
+{
+	int	i;
+
+        std::cout << *this << " overload operator \"=\"" << std::endl;
+        if (this == (&ref))
+                return (*this);
+	for (i = 0; i < BR_IDEA_NB; i++)
+		this->_ideas[i] = (&ref)->getIdea(i);
+        std::cout << *this << " has been created as a clone" << std::endl;
+        return (*this);
+}
 
 // GETTER / SETTER
 // TODO
