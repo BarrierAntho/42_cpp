@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 00:22:05 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/15 11:18:25 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:57:23 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // CONSTRUCTOR / DESTRUCTOR
 Cat::Cat( void ): Animal()
 {
-	this->setType("Cat");
+	this->_type = "Cat";
 	this->_brain = new Brain();
 	std::cout << *this << " has been created" << std::endl;
 }
