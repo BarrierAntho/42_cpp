@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 08:38:50 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/16 14:22:44 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/17 10:27:39 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Bureaucrat
 		// CONSTRUCTOR / DESTRUCTOR
 		Bureaucrat( void );
 		~Bureaucrat( void );
-		Bureaucrat( std::string const &, int );
+		Bureaucrat( std::string const &, int const );
 		Bureaucrat( Bureaucrat const & );
 
 		// OVERLOAD OPERATOR

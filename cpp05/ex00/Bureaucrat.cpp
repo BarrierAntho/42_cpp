@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 08:56:59 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/16 14:22:45 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/17 10:27:58 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Bureaucrat::~Bureaucrat( void )
 	std::cout << *this << " has been fired" << std::endl;
 }
 
-Bureaucrat::Bureaucrat( std::string const &newName, int i ): _name(newName)
+Bureaucrat::Bureaucrat( std::string const &newName, int const i ): _name(newName)
 {
 	if (i > BR_GRADE_LOW)
 		throw (Bureaucrat::GradeTooLowException());
