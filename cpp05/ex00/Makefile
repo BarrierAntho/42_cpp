@@ -22,7 +22,7 @@ OBJS		:=	$(addprefix $(OPATH)/, $(SRCS:.cpp=.o))
 DEPS		:=	$(OBJS:.o=.d)
 
 vpath %.hpp	$(IPATH)
-vpath $.cpp	$(SRCSPATH)
+vpath %.cpp	$(SRCSPATH)
 vpath %.o	$(OPATH)
 
 all		:	$(NAME)
