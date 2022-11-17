@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:14:44 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/17 14:53:03 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:12:37 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class Form
 		// OVERLOAD OPERATOR
 		Form	&operator = ( Form const & );
 
-		// SUBJECT FUNCTIONS
+		// GETTER / SETTER
 		std::string const	&getName( void ) const;
 		bool			getIsSigned( void ) const;
 		int			getGradeToSign( void ) const;
