@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:14:44 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/17 11:36:15 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/17 14:53:03 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@
 # ifndef FRM_DFT_GRADE_TOEXEC
 #  define FRM_DFT_GRADE_TOEXEC BR_GRADE_HIGH
 # endif
+
+class Bureaucrat;
 
 class Form
 {

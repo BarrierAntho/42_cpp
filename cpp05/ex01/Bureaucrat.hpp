@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 08:38:50 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/17 11:14:14 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:02:35 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <exception>
 # include <iostream>
+
+# include "Form.hpp"
 
 # ifndef BR_FT_NAME
 #  define BR_DFT_NAME "Jean Marc THIBAULT"
@@ -28,6 +30,8 @@
 # ifndef BR_GRADE_LOW
 #  define BR_GRADE_LOW 150
 # endif
+
+class Form;
 
 class Bureaucrat
 {
@@ -49,6 +53,7 @@ class Bureaucrat
 		// SUBJECT FUNCTIONS
 		int			decrementGrade( void );
 		int			incrementGrade( void );
+		bool			signForm( Form const & ) const;
 
 		// EXCEPTION FUNCTIONS
 		class GradeTooLowException: public std::exception

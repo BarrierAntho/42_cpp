@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:30:26 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/17 11:21:11 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:03:38 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	Form::getGradeToExec( void ) const
 // SUBJECT FUNCTIONS
 void	Form::beSigned( Bureaucrat const &bureaucrat )
 {
-	if ((&bureaucrat)->getGrade() > this->_gradeToSign)
+	if ((&bureaucrat)->signForm(*this) == false)
 		throw (Form::GradeTooLowException());
 	this->_isSigned = true;
 }
