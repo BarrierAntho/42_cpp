@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 10:11:03 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/17 10:08:11 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/17 11:59:23 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 int	main( void )
 {
 	std::cout << "Program - Start" << std::endl;
+	std::cout << SEP_P << std::endl;
+	// TEST - BUREAUCRAT
+	std::cout << "TEST - BUREAUCRAT" << std::endl;
 	std::cout << SEP_P << std::endl;
 	{
 		// TEST - CONSTRUCTOR / DESTRUCTOR / OVERLOAD OPERATOR
@@ -51,7 +54,7 @@ int	main( void )
 			std::cout << SEP_SP << std::endl;
 
 			std::cout << "SHOW" << std::endl;
-			std::cout << "bo: " << b0 << std::endl;
+			std::cout << "b0: " << b0 << std::endl;
 			std::cout << "b1: " << b1 << std::endl;
 			std::cout << "b2: " << b2 << std::endl;
 			std::cout << "b3: " << b3 << std::endl;
@@ -82,7 +85,42 @@ int	main( void )
 			std::cout << SEP_SP << std::endl;
 
 			std::cout << "SHOW" << std::endl;
-			std::cout << "bo: " << b0 << std::endl;
+			std::cout << "b0: " << b0 << std::endl;
+			std::cout << SEP_SP << std::endl;
+
+			std::cout << "DESTRUCTOR" << std::endl;
+		}
+		catch (std::exception &e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
+	}
+	std::cout << SEP_P << std::endl;
+	{
+		// TEST - SUBJECT FUNCTIONS
+		std::cout << "TEST - SUBJECT FUNCTIONS" << std::endl;
+		std::cout << SEP_SP << std::endl;
+		try
+		{
+			std::cout << "CONSTRUCTOR - DEFAULT" << std::endl;
+			std::cout << "b0" << std::endl;
+			Bureaucrat	b0;
+			std::cout << SEP_SP << std::endl;
+
+			std::cout << "DECREMENT" << std::endl;
+			std::cout << "BEFORE b0: " << b0 << std::endl;
+			b0.decrementGrade();
+			std::cout << "AFTER b0: " << b0 << std::endl;
+			std::cout << SEP_SP << std::endl;
+
+			std::cout << "INCREMENT" << std::endl;
+			std::cout << "BEFORE b0: " << b0 << std::endl;
+			b0.incrementGrade();
+			std::cout << "AFTER b0: " << b0 << std::endl;
+			std::cout << SEP_SP << std::endl;
+
+			std::cout << "SHOW" << std::endl;
+			std::cout << "b0: " << b0 << std::endl;
 			std::cout << SEP_SP << std::endl;
 
 			std::cout << "DESTRUCTOR" << std::endl;
