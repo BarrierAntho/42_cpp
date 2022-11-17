@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 08:56:59 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/17 10:27:58 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/17 10:54:31 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ Bureaucrat	&Bureaucrat::operator = ( Bureaucrat const &ref )
 }
 
 
-// SUBJECT FUNCTIONS
+// GETTER / SETTER
 std::string const	&Bureaucrat::getName( void ) const
 {
 	return (this->_name);
@@ -73,6 +73,7 @@ void	Bureaucrat::setGrade( int const i )
 	this->_grade = i;
 }
 
+// SUBJECT FUNCTIONS
 int	Bureaucrat::decrementGrade( void )
 {
 	if (this->getGrade() >= BR_GRADE_LOW)
