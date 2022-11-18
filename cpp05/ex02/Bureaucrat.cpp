@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 08:56:59 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/18 14:10:58 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:48:34 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ bool	Bureaucrat::signForm( Form const &form ) const
 {
 	if (this->_grade > (&form)->getGradeToSign())
 	{
-		std::cout << *this << " couldn't sign \"" << form << "\" because of higher grade for the form than the bureaucrat" << std::endl;
+		std::cerr << *this << " couldn't sign \"" << form << "\" because of higher grade for the form than the bureaucrat" << std::endl;
 		return (false);
 	}
 	else
