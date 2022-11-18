@@ -44,19 +44,19 @@ class Form
 		Form( Form const & );
 
 		// OVERLOAD OPERATOR
-		Form	&operator = ( Form const & );
+		Form						&operator = ( Form const & );
 
 		// GETTER / SETTER
-		std::string const	&getName( void ) const;
-		bool			getIsSigned( void ) const;
-		int			getGradeToSign( void ) const;
-		int			getGradeToExec( void ) const;
-		std::string const	&getTarget( void ) const;
+		std::string const			&getName( void ) const;
+		bool						getIsSigned( void ) const;
+		int							getGradeToSign( void ) const;
+		int							getGradeToExec( void ) const;
+		std::string const			&getTarget( void ) const;
 
 		// SUBJECT FUNCTIONS
-		void			beSigned( Bureaucrat const & );
-		void			execute( Bureaucrat const & ) const;
-		virtual void		executeFunction( Bureaucrat const & ) const = 0;
+		void						beSigned( Bureaucrat const & );
+		void						execute( Bureaucrat const & ) const;
+		virtual void				executeFunction( Bureaucrat const & ) const = 0;
 
 		// EXCEPTION FUNCTIONS
 		class GradeTooLowException: public std::exception
@@ -79,11 +79,11 @@ class Form
 
 	private:
 		// ATTRIBUTES
-		const std::string	_name;
-		bool			_isSigned;
-		const int		_gradeToSign;
-		const int		_gradeToExec;
-		std::string		_target;
+		const std::string			_name;
+		bool						_isSigned;
+		const int					_gradeToSign;
+		const int					_gradeToExec;
+		std::string					_target;
 };
 
 // OUTSIDE OF THE CLASS

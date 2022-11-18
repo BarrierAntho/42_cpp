@@ -48,7 +48,7 @@ class RobotomyRequestForm: virtual public Form
 		RobotomyRequestForm	&operator = ( RobotomyRequestForm const & );
 
 		// SUBJECT FUNCTIONS
-		void	executeFunction( Bureaucrat const & ) const;
+		void				executeFunction( Bureaucrat const & ) const;
 };
 
 // OUTSIDE OF THE CLASS

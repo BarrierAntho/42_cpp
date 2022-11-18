@@ -43,17 +43,17 @@ class Bureaucrat
 		Bureaucrat( Bureaucrat const & );
 
 		// OVERLOAD OPERATOR
-		Bureaucrat	&operator = ( Bureaucrat const & );
+		Bureaucrat					&operator = ( Bureaucrat const & );
 
 		// GETTER / SETTER
-		std::string const	&getName() const;
-		int			getGrade() const;
-		void			setGrade( int const );
+		std::string const			&getName() const;
+		int							getGrade() const;
+		void						setGrade( int const );
 
 		// SUBJECT FUNCTIONS
-		int			decrementGrade( void );
-		int			incrementGrade( void );
-		bool			signForm( Form const & ) const;
+		int							decrementGrade( void );
+		int							incrementGrade( void );
+		bool						signForm( Form const & ) const;
 
 		// EXCEPTION FUNCTIONS
 		class GradeTooLowException: public std::exception
@@ -70,8 +70,8 @@ class Bureaucrat
 
 	private:
 		// ATTRIBUTES
-		const std::string	_name;
-		int					_grade;
+		const std::string			_name;
+		int							_grade;
 };
 
 // OUTSIDE OF THE CLASS

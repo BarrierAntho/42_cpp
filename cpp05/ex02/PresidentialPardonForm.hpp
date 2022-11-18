@@ -44,7 +44,7 @@ class PresidentialPardonForm: virtual public Form
 		PresidentialPardonForm	&operator = ( PresidentialPardonForm const & );
 
 		// SUBJECT FUNCTIONS
-		void	executeFunction( Bureaucrat const & ) const;
+		void					executeFunction( Bureaucrat const & ) const;
 };
 
 // OUTSIDE OF THE CLASS

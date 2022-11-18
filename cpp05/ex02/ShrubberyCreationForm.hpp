@@ -43,7 +43,7 @@ class ShrubberyCreationForm: virtual public Form
 		ShrubberyCreationForm	&operator = ( ShrubberyCreationForm const & );
 
 		// SUBJECT FUNCTIONS
-		void	executeFunction( Bureaucrat const & ) const;
+		void					executeFunction( Bureaucrat const & ) const;
 };
 
 // OUTSIDE OF THE CLASS
