@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:00:34 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/18 13:39:09 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:04:05 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 # include <iostream>
+# include <fstream>
 
 # include "Form.hpp"
 

@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:00:14 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/18 13:41:50 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:30:13 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,26 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator = ( ShrubberyCreationForm
 // SUBJECT FUNCTIONS
 void	ShrubberyCreationForm::executeFunction( Bureaucrat const &executor ) const
 {
+	std::ofstream	ofs;
+	std::string		str = this->getTarget() + "_shrubbery";
+	const char		*filename = str.c_str();
+
 	(void)executor;
-	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+	ofs.open(filename, std::fstream::out | std::fstream::trunc);
+	if (ofs.is_open() == false)
+	{
+		std::cerr << "File can not be opened/created" << std::endl;
+		return ;
+	}
+	ofs << "  /$$$$$$  /$$      /$$ /$$$$$$$ " << std::endl;
+	ofs << " /$$__  $$| $$$    /$$$| $$__  $$" << std::endl;
+	ofs << "| $$  \\__/| $$$$  /$$$$| $$  \\ $$" << std::endl;
+	ofs << "|  $$$$$$ | $$ $$/$$ $$| $$$$$$$ " << std::endl;
+	ofs << " \\____  $$| $$  $$$| $$| $$__  $$" << std::endl;
+	ofs << " /$$  \\ $$| $$\\  $ | $$| $$  \\ $$" << std::endl;
+	ofs << "|  $$$$$$/| $$ \\/  | $$| $$$$$$$/" << std::endl;
+	ofs << " \\______/ |__/     |__/|_______/ " << std::endl;
+	ofs.close();
 }
 
 // OUTSIDE OF THE CLASS
