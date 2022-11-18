@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:01:49 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/18 14:52:00 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:21:28 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 #  define FRM_ROBOT_DFT_GRADE_TOEXEC 45
 # endif
 # ifndef FRM_ROBOT_DFT_TARGET
-#  define FRM_ROBOT_DFT_TARGET "Home"
+#  define FRM_ROBOT_DFT_TARGET "TV"
 # endif
 # ifndef FRM_ROBOT_NOIS
 #  define FRM_ROBOT_NOISE "biiippbiiipppbiiipppppppppppppppp"
