@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:30:26 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/18 09:34:31 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 11:42:52 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,15 @@ void	Form::beSigned( Bureaucrat const &bureaucrat )
 	this->_isSigned = true;
 }
 
+void	Form::execute( Bureaucrat const &executor ) const
+{
+	if (this->_isSigned == false)
+		throw (Form::IsNotSignedException());
+	else if ((&executor)->getGrade() > this->_gradeToExec)
+		throw (Form::GradeTooLowException());
+	executeFunction(executor);
+}
+
 // EXCEPTION FUNCTIONS
 const char	*Form::GradeTooLowException::what( void ) const throw()
 {
@@ -115,10 +124,18 @@ const char	*Form::GradeTooHighException::what( void ) const throw()
 	return ("GradeTooHighException");
 }
 
+const char	*Form::IsNotSignedException::what( void ) const throw()
+{
+	return ("IsNotSignedException");
+}
+
 // OUTSIDE OF THE CLASS
 std::ostream	&operator << ( std::ostream &out, Form const & ref )
 {
-	return (out << "[Form] " << (&ref)->getName() << ", status \"isSigned\" " << (&ref)->getIsSigned()
+	return (out << "[Form] " << (&ref)->getName()
+			<< " ["
+			<< "status \"isSigned\" " << (&ref)->getIsSigned()
 			<< ", grade to sign " << (&ref)->getGradeToSign()
-			<< ", grade to execute " << (&ref)->getGradeToExec());
+			<< ", grade to execute " << (&ref)->getGradeToExec()
+			<< "]");
 }

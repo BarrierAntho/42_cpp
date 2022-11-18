@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:14:44 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/18 09:31:51 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 11:31:25 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ class Form
 
 		// SUBJECT FUNCTIONS
 		void			beSigned( Bureaucrat const & );
+		void			execute( Bureaucrat const & ) const;
+		virtual void		executeFunction( Bureaucrat const & ) const = 0;
 
 		// EXCEPTION FUNCTIONS
 		class GradeTooLowException: public std::exception
@@ -64,6 +66,12 @@ class Form
 		};
 
 		class GradeTooHighException: public std::exception
+		{
+			public:
+				virtual const char	*what( void ) const throw();
+		};
+
+		class IsNotSignedException: public std::exception
 		{
 			public:
 				virtual const char	*what( void ) const throw();

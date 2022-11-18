@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:56:30 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/18 09:37:31 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 11:42:48 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,21 @@ PresidentialPardonForm	&PresidentialPardonForm::operator = ( PresidentialPardonF
 	return (*this);
 }
 
+// SUBJECT FUNCTIONS
+void	PresidentialPardonForm::executeFunction( Bureaucrat const &executor ) const
+{
+	(void)executor;
+	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+}
+
 // OUTSIDE OF THE CLASS
 std::ostream	&operator << ( std::ostream &out, PresidentialPardonForm const &ref )
 {
-	return (out << "[PresidentialPardonForm] " << (&ref)->getName() << ", status \"isSigned\" " << (&ref)->getIsSigned()
+	return (out << "[PresidentialPardonForm] " << (&ref)->getName()
+			<< " ["
+			<< "status \"isSigned\" " << (&ref)->getIsSigned()
 			<< ", grade to sign " << (&ref)->getGradeToSign()
 			<< ", grade to execute " << (&ref)->getGradeToExec()
-			<< ", target " << (&ref)->getTarget());
+			<< ", target " << (&ref)->getTarget()
+			<< "]");
 }

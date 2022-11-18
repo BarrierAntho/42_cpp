@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 10:11:03 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/18 09:39:28 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 11:27:36 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -503,9 +503,16 @@ int	main( void )
 			std::cout << "BEFORE f2: " << f2 << std::endl;
 			f2.beSigned(b2);
 			std::cout << "AFTER f2: " << f2 << std::endl;
-			std::cout << "BEFORE f1: " << f1 << std::endl;
-			f1.beSigned(b1);
-			std::cout << "AFTER f1: " << f1 << std::endl;
+//			std::cout << "BEFORE f1: " << f1 << std::endl;
+//			f1.beSigned(b1);
+//			std::cout << "AFTER f1: " << f1 << std::endl;
+			std::cout << SEP_SP << std::endl;
+
+			std::cout << "FORM EXECUTE" << std::endl;
+			std::cout << "f2.execute(b2)" << std::endl;
+			f2.execute(b2);
+			std::cout << "f1.execute(b1)" << std::endl;
+			f1.execute(b1);
 			std::cout << SEP_SP << std::endl;
 
 			std::cout << "SHOW" << std::endl;

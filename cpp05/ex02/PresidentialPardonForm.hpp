@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:56:44 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/18 09:30:06 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 11:26:23 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ class PresidentialPardonForm: virtual public Form
 
 		// OVERLOAD OPERATOR
 		PresidentialPardonForm	&operator = ( PresidentialPardonForm const & );
+
+		// SUBJECT FUNCTIONS
+		void	executeFunction( Bureaucrat const & ) const;
 };
 
 // OUTSIDE OF THE CLASS
