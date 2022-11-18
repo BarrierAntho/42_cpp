@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:56:44 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/17 15:59:10 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 09:30:06 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,36 @@
 
 # include <iostream>
 
-class PresidentialPardonForm
+# include "Form.hpp"
+
+# ifndef FRM_PRES_DFT_NAME
+#  define FRM_PRES_DFT_NAME "PresidentialPardonForm"
+# endif
+# ifndef FRM_PRES_DFT_GRADE_TOSIGN
+#  define FRM_PRES_DFT_GRADE_TOSIGN 25
+# endif
+# ifndef FRM_PRES_DFT_GRADE_TOEXEC
+#  define FRM_PRES_DFT_GRADE_TOEXEC 5
+# endif
+# ifndef FRM_PRES_DFT_TARGET
+#  define FRM_PRES_DFT_TARGET "Boss"
+# endif
+
+// CONSTRUCTOR / DESTRUCTOR
+class PresidentialPardonForm: virtual public Form
 {
 	public:
+		// CONSTRUCTOR / DESTRUCTOR
 		PresidentialPardonForm( void );
-		~PresidentialPardonForm( void );
+		virtual ~PresidentialPardonForm( void );
+		PresidentialPardonForm( std::string const & );
+		PresidentialPardonForm( PresidentialPardonForm const & );
 
-	private:
+		// OVERLOAD OPERATOR
+		PresidentialPardonForm	&operator = ( PresidentialPardonForm const & );
 };
+
+// OUTSIDE OF THE CLASS
+std::ostream	&operator << ( std::ostream &, PresidentialPardonForm const & );
 
 #endif

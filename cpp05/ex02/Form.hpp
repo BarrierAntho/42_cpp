@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:14:44 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/17 15:12:37 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 09:31:51 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@
 # ifndef FRM_DFT_GRADE_TOEXEC
 #  define FRM_DFT_GRADE_TOEXEC BR_GRADE_HIGH
 # endif
+# ifndef FRM_DFT_TARGET
+#  define FRM_DFT_TARGET "Everyone"
+# endif
 
 class Bureaucrat;
 
@@ -35,8 +38,9 @@ class Form
 	public:
 		// CONSTRUCTOR / DESTRUCTOR
 		Form( void );
-		~Form( void );
+		virtual ~Form( void ) = 0;
 		Form( std::string const &, int const, int const );
+		Form( std::string const &, int const, int const, std::string const & );
 		Form( Form const & );
 
 		// OVERLOAD OPERATOR
@@ -47,6 +51,7 @@ class Form
 		bool			getIsSigned( void ) const;
 		int			getGradeToSign( void ) const;
 		int			getGradeToExec( void ) const;
+		std::string const	&getTarget( void ) const;
 
 		// SUBJECT FUNCTIONS
 		void			beSigned( Bureaucrat const & );
@@ -70,6 +75,7 @@ class Form
 		bool			_isSigned;
 		const int		_gradeToSign;
 		const int		_gradeToExec;
+		std::string		_target;
 };
 
 // OUTSIDE OF THE CLASS
