@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:14:44 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/18 11:31:25 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:16:31 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Form
 	public:
 		// CONSTRUCTOR / DESTRUCTOR
 		Form( void );
-		virtual ~Form( void ) = 0;
+		virtual ~Form( void );
 		Form( std::string const &, int const, int const );
 		Form( std::string const &, int const, int const, std::string const & );
 		Form( Form const & );

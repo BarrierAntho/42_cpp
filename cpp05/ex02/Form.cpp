@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:30:26 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/18 11:42:52 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:11:09 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,15 @@ void	Form::beSigned( Bureaucrat const &bureaucrat )
 void	Form::execute( Bureaucrat const &executor ) const
 {
 	if (this->_isSigned == false)
+	{
+		std::cout << executor << " can not execute " << *this << " due to unsigned form" << std::endl;
 		throw (Form::IsNotSignedException());
+	}
 	else if ((&executor)->getGrade() > this->_gradeToExec)
+	{
+		std::cout << executor << " can not execute " << *this << " due to his lower grade than the form" << std::endl;
 		throw (Form::GradeTooLowException());
+	}
 	executeFunction(executor);
 }
 

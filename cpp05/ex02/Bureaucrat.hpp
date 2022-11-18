@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 08:38:50 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/17 15:02:35 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:44:19 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ class Bureaucrat
 		int			decrementGrade( void );
 		int			incrementGrade( void );
 		bool			signForm( Form const & ) const;
+		void			executeForm(Form const & ) const;
 
 		// EXCEPTION FUNCTIONS
 		class GradeTooLowException: public std::exception
