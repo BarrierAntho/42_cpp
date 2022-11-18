@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:01:49 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/18 14:42:14 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:52:00 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@
 #  define FRM_ROBOT_DFT_NAME "RobotomyRequestForm"
 # endif
 # ifndef FRM_ROBOT_DFT_GRADE_TOSIGN
-#  define FRM_ROBOT_DFT_GRADE_TOSIGN 145
+#  define FRM_ROBOT_DFT_GRADE_TOSIGN 72
 # endif
 # ifndef FRM_ROBOT_DFT_GRADE_TOEXEC
-#  define FRM_ROBOT_DFT_GRADE_TOEXEC 137
+#  define FRM_ROBOT_DFT_GRADE_TOEXEC 45
 # endif
 # ifndef FRM_ROBOT_DFT_TARGET
 #  define FRM_ROBOT_DFT_TARGET "Home"
