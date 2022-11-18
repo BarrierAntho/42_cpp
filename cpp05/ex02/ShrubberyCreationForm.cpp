@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:00:14 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/18 15:30:13 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:29:39 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	ShrubberyCreationForm::executeFunction( Bureaucrat const &executor ) const
 	ofs << "|  $$$$$$/| $$ \\/  | $$| $$$$$$$/" << std::endl;
 	ofs << " \\______/ |__/     |__/|_______/ " << std::endl;
 	ofs.close();
+	std::cout << "ASCII trees has been generated into " << str << std::endl;
 }
 
 // OUTSIDE OF THE CLASS

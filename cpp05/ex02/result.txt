@@ -1,0 +1,454 @@
+==324384== Memcheck, a memory error detector
+==324384== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==324384== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==324384== Command: ./Noyouneedform28Bnot28C
+==324384== 
+Program - Start
+####################
+####################
+TEST - SHRUBBERY FORM
+####################
+TEST - CONSTRUCTOR / DESTRUCTOR / OVERLOAD OPERATOR
+--------------------
+CONSTRUCTOR - DEFAULT
+f0
+[Form] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137] has been created
+[ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Home] has been created
+--------------------
+CONSTRUCTOR - WITH ARGUMENT
+f1("Poseidon")
+[Form] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137] has been created
+[ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Poseidon] has been created
+--------------------
+CONSTRUCTOR - COPY
+f2(f1)
+[Form] ShrubberyCreationForm_copy [status "isSigned" 0, grade to sign 145, grade to execute 137] has been created
+ShrubberyCreationForm copy constructor
+ShrubberyCreationForm overload operator =
+Form overload operator =
+--------------------
+OVERLOAD OPERATOR
+f3 = f0
+[Form] ShrubberyCreationForm_copy [status "isSigned" 0, grade to sign 145, grade to execute 137] has been created
+ShrubberyCreationForm copy constructor
+ShrubberyCreationForm overload operator =
+Form overload operator =
+f0 = f1
+ShrubberyCreationForm overload operator =
+Form overload operator =
+--------------------
+SHOW
+f0: [ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Poseidon]
+f1: [ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Poseidon]
+f2: [ShrubberyCreationForm] ShrubberyCreationForm_copy [status "isSigned" 0, grade to sign 145, grade to execute 137, target Poseidon]
+f3: [ShrubberyCreationForm] ShrubberyCreationForm_copy [status "isSigned" 0, grade to sign 145, grade to execute 137, target Home]
+--------------------
+DESTRUCTOR
+[ShrubberyCreationForm] ShrubberyCreationForm_copy [status "isSigned" 0, grade to sign 145, grade to execute 137, target Home] has been deleted
+[Form] ShrubberyCreationForm_copy [status "isSigned" 0, grade to sign 145, grade to execute 137] has been deleted
+[ShrubberyCreationForm] ShrubberyCreationForm_copy [status "isSigned" 0, grade to sign 145, grade to execute 137, target Poseidon] has been deleted
+[Form] ShrubberyCreationForm_copy [status "isSigned" 0, grade to sign 145, grade to execute 137] has been deleted
+[ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Poseidon] has been deleted
+[Form] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137] has been deleted
+[ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Poseidon] has been deleted
+[Form] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137] has been deleted
+####################
+TEST - GETTER
+--------------------
+CONSTRUCTOR - DEFAULT
+f0
+[Form] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137] has been created
+[ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Home] has been created
+--------------------
+GETTER
+f0 Name: ShrubberyCreationForm
+f0 status "isSigned": 0
+f0 grade to sign: 145
+f0 grade to exec: 137
+f0 target: Home
+--------------------
+SHOW
+f0: [ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Home]
+--------------------
+DESTRUCTOR
+[ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Home] has been deleted
+[Form] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137] has been deleted
+####################
+TEST - SUBJECT FUNCTIONS
+--------------------
+BUREAUCRAT CONSTRUCTOR
+b1("Zeus", 1)
+Zeus, bureaucrat grade 1 has been hired
+--------------------
+FORM CONSTRUCTOR
+f1("Poseidon")
+[Form] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137] has been created
+[ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Poseidon] has been created
+--------------------
+FORM BESIGNED
+BEFORE f1: [ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Poseidon]
+Zeus, bureaucrat grade 1 signed [Form] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137]
+AFTER f1: [ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 1, grade to sign 145, grade to execute 137, target Poseidon]
+--------------------
+BUREAUCRAT EXECUTE
+b1.executeForm(f1)
+ASCII trees has been generated into Poseidon_shrubbery
+Zeus, bureaucrat grade 1 executed [Form] ShrubberyCreationForm [status "isSigned" 1, grade to sign 145, grade to execute 137]
+--------------------
+SHOW
+f1: [ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 1, grade to sign 145, grade to execute 137, target Poseidon]
+--------------------
+DESTRUCTOR
+[ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 1, grade to sign 145, grade to execute 137, target Poseidon] has been deleted
+[Form] ShrubberyCreationForm [status "isSigned" 1, grade to sign 145, grade to execute 137] has been deleted
+Zeus, bureaucrat grade 1 has been fired
+####################
+TEST - ERROR
+--------------------
+TEST - FORM NOT SIGNED
+BUREAUCRAT CONSTRUCTOR
+b1("Zeus", 1)
+Zeus, bureaucrat grade 1 has been hired
+--------------------
+FORM CONSTRUCTOR
+f1("Poseidon")
+[Form] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137] has been created
+[ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Poseidon] has been created
+--------------------
+FORM EXECUTE
+f1: [ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Poseidon]
+b1.executeForm(11)
+Zeus, bureaucrat grade 1 can not execute [Form] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137] due to unsigned form
+[ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Poseidon] has been deleted
+[Form] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137] has been deleted
+Zeus, bureaucrat grade 1 has been fired
+IsNotSignedException
+--------------------
+TEST - BUREAUCRAT WITH LOWER GRADE THAN FORM
+BUREAUCRAT CONSTRUCTOR
+b1("Zeus", 1)
+Zeus, bureaucrat grade 1 has been hired
+b2("Ares", 150)
+Ares, bureaucrat grade 150 has been hired
+--------------------
+FORM CONSTRUCTOR
+f1("Poseidon")
+[Form] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137] has been created
+[ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Poseidon] has been created
+--------------------
+FORM BESIGNED
+BEFORE f1: [ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137, target Poseidon]
+Zeus, bureaucrat grade 1 signed [Form] ShrubberyCreationForm [status "isSigned" 0, grade to sign 145, grade to execute 137]
+AFTER f1: [ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 1, grade to sign 145, grade to execute 137, target Poseidon]
+--------------------
+BUREAUCRAT EXECUTE
+b2.executeForm(f1)
+Ares, bureaucrat grade 150 can not execute [Form] ShrubberyCreationForm [status "isSigned" 1, grade to sign 145, grade to execute 137] due to his lower grade than the form
+[ShrubberyCreationForm] ShrubberyCreationForm [status "isSigned" 1, grade to sign 145, grade to execute 137, target Poseidon] has been deleted
+[Form] ShrubberyCreationForm [status "isSigned" 1, grade to sign 145, grade to execute 137] has been deleted
+Ares, bureaucrat grade 150 has been fired
+Zeus, bureaucrat grade 1 has been fired
+GradeTooLowException
+--------------------
+####################
+TEST - ROBOTOMY FORM
+####################
+TEST - CONSTRUCTOR / DESTRUCTOR / OVERLOAD OPERATOR
+--------------------
+CONSTRUCTOR - DEFAULT
+f0
+[Form] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45] has been created
+[RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target TV] has been created
+--------------------
+CONSTRUCTOR - WITH ARGUMENT
+f1("Poseidon")
+[Form] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45] has been created
+[RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target Poseidon] has been created
+--------------------
+CONSTRUCTOR - COPY
+f2(f1)
+[Form] RobotomyRequestForm_copy [status "isSigned" 0, grade to sign 72, grade to execute 45] has been created
+RobotomyRequestForm copy constructor
+RobotomyRequestForm overload operator =
+Form overload operator =
+--------------------
+OVERLOAD OPERATOR
+f3 = f0
+[Form] RobotomyRequestForm_copy [status "isSigned" 0, grade to sign 72, grade to execute 45] has been created
+RobotomyRequestForm copy constructor
+RobotomyRequestForm overload operator =
+Form overload operator =
+f0 = f1
+RobotomyRequestForm overload operator =
+Form overload operator =
+--------------------
+SHOW
+f0: [RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target Poseidon]
+f1: [RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target Poseidon]
+f2: [RobotomyRequestForm] RobotomyRequestForm_copy [status "isSigned" 0, grade to sign 72, grade to execute 45, target Poseidon]
+f3: [RobotomyRequestForm] RobotomyRequestForm_copy [status "isSigned" 0, grade to sign 72, grade to execute 45, target TV]
+--------------------
+DESTRUCTOR
+[RobotomyRequestForm] RobotomyRequestForm_copy [status "isSigned" 0, grade to sign 72, grade to execute 45, target TV] has been deleted
+[Form] RobotomyRequestForm_copy [status "isSigned" 0, grade to sign 72, grade to execute 45] has been deleted
+[RobotomyRequestForm] RobotomyRequestForm_copy [status "isSigned" 0, grade to sign 72, grade to execute 45, target Poseidon] has been deleted
+[Form] RobotomyRequestForm_copy [status "isSigned" 0, grade to sign 72, grade to execute 45] has been deleted
+[RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target Poseidon] has been deleted
+[Form] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45] has been deleted
+[RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target Poseidon] has been deleted
+[Form] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45] has been deleted
+####################
+TEST - GETTER
+--------------------
+CONSTRUCTOR - DEFAULT
+f0
+[Form] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45] has been created
+[RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target TV] has been created
+--------------------
+GETTER
+f0 Name: RobotomyRequestForm
+f0 status "isSigned": 0
+f0 grade to sign: 72
+f0 grade to exec: 45
+f0 target: TV
+--------------------
+SHOW
+f0: [RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target TV]
+--------------------
+DESTRUCTOR
+[RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target TV] has been deleted
+[Form] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45] has been deleted
+####################
+TEST - SUBJECT FUNCTIONS
+--------------------
+BUREAUCRAT CONSTRUCTOR
+b1("Zeus", 1)
+Zeus, bureaucrat grade 1 has been hired
+--------------------
+FORM CONSTRUCTOR
+f1("Poseidon")
+[Form] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45] has been created
+[RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target Poseidon] has been created
+--------------------
+FORM BESIGNED
+BEFORE f1: [RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target Poseidon]
+Zeus, bureaucrat grade 1 signed [Form] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45]
+AFTER f1: [RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 1, grade to sign 72, grade to execute 45, target Poseidon]
+--------------------
+BUREAUCRAT EXECUTE
+b1.executeForm(f1)
+biiippbiiipppbiiipppppppppppppppp
+Poseidon has been robotomized
+Zeus, bureaucrat grade 1 executed [Form] RobotomyRequestForm [status "isSigned" 1, grade to sign 72, grade to execute 45]
+--------------------
+SHOW
+f1: [RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 1, grade to sign 72, grade to execute 45, target Poseidon]
+--------------------
+DESTRUCTOR
+[RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 1, grade to sign 72, grade to execute 45, target Poseidon] has been deleted
+[Form] RobotomyRequestForm [status "isSigned" 1, grade to sign 72, grade to execute 45] has been deleted
+Zeus, bureaucrat grade 1 has been fired
+####################
+TEST - ERROR
+--------------------
+TEST - FORM NOT SIGNED
+BUREAUCRAT CONSTRUCTOR
+b1("Zeus", 1)
+Zeus, bureaucrat grade 1 has been hired
+--------------------
+FORM CONSTRUCTOR
+f1("Poseidon")
+[Form] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45] has been created
+[RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target Poseidon] has been created
+--------------------
+FORM EXECUTE
+f1: [RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target Poseidon]
+b1.executeForm(11)
+Zeus, bureaucrat grade 1 can not execute [Form] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45] due to unsigned form
+[RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target Poseidon] has been deleted
+[Form] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45] has been deleted
+Zeus, bureaucrat grade 1 has been fired
+IsNotSignedException
+--------------------
+TEST - BUREAUCRAT WITH LOWER GRADE THAN FORM
+BUREAUCRAT CONSTRUCTOR
+b1("Zeus", 1)
+Zeus, bureaucrat grade 1 has been hired
+b2("Ares", 150)
+Ares, bureaucrat grade 150 has been hired
+--------------------
+FORM CONSTRUCTOR
+f1("Poseidon")
+[Form] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45] has been created
+[RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target Poseidon] has been created
+--------------------
+FORM BESIGNED
+BEFORE f1: [RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45, target Poseidon]
+Zeus, bureaucrat grade 1 signed [Form] RobotomyRequestForm [status "isSigned" 0, grade to sign 72, grade to execute 45]
+AFTER f1: [RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 1, grade to sign 72, grade to execute 45, target Poseidon]
+--------------------
+BUREAUCRAT EXECUTE
+b2.executeForm(f1)
+Ares, bureaucrat grade 150 can not execute [Form] RobotomyRequestForm [status "isSigned" 1, grade to sign 72, grade to execute 45] due to his lower grade than the form
+[RobotomyRequestForm] RobotomyRequestForm [status "isSigned" 1, grade to sign 72, grade to execute 45, target Poseidon] has been deleted
+[Form] RobotomyRequestForm [status "isSigned" 1, grade to sign 72, grade to execute 45] has been deleted
+Ares, bureaucrat grade 150 has been fired
+Zeus, bureaucrat grade 1 has been fired
+GradeTooLowException
+--------------------
+####################
+TEST - PRESIDENTIAL PARDON FORM
+####################
+TEST - CONSTRUCTOR / DESTRUCTOR / OVERLOAD OPERATOR
+--------------------
+CONSTRUCTOR - DEFAULT
+f0
+[Form] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5] has been created
+[PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Boss] has been created
+--------------------
+CONSTRUCTOR - WITH ARGUMENT
+f1("Poseidon")
+[Form] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5] has been created
+[PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Poseidon] has been created
+--------------------
+CONSTRUCTOR - COPY
+f2(f1)
+[Form] PresidentialPardonForm_copy [status "isSigned" 0, grade to sign 25, grade to execute 5] has been created
+PresidentialPardonForm copy constructor
+PresidentialPardonForm overload operator =
+Form overload operator =
+--------------------
+OVERLOAD OPERATOR
+f3 = f0
+[Form] PresidentialPardonForm_copy [status "isSigned" 0, grade to sign 25, grade to execute 5] has been created
+PresidentialPardonForm copy constructor
+PresidentialPardonForm overload operator =
+Form overload operator =
+f0 = f1
+PresidentialPardonForm overload operator =
+Form overload operator =
+--------------------
+SHOW
+f0: [PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Poseidon]
+f1: [PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Poseidon]
+f2: [PresidentialPardonForm] PresidentialPardonForm_copy [status "isSigned" 0, grade to sign 25, grade to execute 5, target Poseidon]
+f3: [PresidentialPardonForm] PresidentialPardonForm_copy [status "isSigned" 0, grade to sign 25, grade to execute 5, target Boss]
+--------------------
+DESTRUCTOR
+[PresidentialPardonForm] PresidentialPardonForm_copy [status "isSigned" 0, grade to sign 25, grade to execute 5, target Boss] has been deleted
+[Form] PresidentialPardonForm_copy [status "isSigned" 0, grade to sign 25, grade to execute 5] has been deleted
+[PresidentialPardonForm] PresidentialPardonForm_copy [status "isSigned" 0, grade to sign 25, grade to execute 5, target Poseidon] has been deleted
+[Form] PresidentialPardonForm_copy [status "isSigned" 0, grade to sign 25, grade to execute 5] has been deleted
+[PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Poseidon] has been deleted
+[Form] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5] has been deleted
+[PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Poseidon] has been deleted
+[Form] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5] has been deleted
+####################
+TEST - GETTER
+--------------------
+CONSTRUCTOR - DEFAULT
+f0
+[Form] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5] has been created
+[PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Boss] has been created
+--------------------
+GETTER
+f0 Name: PresidentialPardonForm
+f0 status "isSigned": 0
+f0 grade to sign: 25
+f0 grade to exec: 5
+f0 target: Boss
+--------------------
+SHOW
+f0: [PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Boss]
+--------------------
+DESTRUCTOR
+[PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Boss] has been deleted
+[Form] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5] has been deleted
+####################
+TEST - SUBJECT FUNCTIONS
+--------------------
+BUREAUCRAT CONSTRUCTOR
+b1("Zeus", 1)
+Zeus, bureaucrat grade 1 has been hired
+--------------------
+FORM CONSTRUCTOR
+f1("Poseidon")
+[Form] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5] has been created
+[PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Poseidon] has been created
+--------------------
+FORM BESIGNED
+BEFORE f1: [PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Poseidon]
+Zeus, bureaucrat grade 1 signed [Form] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5]
+AFTER f1: [PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 1, grade to sign 25, grade to execute 5, target Poseidon]
+--------------------
+BUREAUCRAT EXECUTE
+b1.executeForm(f1)
+Poseidon has been pardoned by Zaphod Beeblebrox
+Zeus, bureaucrat grade 1 executed [Form] PresidentialPardonForm [status "isSigned" 1, grade to sign 25, grade to execute 5]
+--------------------
+SHOW
+f1: [PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 1, grade to sign 25, grade to execute 5, target Poseidon]
+--------------------
+DESTRUCTOR
+[PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 1, grade to sign 25, grade to execute 5, target Poseidon] has been deleted
+[Form] PresidentialPardonForm [status "isSigned" 1, grade to sign 25, grade to execute 5] has been deleted
+Zeus, bureaucrat grade 1 has been fired
+####################
+TEST - ERROR
+--------------------
+TEST - FORM NOT SIGNED
+BUREAUCRAT CONSTRUCTOR
+b1("Zeus", 1)
+Zeus, bureaucrat grade 1 has been hired
+--------------------
+FORM CONSTRUCTOR
+f1("Poseidon")
+[Form] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5] has been created
+[PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Poseidon] has been created
+--------------------
+FORM EXECUTE
+f1: [PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Poseidon]
+b1.executeForm(11)
+Zeus, bureaucrat grade 1 can not execute [Form] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5] due to unsigned form
+[PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Poseidon] has been deleted
+[Form] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5] has been deleted
+Zeus, bureaucrat grade 1 has been fired
+IsNotSignedException
+--------------------
+TEST - BUREAUCRAT WITH LOWER GRADE THAN FORM
+BUREAUCRAT CONSTRUCTOR
+b1("Zeus", 1)
+Zeus, bureaucrat grade 1 has been hired
+b2("Ares", 150)
+Ares, bureaucrat grade 150 has been hired
+--------------------
+FORM CONSTRUCTOR
+f1("Poseidon")
+[Form] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5] has been created
+[PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Poseidon] has been created
+--------------------
+FORM BESIGNED
+BEFORE f1: [PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5, target Poseidon]
+Zeus, bureaucrat grade 1 signed [Form] PresidentialPardonForm [status "isSigned" 0, grade to sign 25, grade to execute 5]
+AFTER f1: [PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 1, grade to sign 25, grade to execute 5, target Poseidon]
+--------------------
+BUREAUCRAT EXECUTE
+b2.executeForm(f1)
+Ares, bureaucrat grade 150 can not execute [Form] PresidentialPardonForm [status "isSigned" 1, grade to sign 25, grade to execute 5] due to his lower grade than the form
+[PresidentialPardonForm] PresidentialPardonForm [status "isSigned" 1, grade to sign 25, grade to execute 5, target Poseidon] has been deleted
+[Form] PresidentialPardonForm [status "isSigned" 1, grade to sign 25, grade to execute 5] has been deleted
+Ares, bureaucrat grade 150 has been fired
+Zeus, bureaucrat grade 1 has been fired
+GradeTooLowException
+--------------------
+####################
+Program - End
+==324384== 
+==324384== HEAP SUMMARY:
+==324384==     in use at exit: 0 bytes in 0 blocks
+==324384==   total heap usage: 65 allocs, 65 frees, 91,731 bytes allocated
+==324384== 
+==324384== All heap blocks were freed -- no leaks are possible
+==324384== 
+==324384== For lists of detected and suppressed errors, rerun with: -s
+==324384== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
