@@ -1,15 +1,43 @@
 # 42\_cpp
 
-## cpp00
-### Goal
+## Content
+- [Historic :clock7:](#historic-clock7)
+- [cpp:zero::zero:](#cpp-zero-zero)
+
+## Historic :clock7:
+[Go to content](#content)
+|Date _YYYY-MM-DD_|Description|
+|:-|:-|
+|2022-11-28|Init|
+
+## cpp:zero::zero:
+Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff
+
+### Goal :dart:
 Introduction to c++ language:
 - Stream: cout, cin, cerr
 - Class object
 
-### Exercices list
+### Exercices list :clipboard:
 - [Exercise 00: Megaphone](cpp00/ex00)
 - [Exercise 01: My Awesome PhoneBook](cpp00/ex01)
 - [Exercise 02: The Job Of Your Dreams](cpp00/ex02)
+
+### Souces :link:
+N/A
+
+## cpp:zero::one:
+### Goal
+Introduction to c++ language:
+
+### Exercices list
+- [Exercise 00: ](cpp01/ex00)
+- [Exercise 01: ](cpp01/ex01)
+- [Exercise 02: ](cpp01/ex02)
+- [Exercise 03: ](cpp01/ex03)
+- [Exercise 04: ](cpp01/ex04)
+- [Exercise 05: ](cpp01/ex05)
+- [Exercise 06: ](cpp01/ex06)
 
 ## cpp02
 BSP sources:<br>
