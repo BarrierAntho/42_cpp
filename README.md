@@ -1,8 +1,17 @@
 # 42\_cpp
 
-## Correction
+## cpp00
+### Goal
+Introduction to c++ language:
+- Stream: cout, cin, cerr
+- Class object
 
-### cpp02
+### Exercices list
+- [Exercise 00: Megaphone](cpp00/ex00)
+- [Exercise 01: My Awesome PhoneBook](cpp00/ex01)
+- [Exercise 02: The Job Of Your Dreams](cpp00/ex02)
+
+## cpp02
 BSP sources:<br>
 - https://www.youtube.com/watch?v=HYAgJN3x4GA
 
@@ -12,7 +21,12 @@ MAP sources:<br>
 Const sources:<br>
 - http://sdz.tdct.org/sdz/la-const-correctness-expliquee-aux-zeros.html
 
-### cpp08
+## cpp06
+
+### Sources :link:
+- https://www.tutorialspoint.com/cplusplus/cpp_casting_operators.htm
+
+## cpp08
 Utilisation des vectors
 Vector = tableau
 
