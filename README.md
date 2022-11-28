@@ -2,7 +2,8 @@
 
 ## Content
 - [Historic :clock7:](#historic-clock7)
-- [cpp:zero::zero:](#cpp-zero-zero)
+- [cpp:zero::zero:](#cppzerozero)
+- [cpp:zero::one:](#cppzeroone)
 
 ## Historic :clock7:
 [Go to content](#content)
@@ -13,11 +14,6 @@
 ## cpp:zero::zero:
 Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff
 
-### Goal :dart:
-Introduction to c++ language:
-- Stream: cout, cin, cerr
-- Class object
-
 ### Exercices list :clipboard:
 - [Exercise 00: Megaphone](cpp00/ex00)
 - [Exercise 01: My Awesome PhoneBook](cpp00/ex01)
@@ -27,12 +23,11 @@ Introduction to c++ language:
 N/A
 
 ## cpp:zero::one:
-### Goal
-Introduction to c++ language:
+Memory allocation, pointers to members, references, switch statement
 
 ### Exercices list
-- [Exercise 00: ](cpp01/ex00)
-- [Exercise 01: ](cpp01/ex01)
+- [Exercise 00: BraiiiiiiinnnzzzZ](cpp01/ex00)
+- [Exercise 01: Moar brainz!](cpp01/ex01)
 - [Exercise 02: ](cpp01/ex02)
 - [Exercise 03: ](cpp01/ex03)
 - [Exercise 04: ](cpp01/ex04)
