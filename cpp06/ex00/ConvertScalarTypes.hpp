@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:21:48 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/29 13:47:58 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/29 15:40:36 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 # define CONVERTSCALARTYPES_HPP
 
 # include <climits>
+# include <cmath>
 # include <cstdlib>
 # include <exception>
+# include <iomanip>
 # include <iostream>
-# include <inttypes.h>
 
 # ifndef CVT_DFT_STR
 #  define CVT_DFT_STR "Default string"
@@ -32,13 +33,19 @@
 #  define CVT_IMPOSSIBLE "Impossible"
 # endif
 # ifndef CVT_INF_P
-#  define CVT_INF_P "+inf"
+#  define CVT_INF_P "inf"
+# endif
+# ifndef CVT_INF_PP
+#  define CVT_INF_PP "+inf"
 # endif
 # ifndef CVT_INF_N
 #  define CVT_INF_N "-inf"
 # endif
 # ifndef CVT_INFF_P
-#  define CVT_INFF_P "+inff"
+#  define CVT_INFF_P "inff"
+# endif
+# ifndef CVT_INFF_PP
+#  define CVT_INFF_PP "+inff"
 # endif
 # ifndef CVT_INFF_N
 #  define CVT_INFF_N "-inff"
@@ -77,6 +84,10 @@ class ConvertScalarTypes
 		// GETTER / SETTER
 		std::string	getString( void ) const;
 		int		getType( void ) const;
+		double		getHandle( void ) const;
+		double		getIntPart( void ) const;
+		double		getFractPart( void ) const;
+
 		char		getChar( void ) const;
 		int		getInt( void ) const;
 		float		getFloat( void ) const;
@@ -91,10 +102,14 @@ class ConvertScalarTypes
 		bool		getErrDouble( void ) const;
 
 		// MEMBER FUNCTIONS
-		int	getInputType( void );
+		int	inputType( void );
 		int	checkString( void );
 		void	convert( void );
 		void	show( void ) const;
+		void	showChar( void ) const;
+		void	showInt( void ) const;
+		void	showFloat( void ) const;
+		void	showDouble( void ) const;
 
 		// EXCEPTION FUNCTIONS
 		class NullInputException: public std::exception
@@ -107,6 +122,8 @@ class ConvertScalarTypes
 		std::string	_str;
 		int		_type;
 		double		_handle;
+		double		_intpart;
+		double		_fractpart;
 		char		_char;
 		int		_int;
 		float		_float;

@@ -55,36 +55,55 @@ test		:
 			$(VAL) ./$(NAME) > result.txt 2>&1
 			less result.txt
 			@echo $(SEP_P)
-			$(VAL) ./$(NAME) "a" > result.txt 2>&1
+			@echo "SUBJECT TEST"
+			@echo $(SEP_SP)
+			$(VAL) ./$(NAME) "0" > result.txt 2>&1
 			less result.txt
-			@echo $(SEP_P)
-			$(VAL) ./$(NAME) "1" > result.txt 2>&1
-			less result.txt
-			@echo $(SEP_P)
-			$(VAL) ./$(NAME) "42.42f" > result.txt 2>&1
-			less result.txt
-			@echo $(SEP_P)
-			$(VAL) ./$(NAME) "42.42" > result.txt 2>&1
-			less result.txt
-			@echo $(SEP_P)
-			$(VAL) ./$(NAME) "-inf" > result.txt 2>&1
-			less result.txt
-			@echo $(SEP_P)
-			$(VAL) ./$(NAME) "+inf" > result.txt 2>&1
-			less result.txt
-			@echo $(SEP_P)
+			@echo $(SEP_SP)
 			$(VAL) ./$(NAME) "nan" > result.txt 2>&1
 			less result.txt
+			@echo $(SEP_SP)
+			$(VAL) ./$(NAME) "42.0f" > result.txt 2>&1
+			less result.txt
 			@echo $(SEP_P)
+			@echo "PERSONNAL TEST"
+			@echo $(SEP_SP)
+			$(VAL) ./$(NAME) "a" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_SP)
+			$(VAL) ./$(NAME) "1" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_SP)
+			$(VAL) ./$(NAME) "42.42f" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_SP)
+			$(VAL) ./$(NAME) "42.42" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_SP)
+			$(VAL) ./$(NAME) "-inf" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_SP)
+			$(VAL) ./$(NAME) "inf" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_SP)
+			$(VAL) ./$(NAME) "+inf" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_SP)
+			$(VAL) ./$(NAME) "nan" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_SP)
 			$(VAL) ./$(NAME) "-inff" > result.txt 2>&1
 			less result.txt
-			@echo $(SEP_P)
+			@echo $(SEP_SP)
+			$(VAL) ./$(NAME) "inff" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_SP)
 			$(VAL) ./$(NAME) "+inff" > result.txt 2>&1
 			less result.txt
-			@echo $(SEP_P)
+			@echo $(SEP_SP)
 			$(VAL) ./$(NAME) "nanf" > result.txt 2>&1
 			less result.txt
-			@echo $(SEP_P)
+			@echo $(SEP_SP)
 			$(VAL) ./$(NAME) "1a" > result.txt 2>&1
 			less result.txt
 
