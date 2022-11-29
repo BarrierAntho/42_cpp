@@ -6,16 +6,22 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:23:57 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/28 13:18:36 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/29 12:51:59 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
 #include "ConvertScalarTypes.hpp"
 
+#define SEP_P "##############################"
+#define SEP_SP "------------------------------"
+
 int	main( int argc, char **argv )
 {
+	std::string	tab[4] = { "CHAR", "INT", "FLOAT", "DOUBLE" };
+
 	try
 	{
 		if (argc == 1)
@@ -27,16 +33,19 @@ int	main( int argc, char **argv )
 		std::cerr << e.what() << std::endl;
 		return (1);
 	}
-	std::cout << "CONVERT TO INT" << std::endl;
+	std::cout << SEP_P << std::endl;
 	{
-		ConvertScalarTypes	cst;
-		int			a;
+		std::string		arg(argv[1]);
+		ConvertScalarTypes	cst(arg);
+		int	i;
 
-		a = 10;
-		std::cout << cst << std::endl;
-		std::cout << "a: " << a << std::endl;
-		a = static_cast<char>(cst);
-		std::cout << "a: " << a << std::endl;
+		for (i = 0; i < 4; i++)
+		{
+			std::cout << "CHECK INPUT AS " << tab[i] << std::endl;
+			std::cout << cst << std::endl;
+			std::cout << cst.getInputType() << std::endl;
+		}
 	}
+	std::cout << SEP_P << std::endl;
 	return (0);
 }

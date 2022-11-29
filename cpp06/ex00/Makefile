@@ -7,7 +7,7 @@ IPATH		:=	.
 OPATH		:=	obj
 
 CXX		:=	c++
-CXXFLAGS	:=	-std=c++98 -Wall -Werror -Wextra
+CXXFLAGS	:=	-std=c++98 -Wall -Werror -Wextra -g3
 CPPFLAGS	:=	-MMD -I $(IPATH)
 
 SRCSPATH	:=	.
@@ -55,9 +55,39 @@ test		:
 			$(VAL) ./$(NAME) > result.txt 2>&1
 			less result.txt
 			@echo $(SEP_P)
-			$(VAL) ./$(NAME) "aa" > result.txt 2>&1
+			$(VAL) ./$(NAME) "a" > result.txt 2>&1
 			less result.txt
 			@echo $(SEP_P)
+			$(VAL) ./$(NAME) "1" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) "42.42f" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) "42.42" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) "-inf" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) "+inf" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) "nan" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) "-inff" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) "+inff" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) "nanf" > result.txt 2>&1
+			less result.txt
+			@echo $(SEP_P)
+			$(VAL) ./$(NAME) "1a" > result.txt 2>&1
+			less result.txt
+
 
 -include $(DEPS)
 

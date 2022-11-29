@@ -6,16 +6,22 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:28:33 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/28 17:37:56 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/29 12:45:12 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ConvertScalarTypes.hpp"
 
 // CONSTRUCTOR / DESTRUCTOR
-ConvertScalarTypes::ConvertScalarTypes( void ): _str(CVT_DFT_STR), _type(CVT_DFT_TYPE)
+ConvertScalarTypes::ConvertScalarTypes( void ): _str(CVT_DFT_STR), _type(CVT_DFT_TYPE),
+	_char(0), _int(0), _float(0.0f), _double(0.0)
 {
-	std::cout << "ConvertScalarTypes has been created" << std::endl;
+	this->_type = this->getInputType();
+	if (this->_type == CHR)
+		this->_handle = static_cast<double>(this->_str[0]);
+	else
+		this->_handle = strtod(this->_str.c_str(), NULL);
+	std::cout << *this << " has been created" << std::endl;
 }
 
 ConvertScalarTypes::~ConvertScalarTypes( void )
@@ -23,9 +29,15 @@ ConvertScalarTypes::~ConvertScalarTypes( void )
 	std::cout << "ConvertScalarTypes has been deleted" << std::endl;
 }
 
-ConvertScalarTypes::ConvertScalarTypes( std::string const &str ): _str(str), _type(CVT_DFT_TYPE)
+ConvertScalarTypes::ConvertScalarTypes( std::string const &newStr ): _str(newStr), _type(CVT_DFT_TYPE),
+	_char(0), _int(0), _float(0.0f), _double(0.0)
 {
-	std::cout << "ConvertScalarTypes has been created" << std::endl;
+	this->_type = this->getInputType();
+	if (this->_type == CHR)
+		this->_handle = static_cast<double>(this->_str[0]);
+	else
+		this->_handle = strtod(this->_str.c_str(), NULL);
+	std::cout << *this << " has been created" << std::endl;
 }
 
 ConvertScalarTypes::ConvertScalarTypes( ConvertScalarTypes const &ref )
@@ -44,19 +56,41 @@ ConvertScalarTypes	&ConvertScalarTypes::operator = ( ConvertScalarTypes const &r
 		return (*this);
 	this->_str = (&ref)->getString();
 	this->_type = (&ref)->getType();
+	this->_char = (&ref)->getChar();
+	this->_int = (&ref)->getInt();
+	this->_float = (&ref)->getFloat();
+	this->_double = (&ref)->getDouble();
 	return (*this);
 }
 
 ConvertScalarTypes::operator char ( void )
 {
-	// TO BE DONE
-	return ('a');
+	try
+	{
+		this->_char = static_cast<char>(this->_handle);
+	}
+	catch (const std::overflow_error& e)
+	{
+		std::cout << "TEST ERROR" << std::endl;
+	}
+	return (this->_char);
 }
 
 ConvertScalarTypes::operator int ( void )
 {
-	// TO BE DONE
-	return (1);
+	try
+	{
+		this->_int = static_cast<int>(this->_handle);
+	}
+	catch (const std::overflow_error& e)
+	{
+		std::cout << "TEST ERROR" << std::endl;
+	}
+	catch (const std::out_of_range& oor)
+	{
+		std::cerr << "Out of Range error: " << oor.what() << '\n';
+	}
+	return (this->_int);
 }
 
 ConvertScalarTypes::operator float ( void )
@@ -74,12 +108,32 @@ ConvertScalarTypes::operator double ( void )
 // GETTER / SETTER
 std::string	ConvertScalarTypes::getString( void ) const
 {
-	return (_str);
+	return (this->_str);
 }
 
 int	ConvertScalarTypes::getType( void ) const
 {
-	return (_type);
+	return (this->_type);
+}
+
+char	ConvertScalarTypes::getChar( void ) const
+{
+	return (this->_char);
+}
+
+int	ConvertScalarTypes::getInt( void ) const
+{
+	return (this->_int);
+}
+
+float	ConvertScalarTypes::getFloat( void ) const
+{
+	return (this->_float);
+}
+
+double	ConvertScalarTypes::getDouble( void ) const
+{
+	return (this->_double);
 }
 
 // MEMBER FUNCTIONS
@@ -91,21 +145,24 @@ int	ConvertScalarTypes::getType( void ) const
 // string: "test", " test", "test ", " test ", "a1"
 int	ConvertScalarTypes::getInputType( void )
 {
-	if (this->_str.length() == 1)
+	if (this->_str.compare(CVT_INF_P) == 0 || this->_str.compare(CVT_INF_N) == 0
+			|| this->_str.compare(CVT_NAN) == 0)
+		return (FLT);
+	else if (this->_str.compare(CVT_INFF_P) == 0 || this->_str.compare(CVT_INFF_N) == 0
+			|| this->_str.compare(CVT_NANF) == 0)
+		return (DBL);
+	else if (this->_str.length() == 1)
 	{
-		if (std::isdigit(this->_str[0]) == 1)
+		if (std::isdigit((unsigned char)this->_str.at(0)) != 0)
 			return (INTG);
 		else
 			return (CHR);
 	}
 	else
-	{
-
-	}
-	return (NA);
+		return (this->checkString());
 }
 
-bool	ConvertScalarTypes::isString( void )
+int	ConvertScalarTypes::checkString( void )
 {
 	size_t	i;
 	int	dot;
@@ -116,22 +173,39 @@ bool	ConvertScalarTypes::isString( void )
 	for (i = 0; i < this->_str.length(); i++)
 	{
 		if (this->_str.at(i) == '.')
-		{
 			dot++;
-			if (dot > 1)
-				return (true);
-		}
 		else if (this->_str.at(i) == 'f')
-		{
 			f++;
-			if (f > 1)
-				return (true);
-		}
-		else if (std::isdigit(this->_str.at(i)) == 0)
-			return (true);
+		else if (std::isdigit((unsigned char)this->_str.at(i)) == 0)
+			return (STRG);
+		if (dot > 1 || f > 1)
+			return (STRG);
 	}
-	return (false);
+	if (dot == 1 && f == 1) // 42.42f
+		return (FLT);
+	else if (dot == 1 && f == 0) // 42.42
+		return (DBL);
+	else if (dot == 0 && f == 1) // 42f
+		return (STRG);
+	else
+		return (INTG);
 }
+
+//void	ConvertScalarTypes::convert( void )
+//{
+//	switch (this->_type)
+//	{
+//		case CHR:
+//			this->_char = this->_str.at(0);
+//			break;
+//		case INTG:
+//			break;
+//		case FLT:
+//			break;
+//		case DBL:
+//			break;
+//	}
+//}
 
 // EXCEPTION FUNCTIONS
 const char	*ConvertScalarTypes::NullInputException::what( void ) const throw()
@@ -142,6 +216,6 @@ const char	*ConvertScalarTypes::NullInputException::what( void ) const throw()
 // OUTSIDE OF THE CLASS
 std::ostream	&operator << ( std::ostream &out, ConvertScalarTypes const &ref )
 {
-	return (out << "[ConvertScalarTypes] "
-			<< "string: " << (&ref)->getString() << std::endl);
+	return (out << "[ConvertScalarTypes] " << "string: " << (&ref)->getString()
+			<< "\ttype: " << (&ref)->getType());
 }
