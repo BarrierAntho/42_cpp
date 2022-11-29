@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:21:48 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/29 12:44:26 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/29 13:47:58 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,19 @@ class ConvertScalarTypes
 		float		getFloat( void ) const;
 		double		getDouble( void ) const;
 
+		bool		getPseudo( void ) const;
+		bool		getPseudoF( void ) const;
+
+		bool		getErrChar( void ) const;
+		bool		getErrInt( void ) const;
+		bool		getErrFloat( void ) const;
+		bool		getErrDouble( void ) const;
+
 		// MEMBER FUNCTIONS
 		int	getInputType( void );
 		int	checkString( void );
-		//void	convert( void );
+		void	convert( void );
+		void	show( void ) const;
 
 		// EXCEPTION FUNCTIONS
 		class NullInputException: public std::exception
@@ -102,6 +111,14 @@ class ConvertScalarTypes
 		int		_int;
 		float		_float;
 		double		_double;
+
+		bool		_isPseudo;
+		bool		_isPseudoF;
+
+		bool		_err_char;
+		bool		_err_int;
+		bool		_err_float;
+		bool		_err_double;
 };
 
 std::ostream	&operator << ( std::ostream &, ConvertScalarTypes const & );

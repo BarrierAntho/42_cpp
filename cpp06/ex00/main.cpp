@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:23:57 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/29 12:51:59 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/29 13:57:08 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main( int argc, char **argv )
 		{
 			std::cout << "CHECK INPUT AS " << tab[i] << std::endl;
 			std::cout << cst << std::endl;
-			std::cout << cst.getInputType() << std::endl;
+			cst.show();
 		}
 	}
 	std::cout << SEP_P << std::endl;

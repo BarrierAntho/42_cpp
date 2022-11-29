@@ -6,7 +6,7 @@
 /*   By: abarrier <abarrier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:28:33 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/29 12:45:12 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:09:55 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 // CONSTRUCTOR / DESTRUCTOR
 ConvertScalarTypes::ConvertScalarTypes( void ): _str(CVT_DFT_STR), _type(CVT_DFT_TYPE),
-	_char(0), _int(0), _float(0.0f), _double(0.0)
+	_char(0), _int(0), _float(0.0f), _double(0.0),
+	_isPseudo(false), _isPseudoF(false),
+	_err_char(true), _err_int(true), _err_float(true), _err_double(true)
 {
 	this->_type = this->getInputType();
 	if (this->_type == CHR)
 		this->_handle = static_cast<double>(this->_str[0]);
 	else
 		this->_handle = strtod(this->_str.c_str(), NULL);
+	this->convert();
 	std::cout << *this << " has been created" << std::endl;
 }
 
@@ -30,13 +33,16 @@ ConvertScalarTypes::~ConvertScalarTypes( void )
 }
 
 ConvertScalarTypes::ConvertScalarTypes( std::string const &newStr ): _str(newStr), _type(CVT_DFT_TYPE),
-	_char(0), _int(0), _float(0.0f), _double(0.0)
+	_char(0), _int(0), _float(0.0f), _double(0.0),
+	_isPseudo(false), _isPseudoF(false),
+	_err_char(true), _err_int(true), _err_float(true), _err_double(true)
 {
 	this->_type = this->getInputType();
 	if (this->_type == CHR)
 		this->_handle = static_cast<double>(this->_str[0]);
 	else
 		this->_handle = strtod(this->_str.c_str(), NULL);
+	this->convert();
 	std::cout << *this << " has been created" << std::endl;
 }
 
@@ -60,49 +66,59 @@ ConvertScalarTypes	&ConvertScalarTypes::operator = ( ConvertScalarTypes const &r
 	this->_int = (&ref)->getInt();
 	this->_float = (&ref)->getFloat();
 	this->_double = (&ref)->getDouble();
+	this->_err_char = (&ref)->getErrChar();
+	this->_err_int = (&ref)->getErrInt();
+	this->_err_float = (&ref)->getErrFloat();
+	this->_err_double = (&ref)->getErrDouble();
 	return (*this);
 }
 
 ConvertScalarTypes::operator char ( void )
 {
-	try
+	if (this->_type == STRG || this->_handle < CHAR_MIN || this->_handle > CHAR_MAX)
+		return (0);
+	else
 	{
 		this->_char = static_cast<char>(this->_handle);
+		this->_err_char = false;
+		return (this->_char);
 	}
-	catch (const std::overflow_error& e)
-	{
-		std::cout << "TEST ERROR" << std::endl;
-	}
-	return (this->_char);
 }
 
 ConvertScalarTypes::operator int ( void )
 {
-	try
+	if (this->_type == STRG || this->_handle < INT_MIN || this->_handle > INT_MAX)
+		return (0);
+	else
 	{
 		this->_int = static_cast<int>(this->_handle);
+		this->_err_int = false;
+		return (this->_int);
 	}
-	catch (const std::overflow_error& e)
-	{
-		std::cout << "TEST ERROR" << std::endl;
-	}
-	catch (const std::out_of_range& oor)
-	{
-		std::cerr << "Out of Range error: " << oor.what() << '\n';
-	}
-	return (this->_int);
 }
 
 ConvertScalarTypes::operator float ( void )
 {
-	// TO BE DONE
-	return (42.42f);
+	if (this->_type == STRG)
+		return (0.0f);
+	else
+	{
+		this->_float = static_cast<float>(this->_handle);
+		this->_err_float = false;
+		return (this->_float);
+	}
 }
 
 ConvertScalarTypes::operator double ( void )
 {
-	// TO BE DONE
-	return (42.42);
+	if (this->_type == STRG)
+		return (0.0f);
+	else
+	{
+		this->_double = this->_handle;
+		this->_err_double = false;
+		return (this->_double);
+	}
 }
 
 // GETTER / SETTER
@@ -136,6 +152,36 @@ double	ConvertScalarTypes::getDouble( void ) const
 	return (this->_double);
 }
 
+bool	ConvertScalarTypes::getPseudo( void ) const
+{
+	return (this->_isPseudo);
+}
+
+bool	ConvertScalarTypes::getPseudoF( void ) const
+{
+	return (this->_isPseudoF);
+}
+
+bool	ConvertScalarTypes::getErrChar( void ) const
+{
+	return (this->_err_char);
+}
+
+bool	ConvertScalarTypes::getErrInt( void ) const
+{
+	return (this->_err_int);
+}
+
+bool	ConvertScalarTypes::getErrFloat( void ) const
+{
+	return (this->_err_float);
+}
+
+bool	ConvertScalarTypes::getErrDouble( void ) const
+{
+	return (this->_err_double);
+}
+
 // MEMBER FUNCTIONS
 // Example:
 // ??: "", " ", "  "
@@ -147,10 +193,16 @@ int	ConvertScalarTypes::getInputType( void )
 {
 	if (this->_str.compare(CVT_INF_P) == 0 || this->_str.compare(CVT_INF_N) == 0
 			|| this->_str.compare(CVT_NAN) == 0)
+	{
+		this->_isPseudoF = true;
 		return (FLT);
+	}
 	else if (this->_str.compare(CVT_INFF_P) == 0 || this->_str.compare(CVT_INFF_N) == 0
 			|| this->_str.compare(CVT_NANF) == 0)
+	{
+		this->_isPseudo = true;
 		return (DBL);
+	}
 	else if (this->_str.length() == 1)
 	{
 		if (std::isdigit((unsigned char)this->_str.at(0)) != 0)
@@ -191,21 +243,70 @@ int	ConvertScalarTypes::checkString( void )
 		return (INTG);
 }
 
-//void	ConvertScalarTypes::convert( void )
-//{
-//	switch (this->_type)
-//	{
-//		case CHR:
-//			this->_char = this->_str.at(0);
-//			break;
-//		case INTG:
-//			break;
-//		case FLT:
-//			break;
-//		case DBL:
-//			break;
-//	}
-//}
+void	ConvertScalarTypes::convert( void )
+{
+	switch (this->_type)
+	{
+		case CHR:
+			this->_char = static_cast<char>(*this);
+			this->_int = static_cast<int>(*this);
+			this->_float = static_cast<float>(*this);
+			this->_double = static_cast<double>(*this);
+			break;
+		case INTG:
+			this->_int = static_cast<int>(*this);
+			this->_char = static_cast<char>(*this);
+			this->_float = static_cast<float>(*this);
+			this->_double = static_cast<double>(*this);
+			break;
+		case FLT:
+			this->_float = static_cast<float>(*this);
+			this->_char = static_cast<char>(*this);
+			this->_int = static_cast<int>(*this);
+			this->_double = static_cast<double>(*this);
+			break;
+		case DBL:
+			this->_double = static_cast<double>(*this);
+			this->_char = static_cast<char>(*this);
+			this->_int = static_cast<int>(*this);
+			this->_float = static_cast<float>(*this);
+			break;
+		default:
+			this->_char = 0;
+			this->_int = 0;
+			this->_float = 0.0f;
+			this->_double = 0.0;
+			break;
+	}
+}
+
+void	ConvertScalarTypes::show( void ) const
+{
+	std::cout << "char: ";
+	if (this->_err_char == true)
+		std::cout << "Impossible";
+	else
+		std::cout << this->_char;
+	std::cout << std::endl;
+	std::cout << "int: ";
+	if (this->_err_int == true)
+		std::cout << "Impossible";
+	else
+		std::cout << this->_int;
+	std::cout << std::endl;
+	std::cout << "float: ";
+	if (this->_err_float == true)
+		std::cout << "Impossible";
+	else
+		std::cout << this->_float;
+	std::cout << std::endl;
+	std::cout << "double: ";
+	if (this->_err_double == true)
+		std::cout << "Impossible";
+	else
+		std::cout << this->_double;
+	std::cout << std::endl;
+}
 
 // EXCEPTION FUNCTIONS
 const char	*ConvertScalarTypes::NullInputException::what( void ) const throw()
