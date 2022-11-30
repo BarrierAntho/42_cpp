@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:16:17 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/29 16:35:55 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/11/30 08:08:35 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,15 @@
 # include <stdint.h>
 # include <iostream>
 
-# ifndef DATA_DFT_CHAR
-#  define DATA_DFT_CHAR 'a'
-# endif
-# ifndef DATA_DFT_INT
-#  define DATA_DFT_INT 'a'
-# endif
-
-class Data
+typedef struct Data
 {
-	public:
-		// CONSTRUCTOR / DESTRUCTOR
-		Data( void );
-		~Data( void );
-		Data( Data const & );
+	char	_c;
+	int	_i;
+}	t_data;
 
-		// OVERLOAD OPERATOR
-		Data	&operator = ( Data const & );
+uintptr_t	serialize( Data * );
+Data*	deserialize( uintptr_t );
 
-		// GETTER / SETTER
-		char	getChar( void ) const;
-		int	getInt( void ) const;
-
-	private:
-			char	_c;
-			int	_i;
-};
-
-// OUTSIDE OF THE CLASS
-std::ostream	&operator << ( std::ostream &, Data const & );
-uintptr_t	serialize(Data* ptr);
-Data*	deserialize(uintptr_t raw);
+void	dataShow( t_data data );
 
 #endif
