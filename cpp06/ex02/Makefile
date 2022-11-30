@@ -52,8 +52,7 @@ re		:
 test		:
 			make all
 			@echo $(SEP_P)
-			$(VAL) ./$(NAME) > result.txt 2>&1
-			less result.txt
+			$(VAL) ./$(NAME)
 
 -include $(DEPS)
 
