@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 14:01:51 by abarrier          #+#    #+#             */
-/*   Updated: 2022/12/01 12:25:05 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/12/01 12:30:47 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	main( void )
 		std::cout << "Loop through the array ended" << std::endl;
 	}
 	////////////////////////////////////////
+	////////////////////////////////////////
+	////////////////////////////////////////
 	{
 		std::cout << SEP_P << std::endl;
 		std::cout << "TEST - INT" << std::endl;
@@ -55,6 +57,8 @@ int	main( void )
 		std::cout << "Loop through the array ended" << std::endl;
 	}
 	////////////////////////////////////////
+	////////////////////////////////////////
+	////////////////////////////////////////
 	{
 		std::cout << SEP_P << std::endl;
 		std::cout << "TEST - DOUBLE" << std::endl;
@@ -72,6 +76,9 @@ int	main( void )
 			std::cout << "a[" << i << "]: " << a[i] << std::endl;
 		std::cout << "Loop through the array ended" << std::endl;
 	}
+	////////////////////////////////////////
+	////////////////////////////////////////
+	////////////////////////////////////////
 	std::cout << SEP_P << std::endl;
 	std::cout << "TEST - INIT WITH DEFAULT CONSTRUCTOR" << std::endl;
 	std::cout << SEP_P << std::endl;
@@ -122,6 +129,9 @@ int	main( void )
 		std::cout << "Loop through the array ended" << std::endl;
 		std::cout << SEP_SP << std::endl;
 	}
+	////////////////////////////////////////
+	////////////////////////////////////////
+	////////////////////////////////////////
 	std::cout << SEP_P << std::endl;
 	std::cout << "TEST - INIT WITH CONSTRUCTOR AND ARGUMENT BUT NOT SETTED" << std::endl;
 	std::cout << SEP_P << std::endl;
@@ -201,7 +211,30 @@ int	main( void )
 				std::cout << "c[" << i << "]: " << c[i] << std::endl;
 		}
 		std::cout << "Loop through the array (c) ended" << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		////////////////////////////////////////
+		std::cout << "COPY OF THE ARRAY" << std::endl;
+		std::cout << "a = b" << std::endl;
+		a = b;
+		std::cout << "Loop through the array (a) in progress" << std::endl;
+		if (a.getArray() != NULL)
+		{
+			for (i = 0; i < n; i++)
+				std::cout << "a[" << i << "]: " << a[i] << std::endl;
+		}
+		std::cout << "Loop through the array (a) ended" << std::endl;
+		std::cout << "Loop through the array (b) in progress" << std::endl;
+		if (b.getArray() != NULL)
+		{
+			for (i = 0; i < n; i++)
+				std::cout << "b[" << i << "]: " << b[i] << std::endl;
+		}
+		std::cout << "Loop through the array (b) ended" << std::endl;
 	}
+	////////////////////////////////////////
+	////////////////////////////////////////
+	////////////////////////////////////////
 	std::cout << SEP_P << std::endl;
 	std::cout << "TEST - INIT WITH CONSTRUCTOR AND ARGUMENT BUT SETTED VALUE" << std::endl;
 	std::cout << SEP_P << std::endl;
@@ -286,7 +319,28 @@ std::cout << "Loop through the array in progress" << std::endl;
 				std::cout << "c[" << i << "]: " << c[i] << std::endl;
 		}
 		std::cout << "Loop through the array (c) ended" << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		////////////////////////////////////////
+		std::cout << "COPY OF THE ARRAY" << std::endl;
+		std::cout << "a = b" << std::endl;
+		a = b;
+		std::cout << "Loop through the array (a) in progress" << std::endl;
+		if (a.getArray() != NULL)
+		{
+			for (i = 0; i < n; i++)
+				std::cout << "a[" << i << "]: " << a[i] << std::endl;
+		}
+		std::cout << "Loop through the array (a) ended" << std::endl;
+		std::cout << "Loop through the array (b) in progress" << std::endl;
+		if (b.getArray() != NULL)
+		{
+			for (i = 0; i < n; i++)
+				std::cout << "b[" << i << "]: " << b[i] << std::endl;
+		}
+		std::cout << "Loop through the array (b) ended" << std::endl;
 	}
+	////////////////////////////////////////
 	////////////////////////////////////////
 	////////////////////////////////////////
 	{
