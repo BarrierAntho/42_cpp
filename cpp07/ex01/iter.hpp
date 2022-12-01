@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 12:52:42 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/30 13:17:59 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/12/01 14:23:52 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 # include <iostream>
 
 template <class T>
-void	show( T &obj )
+void	show( T const &obj )
 {
 	std::cout << "obj: " << obj << std::endl;
 }
 
 template <class T>
-void	addone( T &obj )
+void	addone( T const &obj )
 {
-	obj++;
+	std::cout << "obj: " << obj + 1 << std::endl;
 }
 
 template <class T>
-void	iter( T *array, size_t size, void (*f)(T &obj) )
+void	iter( T *array, size_t size, void (*f)(T const &obj) )
 {
 	size_t	i;
 

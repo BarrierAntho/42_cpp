@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 12:57:59 by abarrier          #+#    #+#             */
-/*   Updated: 2022/11/30 13:26:57 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/12/01 14:21:29 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ int	main( void )
 		size_t	size;
 
 		size = 7;
-		std::cout << "BEFORE ADD" << std::endl;
+		std::cout << "SHOW" << std::endl;
 		iter(a, size, (&show));
+		std::cout << "ADDONE" << std::endl;
 		iter(a, size, (&addone));
-		std::cout << "AFTER ADD" << std::endl;
+		std::cout << "SHOW" << std::endl;
 		iter(a, size, (&show));
 	}
 	std::cout << SEP_P << std::endl;
@@ -40,10 +41,11 @@ int	main( void )
 		size_t	size;
 
 		size = 7;
-		std::cout << "BEFORE ADD" << std::endl;
+		std::cout << "SHOW" << std::endl;
 		iter(a, size, (&show));
+		std::cout << "ADDONE" << std::endl;
 		iter(a, size, (&addone));
-		std::cout << "AFTER ADD" << std::endl;
+		std::cout << "SHOW" << std::endl;
 		iter(a, size, (&show));
 	}
 	std::cout << SEP_P << std::endl;
@@ -54,12 +56,7 @@ int	main( void )
 		size_t	size;
 
 		size = 7;
-		//std::cout << "BEFORE ADD" << std::endl;
-		//iter(a, size, (&show));
-		//iter(a, size, (&addone)); // IMPOSSIBLE ON STRING
-		//std::cout << "AFTER ADD" << std::endl;
-		//iter(a, size, (&show));
-		std::cout << "IMPOSSIBLE TO ADD ON STRING" << std::endl;
+		std::cout << "SHOW" << std::endl;
 		iter(a, size, (&show));
 	}
 	std::cout << SEP_P << std::endl;
