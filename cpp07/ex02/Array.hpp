@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 13:54:35 by abarrier          #+#    #+#             */
-/*   Updated: 2022/12/01 12:02:29 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/12/01 12:48:59 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ class Array
 
 		T	&operator [] ( unsigned int i )
 		{
-			if (i > this->_size)
+			if (i >= this->_size)
 				throw (Array::OutOfRangeException());
 			return (this->_array[i]);
 		}
