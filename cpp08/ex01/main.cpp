@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 11:21:06 by abarrier          #+#    #+#             */
-/*   Updated: 2022/12/02 16:35:55 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/12/02 18:25:45 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -394,6 +394,44 @@ int	main( void )
 
 		////////////////////////////////////////
 		std::cout << "DESTRUCTOR" << std::endl;
+	}
+	////////////////////
+	std::cout << SEP_P << std::endl;
+	std::cout << "TEST - N = 10000" << std::endl;
+	std::cout << SEP_SP << std::endl;
+	////////////////////
+	{
+		try
+		{
+			std::cout << "DEFAULT CONSTRUCTOR" << std::endl;
+			std::cout << "Span a(6)" << std::endl;
+			Span a(10000);
+
+			std::cout << "Span [a] automatic filling in progress..." << std::endl;
+			a.generateData(10000);
+			std::cout << "Span [a] automatic filling ended" << std::endl;
+			std::cout << "Span [a] show in progress..." << std::endl;
+			a.show();
+			std::cout << "Span [a] show ended" << std::endl;
+			std::cout << SEP_SP << std::endl;
+
+			////////////////////////////////////////
+			std::cout << "SHORTEST VALUE" << std::endl;
+			std::cout << "Span [a] : " << a.shortestSpan() << std::endl;
+			std::cout << SEP_SP << std::endl;
+
+			////////////////////////////////////////
+			std::cout << "LONGEST VALUE" << std::endl;
+			std::cout << "Span [a] : " << a.longestSpan() << std::endl;
+			std::cout << SEP_SP << std::endl;
+
+			////////////////////////////////////////
+			std::cout << "DESTRUCTOR" << std::endl;
+		}
+		catch (std::exception &e)
+		{
+			std::cerr << "Error: " << e.what() << std::endl;
+		}
 	}
 	return (0);
 }
