@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 10:53:17 by abarrier          #+#    #+#             */
-/*   Updated: 2022/12/02 15:14:46 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/12/02 16:07:04 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <algorithm>
 # include <climits>
 # include <ctime>
+# include <exception>
 # include <iostream>
 
 // CONTAINERS
@@ -38,6 +39,7 @@ class Span
 		Span	&operator = ( Span const & );
 
 		// GETTER / SETTER
+		unsigned int		getSize( void ) const;
 		std::vector<int>	getContainer( void ) const;
 
 		// SUBJECT FUNCTIONS
@@ -50,12 +52,12 @@ class Span
 		void			generateData( int );
 
 		// EXCEPTION FUNCTIONS
-		class CapacityException: std::exception
+		class CapacityException: public std::exception
 		{
 			virtual const char	*what( void ) const throw();
 		};
 
-		class SizeException: std::exception
+		class SizeException: public std::exception
 		{
 			virtual const char	*what( void ) const throw();
 		};

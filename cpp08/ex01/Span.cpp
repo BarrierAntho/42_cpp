@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 10:53:35 by abarrier          #+#    #+#             */
-/*   Updated: 2022/12/02 15:19:50 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/12/02 16:21:51 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,17 @@ Span	&Span::operator = ( Span const &ref )
 {
 	if (this == &(ref))
 		return (*this);
+	this->_size = (&ref)->getSize();
 	this->_container = (&ref)->getContainer();
 	return (*this);
 }
 
 // GETTER / SETTER
+unsigned int		Span::getSize( void ) const
+{
+	return (this->_size);
+}
+
 std::vector<int>	Span::getContainer( void ) const
 {
 	return (this->_container);
@@ -103,6 +109,17 @@ void	Span::show( void )
 		std::cout << "[show] container value: " << *it << std::endl;
 }
 
+void	Span::generateData( int n )
+{
+	std::vector<int>	tmp(n);
+
+	if ((unsigned int)n > this->_size)
+		throw (Span::CapacityException());
+	srand(time(NULL));
+	std::generate(tmp.begin(), tmp.end(), myRandValue);
+	std::copy(tmp.begin(), tmp.end(), std::inserter(this->_container, this->_container.begin()));
+}
+
 // EXCEPTION FUNCTIONS
 const char	*Span::CapacityException::what( void ) const throw()
 {
@@ -124,13 +141,4 @@ std::ostream	&operator << ( std::ostream &out, Span const &ref )
 int	myRandValue( void )
 {
 	return (rand() % MY_RAND_RANGE);
-}
-
-void	Span::generateData( int n )
-{
-	std::vector<int>	tmp(n);
-
-	srand(time(NULL));
-	std::generate(tmp.begin(), tmp.end(), myRandValue);
-	std::copy(tmp.begin(), tmp.end(), std::inserter(this->_container, this->_container.begin()));
 }
