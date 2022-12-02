@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 16:39:25 by abarrier          #+#    #+#             */
-/*   Updated: 2022/12/02 17:28:59 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/12/02 17:37:47 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,8 @@ class MutantStack: public std::stack<T>
 {
 	public:
 		// CONSTRUCTOR / DESTRUCTOR
-		MutantStack( void ): std::stack<T>()
-		{
-			std::cout << *this << " has been created" << std::endl;
-		}
-
-		~MutantStack( void )
-		{
-			std::cout << *this << " has been deleted" << std::endl;
-		}
+		MutantStack( void ): std::stack<T>() {};
+		~MutantStack( void ) {};
 
 		MutantStack( MutantStack const &ref ): std::stack<T>(ref)
 		{
@@ -58,15 +51,13 @@ class MutantStack: public std::stack<T>
 			return (*this);
 		}
 
-//		typedef typename std::stack<T>::container_type::iterator iterator;
-//		iterator begin()
-		typename std::stack<T>::container_type::iterator	begin()
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		iterator begin()
 		{
 			return (std::stack<T>::c.begin());
 		}
 
-//		iterator end()
-		typename std::stack<T>::container_type::iterator	end()
+		iterator end()
 		{
 			return (std::stack<T>::c.end());
 		}
