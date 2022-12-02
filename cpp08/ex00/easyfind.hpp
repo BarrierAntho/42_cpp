@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 08:31:43 by abarrier          #+#    #+#             */
-/*   Updated: 2022/12/02 10:50:30 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/12/02 18:20:15 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <algorithm>
 # include <iostream>
-# include <vector>
 
 template <typename T>
 typename T::iterator	easyfind( T &ct, int toFind )
