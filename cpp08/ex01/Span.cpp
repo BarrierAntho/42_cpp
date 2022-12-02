@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 10:53:35 by abarrier          #+#    #+#             */
-/*   Updated: 2022/12/02 14:53:12 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/12/02 15:19:50 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,23 +123,14 @@ std::ostream	&operator << ( std::ostream &out, Span const &ref )
 
 int	myRandValue( void )
 {
-	srand(time(NULL));
 	return (rand() % MY_RAND_RANGE);
 }
 
-void	generateData( Span &ref )
+void	Span::generateData( int n )
 {
-	std::vector<int>	ct;
-	typename std::vector<int>::iterator	it;
+	std::vector<int>	tmp(n);
 
-	ct = (&ref)->getContainer();
-	std::cout << "TEST: " << ct.size() << std::endl;
-	ct.push_back(1);
-	std::generate(ct.begin(), ct.end(), myRandValue);
-	std::cout << "Loop through the container in progress.." << std::endl;
-	it = ct.begin();
-	for (it = ct.begin(); it != ct.end(); it++)
-		std::cout << "test: " << *it << std::endl;
-	std::cout << "Loop through the container ended" << std::endl;
-
+	srand(time(NULL));
+	std::generate(tmp.begin(), tmp.end(), myRandValue);
+	std::copy(tmp.begin(), tmp.end(), std::inserter(this->_container, this->_container.begin()));
 }

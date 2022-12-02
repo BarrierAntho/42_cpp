@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 11:21:06 by abarrier          #+#    #+#             */
-/*   Updated: 2022/12/02 14:36:28 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/12/02 15:17:36 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@ int	main( void )
 		Span sp = Span(5);
 
 		sp.show();
-		generateData(sp);
+		std::cout << SEP_SP << std::endl;
+		sp.generateData(10);
+		std::cout << SEP_SP << std::endl;
 		sp.show();
 	}
 	return (0);

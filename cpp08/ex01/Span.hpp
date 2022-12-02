@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 10:53:17 by abarrier          #+#    #+#             */
-/*   Updated: 2022/12/02 14:38:50 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/12/02 15:14:46 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ class Span
 
 		// UTILS FUNCTIONS
 		void			show( void );
+		void			generateData( int );
 
 		// EXCEPTION FUNCTIONS
 		class CapacityException: std::exception
@@ -67,6 +68,5 @@ class Span
 // OUTSIDE OF THE CLASS
 std::ostream	&operator << ( std::ostream &, Span const & );
 int	myRandValue( void );
-void	generateData( Span & );
 
 #endif
