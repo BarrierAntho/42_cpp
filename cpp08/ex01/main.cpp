@@ -6,7 +6,7 @@
 /*   By: abarrier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 11:21:06 by abarrier          #+#    #+#             */
-/*   Updated: 2022/12/02 16:22:44 by abarrier         ###   ########.fr       */
+/*   Updated: 2022/12/02 16:35:55 by abarrier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -297,6 +297,103 @@ int	main( void )
 		{
 			std::cerr << "Error: " << e.what() << std::endl;
 		}
+	}
+	////////////////////
+	std::cout << SEP_P << std::endl;
+	std::cout << "TEST - SPECIAL ERROR" << std::endl;
+	std::cout << SEP_SP << std::endl;
+	////////////////////
+	{
+		std::cout << "DEFAULT CONSTRUCTOR" << std::endl;
+		std::cout << "Span a(1)" << std::endl;
+		Span a(1);
+		std::cout << "Span b" << std::endl;
+		Span b;
+
+		std::cout << "Span [a] show in progress..." << std::endl;
+		a.show();
+		std::cout << "Span [a] show ended" << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		////////////////////////////////////////
+		std::cout << "MODIFICATION OF VALUE" << std::endl;
+		std::cout << "a.addNumber(1)" << std::endl;
+		a.addNumber(1);
+		std::cout << "Span [a] show in progress..." << std::endl;
+		a.show();
+		std::cout << "Span [a] show ended" << std::endl;
+		std::cout << SEP_SP << std::endl;
+
+		////////////////////////////////////////
+		std::cout << "ERROR" << std::endl;
+		std::cout << "a.shortestSpan()" << std::endl;
+		try
+		{
+			a.shortestSpan();
+			std::cout << "Span [a] show in progress..." << std::endl;
+			a.show();
+			std::cout << "Span [a] show ended" << std::endl;
+		}
+		catch (std::exception &e)
+		{
+			std::cerr << "Error: " << e.what() << std::endl;
+		}
+		std::cout << SEP_SP << std::endl;
+		std::cout << "a.longestSpan()" << std::endl;
+		try
+		{
+			a.longestSpan();
+			std::cout << "Span [a] show in progress..." << std::endl;
+			a.show();
+			std::cout << "Span [a] show ended" << std::endl;
+		}
+		catch (std::exception &e)
+		{
+			std::cerr << "Error: " << e.what() << std::endl;
+		}
+		std::cout << SEP_SP << std::endl;
+		std::cout << "b.addNumber(1)" << std::endl;
+		try
+		{
+			b.addNumber(1);
+			std::cout << "Span [b] show in progress..." << std::endl;
+			b.show();
+			std::cout << "Span [b] show ended" << std::endl;
+		}
+		catch (std::exception &e)
+		{
+			std::cerr << "Error: " << e.what() << std::endl;
+		}
+		std::cout << SEP_SP << std::endl;
+		std::cout << "b.shortestSpan()" << std::endl;
+		try
+		{
+			b.shortestSpan();
+			std::cout << "Span [b] show in progress..." << std::endl;
+			b.show();
+			std::cout << "Span [b] show ended" << std::endl;
+		}
+		catch (std::exception &e)
+		{
+			std::cerr << "Error: " << e.what() << std::endl;
+		}
+		std::cout << SEP_SP << std::endl;
+		std::cout << "b.longestSpan()" << std::endl;
+		try
+		{
+			b.longestSpan();
+			std::cout << "Span [b] show in progress..." << std::endl;
+			b.show();
+			std::cout << "Span [b] show ended" << std::endl;
+		}
+		catch (std::exception &e)
+		{
+			std::cerr << "Error: " << e.what() << std::endl;
+		}
+		std::cout << SEP_SP << std::endl;
+
+		////////////////////////////////////////
+		std::cout << "DESTRUCTOR" << std::endl;
 	}
 	return (0);
 }
